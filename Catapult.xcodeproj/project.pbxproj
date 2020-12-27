@@ -16,6 +16,7 @@
 		F1084DB92595C7F9009AD713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1084DB72595C7F9009AD713 /* LaunchScreen.storyboard */; };
 		F1084DC42595C7F9009AD713 /* CatapultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084DC32595C7F9009AD713 /* CatapultTests.swift */; };
 		F1084DCF2595C7FA009AD713 /* CatapultUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084DCE2595C7FA009AD713 /* CatapultUITests.swift */; };
+		F1084DF225984A95009AD713 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084DF125984A95009AD713 /* InitialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F1084DCA2595C7FA009AD713 /* CatapultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatapultUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1084DCE2595C7FA009AD713 /* CatapultUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatapultUITests.swift; sourceTree = "<group>"; };
 		F1084DD02595C7FA009AD713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1084DF125984A95009AD713 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,9 @@
 		F1084DA82595C7F7009AD713 /* Catapult */ = {
 			isa = PBXGroup;
 			children = (
-				F1084DA92595C7F7009AD713 /* AppDelegate.swift */,
-				F1084DAB2595C7F7009AD713 /* SceneDelegate.swift */,
-				F1084DAD2595C7F7009AD713 /* ViewController.swift */,
-				F1084DAF2595C7F7009AD713 /* Main.storyboard */,
+				F1084DE725983879009AD713 /* Navigation Controllers */,
+				F1084DE525983824009AD713 /* Controllers */,
+				F1084DE62598382F009AD713 /* Views */,
 				F1084DB52595C7F9009AD713 /* Assets.xcassets */,
 				F1084DB72595C7F9009AD713 /* LaunchScreen.storyboard */,
 				F1084DBA2595C7F9009AD713 /* Info.plist */,
@@ -129,6 +130,32 @@
 				F1084DD02595C7FA009AD713 /* Info.plist */,
 			);
 			path = CatapultUITests;
+			sourceTree = "<group>";
+		};
+		F1084DE525983824009AD713 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1084DAD2595C7F7009AD713 /* ViewController.swift */,
+				F1084DF125984A95009AD713 /* InitialViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F1084DE62598382F009AD713 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1084DAF2595C7F7009AD713 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1084DE725983879009AD713 /* Navigation Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1084DA92595C7F7009AD713 /* AppDelegate.swift */,
+				F1084DAB2595C7F7009AD713 /* SceneDelegate.swift */,
+			);
+			path = "Navigation Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1084DF225984A95009AD713 /* InitialViewController.swift in Sources */,
 				F1084DAE2595C7F7009AD713 /* ViewController.swift in Sources */,
 				F1084DAA2595C7F7009AD713 /* AppDelegate.swift in Sources */,
 				F1084DAC2595C7F7009AD713 /* SceneDelegate.swift in Sources */,
