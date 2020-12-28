@@ -207,7 +207,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2Jd-o1-jgG"/>
                     <connections>
-                        <outlet property="DoneButton" destination="Pdw-pQ-TLE" id="bQJ-de-IzG"/>
+                        <outlet property="DoneButton" destination="Pdw-pQ-TLE" id="lUI-HO-LjB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EL-hl-eWS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -353,7 +353,7 @@
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="a5H-NZ-2Nw" kind="presentation" modalPresentationStyle="fullScreen" id="3Vy-Tz-0ay"/>
+                                                                    <segue destination="gc2-bX-Z79" kind="presentation" modalPresentationStyle="fullScreen" id="qrf-jJ-2Vy"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -405,7 +405,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="h0q-1w-IOf"/>
                     <connections>
-                        <outlet property="DoneButton" destination="sRq-T5-rh2" id="JRI-TV-gfg"/>
                         <outlet property="FinishButton" destination="sRq-T5-rh2" id="kFh-Uu-3gE"/>
                     </connections>
                 </viewController>
@@ -514,7 +513,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="IK7-ve-FoQ"/>
                     <connections>
-                        <outlet property="DoneButton" destination="Vz7-vV-NaI" id="Sf5-bT-TA2"/>
+                        <outlet property="NextButton" destination="Vz7-vV-NaI" id="NCg-9d-nLT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcu-mF-sQi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -541,8 +540,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="394-f8-AXx">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 2/2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-cD-aiT">
-                                                                <rect key="frame" x="10" y="36" width="129" height="41"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-cD-aiT">
+                                                                <rect key="frame" x="10" y="36" width="117" height="41"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
                                                                 <color key="textColor" name="BrandGreen"/>
                                                                 <nil key="highlightedColor"/>
@@ -558,29 +557,9 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYC-Yt-10q">
                                                         <rect key="frame" x="0.0" y="100" width="374" height="70"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5E-3k-1S8">
-                                                                <rect key="frame" x="10" y="5" width="354" height="60"/>
-                                                                <color key="backgroundColor" red="0.63140612839999999" green="0.63523834940000001" blue="0.63922214509999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="60" id="LRN-qS-lBs"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
-                                                                <state key="normal" title="Finish">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <segue destination="gc2-bX-Z79" kind="presentation" modalPresentationStyle="fullScreen" id="e2D-g9-Jju"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="w5E-3k-1S8" secondAttribute="trailing" constant="10" id="IxD-oh-dSc"/>
-                                                            <constraint firstItem="w5E-3k-1S8" firstAttribute="centerX" secondItem="nYC-Yt-10q" secondAttribute="centerX" id="WOS-1H-Le9"/>
                                                             <constraint firstAttribute="height" constant="70" id="aTC-KR-dJo"/>
-                                                            <constraint firstItem="w5E-3k-1S8" firstAttribute="centerY" secondItem="nYC-Yt-10q" secondAttribute="centerY" id="pJL-kh-Bj7"/>
-                                                            <constraint firstItem="w5E-3k-1S8" firstAttribute="leading" secondItem="nYC-Yt-10q" secondAttribute="leading" constant="10" id="rYh-ek-aLc"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -621,9 +600,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bp1-sp-Nyn"/>
-                    <connections>
-                        <outlet property="DoneButton" destination="w5E-3k-1S8" id="Bl8-SQ-ERD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovs-Lc-eex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

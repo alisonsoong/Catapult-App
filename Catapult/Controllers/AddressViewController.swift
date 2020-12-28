@@ -9,9 +9,10 @@ import UIKit
 
 class AddressViewController: UIViewController {
 
+    @IBOutlet weak var NextButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NextButton.layer.cornerRadius = NextButton.frame.size.height / 5
         // Do any additional setup after loading the view.
     }
     
