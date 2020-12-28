@@ -9,12 +9,14 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
-    @IBOutlet weak var initialScrollView: UIScrollView!
+    @IBOutlet weak var StartButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        StartButton.layer.cornerRadius = StartButton.frame.size.height / 5
+        
         // scroll reset
-        initialScrollView.setContentOffset(CGPoint.zero, animated: true)
+//        initialScrollView.setContentOffset(CGPoint.zero, animated: true)
         
         
     }

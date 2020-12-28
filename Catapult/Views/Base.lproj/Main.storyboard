@@ -14,15 +14,97 @@
             <objects>
                 <viewController title="Initial Screen" id="MAa-eP-b5Y" customClass="InitialViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fck-qi-qm9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrc-tT-zxa">
+                                <rect key="frame" x="0.0" y="171" width="414" height="500"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="azl-jh-yVe">
+                                        <rect key="frame" x="75" y="50" width="264" height="400"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="jgI-t9-JVj">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="REF-p8-ZDb"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Steps!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDw-2L-JGC">
+                                                <rect key="frame" x="0.0" y="210" width="264" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="axW-mY-6KN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="40"/>
+                                                <color key="textColor" red="0.40970116449999999" green="0.42770463199999997" blue="0.41534206000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your contact info and some info about your home. That's it!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMT-Ro-pTD">
+                                                <rect key="frame" x="0.0" y="270" width="264" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="tLN-Wq-eRg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-zd-YFW">
+                                                <rect key="frame" x="0.0" y="330" width="264" height="70"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lod-uY-0Ce">
+                                                        <rect key="frame" x="10" y="5" width="244" height="60"/>
+                                                        <color key="backgroundColor" red="0.63140612839999999" green="0.63523834940000001" blue="0.63922214509999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="9he-Fq-rWg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                                        <state key="normal" title="Start!">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="gc2-bX-Z79" kind="presentation" id="72j-yG-NS5"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="lod-uY-0Ce" firstAttribute="centerY" secondItem="K2K-zd-YFW" secondAttribute="centerY" id="3cR-AY-PND"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lod-uY-0Ce" secondAttribute="trailing" constant="10" id="3ki-ev-jYN"/>
+                                                    <constraint firstItem="lod-uY-0Ce" firstAttribute="centerX" secondItem="K2K-zd-YFW" secondAttribute="centerX" id="9Kn-Ls-one"/>
+                                                    <constraint firstAttribute="height" constant="70" id="GGA-gY-K1W"/>
+                                                    <constraint firstItem="lod-uY-0Ce" firstAttribute="leading" secondItem="K2K-zd-YFW" secondAttribute="leading" constant="10" id="vYI-tF-UWR"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="azl-jh-yVe" secondAttribute="bottom" constant="50" id="9SQ-Do-8l7"/>
+                                    <constraint firstItem="azl-jh-yVe" firstAttribute="centerX" secondItem="vrc-tT-zxa" secondAttribute="centerX" id="FIz-vn-UWD"/>
+                                    <constraint firstItem="azl-jh-yVe" firstAttribute="top" secondItem="vrc-tT-zxa" secondAttribute="top" constant="50" id="MNV-Yt-ri7"/>
+                                    <constraint firstAttribute="trailing" secondItem="azl-jh-yVe" secondAttribute="trailing" constant="75" id="hxe-9f-fy6"/>
+                                    <constraint firstAttribute="height" constant="500" id="pe2-LZ-YUO"/>
+                                    <constraint firstItem="azl-jh-yVe" firstAttribute="leading" secondItem="vrc-tT-zxa" secondAttribute="leading" constant="75" id="qwi-ZC-6a8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="o8a-OY-ppt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vrc-tT-zxa" firstAttribute="trailing" secondItem="o8a-OY-ppt" secondAttribute="trailing" id="Pdo-NA-Z63"/>
+                            <constraint firstItem="vrc-tT-zxa" firstAttribute="centerY" secondItem="fck-qi-qm9" secondAttribute="centerY" id="SVc-MA-bVA"/>
+                            <constraint firstItem="vrc-tT-zxa" firstAttribute="centerX" secondItem="fck-qi-qm9" secondAttribute="centerX" id="hpo-2P-2J2"/>
+                            <constraint firstItem="vrc-tT-zxa" firstAttribute="leading" secondItem="o8a-OY-ppt" secondAttribute="leading" id="qDf-ZB-l1f"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jyd-jk-D5h"/>
+                    <connections>
+                        <outlet property="StartButton" destination="lod-uY-0Ce" id="3Uq-55-79P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oun-LU-zjR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-574" y="94"/>
+            <point key="canvasLocation" x="-575.36231884057975" y="93.75"/>
         </scene>
         <!--Address-->
         <scene sceneID="tne-QT-ifu">
@@ -223,11 +305,11 @@ Abhiteja Konda, Abhinav Prakash, Gregory A. Moss, Michael Schmoldt, Gregory D. G
             <objects>
                 <viewController storyboardIdentifier="Complete" title="Complete" id="gc2-bX-Z79" customClass="CompleteViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RyH-v6-gh7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-ER-Iaq">
-                                <rect key="frame" x="0.0" y="198" width="414" height="500"/>
+                                <rect key="frame" x="0.0" y="171" width="414" height="500"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="z5P-4k-1dU">
                                         <rect key="frame" x="75" y="50" width="264" height="400"/>
@@ -257,7 +339,7 @@ Abhiteja Konda, Abhinav Prakash, Gregory A. Moss, Michael Schmoldt, Gregory D. G
                                                 <rect key="frame" x="0.0" y="235" width="264" height="165"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsV-4z-yBc">
-                                                        <rect key="frame" x="10" y="52.666666666666629" width="244" height="60"/>
+                                                        <rect key="frame" x="10" y="52.666666666666686" width="244" height="60"/>
                                                         <color key="backgroundColor" red="0.63140612839999999" green="0.63523834940000001" blue="0.63922214509999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="8xO-0T-VAv"/>
@@ -266,6 +348,9 @@ Abhiteja Konda, Abhinav Prakash, Gregory A. Moss, Michael Schmoldt, Gregory D. G
                                                         <state key="normal" title="Close">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="MAa-eP-b5Y" kind="presentation" id="BnA-QJ-jlT"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -297,6 +382,7 @@ Abhiteja Konda, Abhinav Prakash, Gregory A. Moss, Michael Schmoldt, Gregory D. G
                             <constraint firstItem="jzn-ER-Iaq" firstAttribute="centerY" secondItem="RyH-v6-gh7" secondAttribute="centerY" id="sWY-xR-5XY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iS7-br-RmK"/>
                     <connections>
                         <outlet property="CloseButton" destination="rsV-4z-yBc" id="iZq-fM-05Q"/>
                     </connections>
@@ -307,6 +393,7 @@ Abhiteja Konda, Abhinav Prakash, Gregory A. Moss, Michael Schmoldt, Gregory D. G
         </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="354" height="342"/>
         <namedColor name="BrandGray">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
