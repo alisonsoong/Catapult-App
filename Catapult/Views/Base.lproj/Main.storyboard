@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="Initial" title="Initial Screen" id="MAa-eP-b5Y" customClass="InitialViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fck-qi-qm9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrc-tT-zxa">
-                                <rect key="frame" x="0.0" y="146" width="414" height="550"/>
+                                <rect key="frame" x="0.0" y="173" width="414" height="550"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="azl-jh-yVe">
                                         <rect key="frame" x="50" y="25" width="314" height="475"/>
@@ -62,7 +62,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="aBh-pk-1vC" kind="show" id="zxS-pQ-CK4"/>
+                                                            <segue destination="aBh-pk-1vC" kind="presentation" modalPresentationStyle="fullScreen" id="uGh-wm-bk6"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -111,11 +111,11 @@
             <objects>
                 <viewController storyboardIdentifier="Step1" title="Step 1" id="aBh-pk-1vC" customClass="Step1ViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h3l-aH-Cdk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGa-aJ-Fux">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-HD-NN4">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="790.5"/>
@@ -155,7 +155,7 @@
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="C7R-Nh-fhf" kind="show" id="NLp-VY-Y9Q"/>
+                                                                    <segue destination="xzN-9e-kMn" kind="presentation" modalPresentationStyle="fullScreen" id="TrZ-ij-TOy"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -208,7 +208,6 @@
                     <navigationItem key="navigationItem" id="2Jd-o1-jgG"/>
                     <connections>
                         <outlet property="DoneButton" destination="Pdw-pQ-TLE" id="bQJ-de-IzG"/>
-                        <outlet property="researchScrollView" destination="VGa-aJ-Fux" id="iwQ-6h-VMr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EL-hl-eWS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -220,11 +219,11 @@
             <objects>
                 <viewController storyboardIdentifier="Complete" title="Complete" id="gc2-bX-Z79" customClass="CompleteViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RyH-v6-gh7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-ER-Iaq">
-                                <rect key="frame" x="0.0" y="171" width="414" height="500"/>
+                                <rect key="frame" x="0.0" y="198" width="414" height="500"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="z5P-4k-1dU">
                                         <rect key="frame" x="50" y="50" width="314" height="400"/>
@@ -264,7 +263,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="MAa-eP-b5Y" kind="presentation" id="BnA-QJ-jlT"/>
+                                                            <segue destination="MAa-eP-b5Y" kind="presentation" modalPresentationStyle="fullScreen" id="ywV-B3-xuw"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -303,18 +302,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8G-xH-BSu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-575.625" y="802.81690140845069"/>
+            <point key="canvasLocation" x="-575" y="802"/>
         </scene>
         <!--Step 2(.5)-->
         <scene sceneID="usu-nu-QAj">
             <objects>
                 <viewController storyboardIdentifier="Step2Photos" title="Step 2(.5)" id="C7R-Nh-fhf" customClass="HouseInfoPhotosViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mgb-ZA-QEZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1j-G5-VMg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkl-qB-Ddn">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="790.5"/>
@@ -354,7 +353,7 @@
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="gc2-bX-Z79" kind="show" id="FOw-Pe-41E"/>
+                                                                    <segue destination="a5H-NZ-2Nw" kind="presentation" modalPresentationStyle="fullScreen" id="3Vy-Tz-0ay"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -408,7 +407,6 @@
                     <connections>
                         <outlet property="DoneButton" destination="sRq-T5-rh2" id="JRI-TV-gfg"/>
                         <outlet property="FinishButton" destination="sRq-T5-rh2" id="kFh-Uu-3gE"/>
-                        <outlet property="researchScrollView" destination="N1j-G5-VMg" id="usI-Jx-Nbi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2l-f9-okJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -463,6 +461,9 @@
                                                                 <state key="normal" title="Finish">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <segue destination="C7R-Nh-fhf" kind="presentation" modalPresentationStyle="fullScreen" id="DJx-YM-eZP"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -514,7 +515,6 @@
                     <navigationItem key="navigationItem" id="IK7-ve-FoQ"/>
                     <connections>
                         <outlet property="DoneButton" destination="Vz7-vV-NaI" id="Sf5-bT-TA2"/>
-                        <outlet property="researchScrollView" destination="RDL-JR-N8S" id="aFs-I3-XbP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcu-mF-sQi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -569,6 +569,9 @@
                                                                 <state key="normal" title="Finish">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <segue destination="gc2-bX-Z79" kind="presentation" modalPresentationStyle="fullScreen" id="e2D-g9-Jju"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -620,7 +623,6 @@
                     <navigationItem key="navigationItem" id="Bp1-sp-Nyn"/>
                     <connections>
                         <outlet property="DoneButton" destination="w5E-3k-1S8" id="Bl8-SQ-ERD"/>
-                        <outlet property="researchScrollView" destination="HIE-0j-uau" id="Xa6-7V-9mB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovs-Lc-eex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
