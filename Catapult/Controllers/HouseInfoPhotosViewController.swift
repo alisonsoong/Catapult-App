@@ -9,9 +9,10 @@ import UIKit
 
 class HouseInfoPhotosViewController: UIViewController {
 
+    @IBOutlet weak var FinishButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        FinishButton.layer.cornerRadius = FinishButton.frame.size.height / 5
         // Do any additional setup after loading the view.
     }
     
