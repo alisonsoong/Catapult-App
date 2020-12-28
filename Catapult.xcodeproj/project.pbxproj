@@ -17,6 +17,12 @@
 		F1084DC42595C7F9009AD713 /* CatapultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084DC32595C7F9009AD713 /* CatapultTests.swift */; };
 		F1084DCF2595C7FA009AD713 /* CatapultUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084DCE2595C7FA009AD713 /* CatapultUITests.swift */; };
 		F1084DF225984A95009AD713 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084DF125984A95009AD713 /* InitialViewController.swift */; };
+		F1084DF725995FBC009AD713 /* Step1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084DF625995FBC009AD713 /* Step1ViewController.swift */; };
+		F1084DFC25995FD7009AD713 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084DFB25995FD7009AD713 /* AddressViewController.swift */; };
+		F1084E0125995FE3009AD713 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0025995FE3009AD713 /* SettingsViewController.swift */; };
+		F1084E0625995FF9009AD713 /* HouseInfoPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0525995FF9009AD713 /* HouseInfoPhotosViewController.swift */; };
+		F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */; };
+		F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E1225996024009AD713 /* CompleteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		F1084DCE2595C7FA009AD713 /* CatapultUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatapultUITests.swift; sourceTree = "<group>"; };
 		F1084DD02595C7FA009AD713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1084DF125984A95009AD713 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		F1084DF625995FBC009AD713 /* Step1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1ViewController.swift; sourceTree = "<group>"; };
+		F1084DFB25995FD7009AD713 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		F1084E0025995FE3009AD713 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F1084E0525995FF9009AD713 /* HouseInfoPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseInfoPhotosViewController.swift; sourceTree = "<group>"; };
+		F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePhotoCategoryViewController.swift; sourceTree = "<group>"; };
+		F1084E1225996024009AD713 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +149,12 @@
 			children = (
 				F1084DAD2595C7F7009AD713 /* ViewController.swift */,
 				F1084DF125984A95009AD713 /* InitialViewController.swift */,
+				F1084E0025995FE3009AD713 /* SettingsViewController.swift */,
+				F1084DF625995FBC009AD713 /* Step1ViewController.swift */,
+				F1084DFB25995FD7009AD713 /* AddressViewController.swift */,
+				F1084E0525995FF9009AD713 /* HouseInfoPhotosViewController.swift */,
+				F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */,
+				F1084E1225996024009AD713 /* CompleteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,10 +307,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1084DF225984A95009AD713 /* InitialViewController.swift in Sources */,
+				F1084E0625995FF9009AD713 /* HouseInfoPhotosViewController.swift in Sources */,
 				F1084DAE2595C7F7009AD713 /* ViewController.swift in Sources */,
 				F1084DAA2595C7F7009AD713 /* AppDelegate.swift in Sources */,
+				F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */,
 				F1084DAC2595C7F7009AD713 /* SceneDelegate.swift in Sources */,
+				F1084DF725995FBC009AD713 /* Step1ViewController.swift in Sources */,
+				F1084DFC25995FD7009AD713 /* AddressViewController.swift in Sources */,
 				F1084DB42595C7F7009AD713 /* Catapult.xcdatamodeld in Sources */,
+				F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */,
+				F1084E0125995FE3009AD713 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
