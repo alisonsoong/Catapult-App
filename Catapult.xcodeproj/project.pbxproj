@@ -23,6 +23,7 @@
 		F1084E0625995FF9009AD713 /* HouseInfoPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0525995FF9009AD713 /* HouseInfoPhotosViewController.swift */; };
 		F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */; };
 		F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E1225996024009AD713 /* CompleteViewController.swift */; };
+		F1CF521E259AB7C1001753EF /* BathroomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F1084E0525995FF9009AD713 /* HouseInfoPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseInfoPhotosViewController.swift; sourceTree = "<group>"; };
 		F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePhotoCategoryViewController.swift; sourceTree = "<group>"; };
 		F1084E1225996024009AD713 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathroomsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				F1084E0525995FF9009AD713 /* HouseInfoPhotosViewController.swift */,
 				F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */,
 				F1084E1225996024009AD713 /* CompleteViewController.swift */,
+				F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				F1084DFC25995FD7009AD713 /* AddressViewController.swift in Sources */,
 				F1084DB42595C7F7009AD713 /* Catapult.xcdatamodeld in Sources */,
 				F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */,
+				F1CF521E259AB7C1001753EF /* BathroomsViewController.swift in Sources */,
 				F1084E0125995FE3009AD713 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

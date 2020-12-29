@@ -10,12 +10,12 @@ import UIKit
 class HouseInfoPhotosViewController: UIViewController {
 
     @IBOutlet weak var FinishButton: UIButton!
+    @IBOutlet weak var BathroomButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         FinishButton.layer.cornerRadius = FinishButton.frame.size.height / 5
-        // Do any additional setup after loading the view.
+        BathroomButton.layer.cornerRadius = BathroomButton.frame.size.height / 5
     }
-    
 
     /*
     // MARK: - Navigation
