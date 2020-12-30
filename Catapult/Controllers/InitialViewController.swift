@@ -15,13 +15,32 @@ class InitialViewController: UIViewController {
         
         StartButton.layer.cornerRadius = StartButton.frame.size.height / 5
         
+        self.tabBarController?.tabBar.isHidden = true
+        
+        navigationController?.navigationBar.isHidden = true
+        
         // scroll reset
 //        initialScrollView.setContentOffset(CGPoint.zero, animated: true)
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.tabBarController?.selectedIndex = 1
         
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let curView  = storyBoard.instantiateViewController(withIdentifier: "Step1") as! Step1ViewController
+//        self.present(curView, animated: true, completion: nil)
+    }
+    
+    @IBAction func StartPressed(_ sender: UIButton) {
+        
+        self.tabBarController?.selectedIndex = 1
+//        let selectedIndex = tabBarController?.selectedViewController
+//        print(selectedIndex)
+    }
+    
     /*
     // MARK: - Navigation
 
