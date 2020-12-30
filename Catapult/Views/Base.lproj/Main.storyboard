@@ -592,6 +592,7 @@
                                                                     <constraint firstAttribute="height" constant="52" id="eBZ-zd-BYA"/>
                                                                 </constraints>
                                                                 <connections>
+                                                                    <action selector="backButton:" destination="C7R-Nh-fhf" eventType="touchUpInside" id="z3Q-ft-B7C"/>
                                                                     <segue destination="xzN-9e-kMn" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="xxi-BF-xh0"/>
                                                                 </connections>
                                                             </button>
@@ -868,6 +869,7 @@
                                                                     <constraint firstAttribute="width" constant="42" id="wkP-dC-QsZ"/>
                                                                 </constraints>
                                                                 <connections>
+                                                                    <action selector="backButton:" destination="xzN-9e-kMn" eventType="touchUpInside" id="Uhn-gi-kjM"/>
                                                                     <segue destination="aBh-pk-1vC" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="qOv-J8-amk"/>
                                                                 </connections>
                                                             </button>
@@ -1164,7 +1166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcu-mF-sQi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1359" y="1629"/>
+            <point key="canvasLocation" x="-1359.4202898550725" y="1628.5714285714284"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Sci-cL-sNX">
@@ -1198,6 +1200,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ta-zb-Dwj">
                                                         <rect key="frame" x="0.0" y="30" width="42" height="52"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <segue destination="9kV-Za-BtS" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="GQM-k7-2J9"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2215,8 +2220,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G3o-8f-hNQ"/>
-        <segue reference="xxi-BF-xh0"/>
+        <segue reference="Wb6-G7-axE"/>
+        <segue reference="4Jy-VJ-dbU"/>
         <segue reference="O3e-12-rzA"/>
         <segue reference="qOv-J8-amk"/>
         <segue reference="Vys-yh-QQu"/>

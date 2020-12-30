@@ -8,7 +8,11 @@
 import UIKit
 
 class Step1ViewController: UIViewController {
-
+    
+    let defaults = UserDefaults.standard
+    let screenKey = "startScreenIndex"
+    let settingsKey = "settingsFrom"
+    let settingsIndexKey = "settingsIndex"
 
     @IBOutlet weak var DoneButton: UIButton!
     override func viewDidLoad() {
@@ -20,13 +24,26 @@ class Step1ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(true)
+        
+        if (self.defaults.bool(forKey: self.settingsKey) && self.defaults.integer(forKey: self.settingsIndexKey) != 1){
+            self.navigationController?.tabBarController?.selectedIndex = self.defaults.integer(forKey: self.settingsIndexKey)
+        }
+        
+        self.defaults.set(false, forKey: self.settingsKey)
+    }
+    
     @IBAction func DoneButtonPressed(_ sender: UIButton) {
         
         // set lastSeenScreen to address
+        self.defaults.set(2, forKey: self.screenKey)
         
     }
     
     @IBAction func SettingsFromStep1(_ sender: UIButton) {
+        self.defaults.set(true, forKey: self.settingsKey)
+        self.defaults.set(1, forKey: self.settingsIndexKey)
     }
     
     /*

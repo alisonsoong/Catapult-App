@@ -10,6 +10,9 @@ import UIKit
 class InitialViewController: UIViewController {
 
     @IBOutlet weak var StartButton: UIButton!
+    let defaults = UserDefaults.standard
+    let screenKey = "startScreenIndex"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +26,9 @@ class InitialViewController: UIViewController {
         // scroll reset
 //        initialScrollView.setContentOffset(CGPoint.zero, animated: true)
         
+        if (self.defaults.integer(forKey:"startScreenIndex") != 0){
+            self.defaults.set(0, forKey: self.screenKey)
+        }
        
         
     }
@@ -38,6 +44,7 @@ class InitialViewController: UIViewController {
     @IBAction func StartPressed(_ sender: UIButton) {
         
         // set lastSeenScreen to step 1
+        self.defaults.set(1, forKey: self.screenKey)
         
     }
     

@@ -8,7 +8,12 @@
 import UIKit
 
 class HouseInfoPhotosViewController: UIViewController {
-
+    
+    let defaults = UserDefaults.standard
+    let screenKey = "startScreenIndex"
+    let settingsKey = "settingsFrom"
+    let settingsIndexKey = "settingsIndex"
+    
     @IBOutlet weak var FinishButton: UIButton!
     @IBOutlet weak var BathroomButton: UIButton!
     override func viewDidLoad() {
@@ -21,8 +26,13 @@ class HouseInfoPhotosViewController: UIViewController {
     }
     
     @IBAction func SettingsFromPictures(_ sender: UIButton) {
+        self.defaults.set(true, forKey: self.settingsKey)
+        self.defaults.set(3, forKey: self.settingsIndexKey)
     }
     
+    @IBAction func backButton(_ sender: UIButton) {
+        self.defaults.set(2, forKey: self.screenKey)
+    }
     /*
     // MARK: - Navigation
 
