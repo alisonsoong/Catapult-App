@@ -15,8 +15,14 @@ class HouseInfoPhotosViewController: UIViewController {
         super.viewDidLoad()
         FinishButton.layer.cornerRadius = FinishButton.frame.size.height / 5
         BathroomButton.layer.cornerRadius = BathroomButton.frame.size.height / 5
+        self.tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
+    
+    @IBAction func SettingsFromPictures(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 

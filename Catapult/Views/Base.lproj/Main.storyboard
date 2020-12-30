@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MAa-eP-b5Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9kV-Za-BtS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,10 +11,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="8qr-1h-xhm">
             <objects>
-                <tabBarController id="9kV-Za-BtS" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tbc" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="9kV-Za-BtS" customClass="customTabBarController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NdI-9L-LH5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -34,7 +35,6 @@
         <!--Item-->
         <scene sceneID="cHl-uK-Sqo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LN1-WR-EDe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="Start" id="Ia7-hl-TEt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="9ze-Ol-gK3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xi6-ql-jt6">
@@ -45,6 +45,7 @@
                         <segue destination="MAa-eP-b5Y" kind="relationship" relationship="rootViewController" id="dIG-hD-gkI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LN1-WR-EDe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2142" y="234"/>
         </scene>
@@ -118,6 +119,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="StartPressed:" destination="MAa-eP-b5Y" eventType="touchUpInside" id="LbF-x8-KUL"/>
+                                                            <segue destination="aBh-pk-1vC" kind="presentation" modalPresentationStyle="fullScreen" id="aFS-5t-hMh"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -170,7 +172,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGa-aJ-Fux">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-HD-NN4">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="790.5"/>
@@ -202,6 +204,7 @@
                                                                     <constraint firstAttribute="height" constant="52" id="h6P-5A-2bj"/>
                                                                 </constraints>
                                                                 <connections>
+                                                                    <action selector="SettingsFromStep1:" destination="aBh-pk-1vC" eventType="touchUpInside" id="aSo-be-DZK"/>
                                                                     <segue destination="a5H-NZ-2Nw" kind="presentation" modalPresentationStyle="fullScreen" id="Wb6-G7-axE"/>
                                                                 </connections>
                                                             </button>
@@ -386,6 +389,10 @@
                                                                         <state key="normal" title="Done">
                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="DoneButtonPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="XfT-WA-mYJ"/>
+                                                                            <segue destination="xzN-9e-kMn" kind="presentation" modalPresentationStyle="fullScreen" id="4Jy-VJ-dbU"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -494,6 +501,9 @@
                                                         <state key="normal" title="Close">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="MAa-eP-b5Y" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="Vys-yh-QQu"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -543,7 +553,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1j-G5-VMg">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkl-qB-Ddn">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -581,6 +591,9 @@
                                                                     <constraint firstAttribute="width" constant="42" id="482-RM-Y4V"/>
                                                                     <constraint firstAttribute="height" constant="52" id="eBZ-zd-BYA"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <segue destination="xzN-9e-kMn" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="xxi-BF-xh0"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obR-SP-64c">
                                                                 <rect key="frame" x="314" y="30" width="54" height="52"/>
@@ -589,6 +602,7 @@
                                                                     <constraint firstAttribute="height" constant="52" id="lM9-RR-rdn"/>
                                                                 </constraints>
                                                                 <connections>
+                                                                    <action selector="SettingsFromPictures:" destination="C7R-Nh-fhf" eventType="touchUpInside" id="D8n-S2-XT4"/>
                                                                     <segue destination="a5H-NZ-2Nw" kind="presentation" modalPresentationStyle="fullScreen" id="G3o-8f-hNQ"/>
                                                                 </connections>
                                                             </button>
@@ -779,7 +793,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDL-JR-N8S">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-GW-46X">
                                         <rect key="frame" x="30" y="381" width="100" height="67.5"/>
@@ -843,6 +857,7 @@
                                                                     <constraint firstAttribute="height" constant="52" id="F3u-pS-cN1"/>
                                                                 </constraints>
                                                                 <connections>
+                                                                    <action selector="SettingsFromAddress:" destination="xzN-9e-kMn" eventType="touchUpInside" id="1nA-5L-yfw"/>
                                                                     <segue destination="a5H-NZ-2Nw" kind="presentation" modalPresentationStyle="fullScreen" id="q5R-Ge-LjV"/>
                                                                 </connections>
                                                             </button>
@@ -852,6 +867,9 @@
                                                                     <constraint firstAttribute="height" constant="52" id="78r-FL-UgD"/>
                                                                     <constraint firstAttribute="width" constant="42" id="wkP-dC-QsZ"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <segue destination="aBh-pk-1vC" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="qOv-J8-amk"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1076,6 +1094,10 @@
                                                                                 <state key="normal" title="Next (Almost Done!)">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="NextPressed:" destination="xzN-9e-kMn" eventType="touchUpInside" id="3o3-3u-mJu"/>
+                                                                                    <segue destination="C7R-Nh-fhf" kind="presentation" modalPresentationStyle="fullScreen" id="O3e-12-rzA"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2143,7 +2165,6 @@
         <!--Item-->
         <scene sceneID="aUw-au-zhK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JXZ-Az-MnE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="Info" id="6g6-nD-U5O" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="dPG-Pf-t1S"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n3E-EB-Ae7">
@@ -2154,13 +2175,13 @@
                         <segue destination="aBh-pk-1vC" kind="relationship" relationship="rootViewController" id="4Lg-X3-s9P"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXZ-Az-MnE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2142" y="932"/>
         </scene>
         <!--Item-->
         <scene sceneID="yKi-75-bo2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="POk-tg-A1g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="Address" id="lw6-a1-J0K" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="PPr-nf-dl2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T91-mz-OmE">
@@ -2171,13 +2192,13 @@
                         <segue destination="xzN-9e-kMn" kind="relationship" relationship="rootViewController" id="efc-5K-hgw"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POk-tg-A1g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2142" y="1629"/>
         </scene>
         <!--Item-->
         <scene sceneID="Eou-NO-3h1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pye-ii-h9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="Pictures" id="S0e-vM-WOX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="iRo-QP-IJ2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K0E-TJ-vFZ">
@@ -2188,13 +2209,17 @@
                         <segue destination="C7R-Nh-fhf" kind="relationship" relationship="rootViewController" id="HYA-qT-5KJ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pye-ii-h9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2142" y="2324"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="G3o-8f-hNQ"/>
-        <segue reference="HYA-qT-5KJ"/>
+        <segue reference="xxi-BF-xh0"/>
+        <segue reference="O3e-12-rzA"/>
+        <segue reference="qOv-J8-amk"/>
+        <segue reference="Vys-yh-QQu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="354" height="342"/>

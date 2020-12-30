@@ -14,10 +14,21 @@ class Step1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DoneButton.layer.cornerRadius = DoneButton.frame.size.height / 5
+        navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func DoneButtonPressed(_ sender: UIButton) {
+        
+        // set lastSeenScreen to address
+        
+    }
+    
+    @IBAction func SettingsFromStep1(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 

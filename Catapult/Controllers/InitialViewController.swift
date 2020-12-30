@@ -18,11 +18,12 @@ class InitialViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         
         navigationController?.navigationBar.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         // scroll reset
 //        initialScrollView.setContentOffset(CGPoint.zero, animated: true)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.tabBarController?.selectedIndex = 1
+        
+       
         
     }
     
@@ -36,9 +37,8 @@ class InitialViewController: UIViewController {
     
     @IBAction func StartPressed(_ sender: UIButton) {
         
-        self.tabBarController?.selectedIndex = 1
-//        let selectedIndex = tabBarController?.selectedViewController
-//        print(selectedIndex)
+        // set lastSeenScreen to step 1
+        
     }
     
     /*

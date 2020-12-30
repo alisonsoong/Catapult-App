@@ -23,6 +23,7 @@
 		F1084E0625995FF9009AD713 /* HouseInfoPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0525995FF9009AD713 /* HouseInfoPhotosViewController.swift */; };
 		F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */; };
 		F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E1225996024009AD713 /* CompleteViewController.swift */; };
+		F191874F259D3B91002A255F /* customTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191874E259D3B91002A255F /* customTabBarController.swift */; };
 		F1CF521E259AB7C1001753EF /* BathroomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		F1084E0525995FF9009AD713 /* HouseInfoPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseInfoPhotosViewController.swift; sourceTree = "<group>"; };
 		F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePhotoCategoryViewController.swift; sourceTree = "<group>"; };
 		F1084E1225996024009AD713 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		F191874E259D3B91002A255F /* customTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabBarController.swift; sourceTree = "<group>"; };
 		F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathroomsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 				F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */,
 				F1084E1225996024009AD713 /* CompleteViewController.swift */,
 				F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */,
+				F191874E259D3B91002A255F /* customTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				F1084DAA2595C7F7009AD713 /* AppDelegate.swift in Sources */,
 				F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */,
 				F1084DAC2595C7F7009AD713 /* SceneDelegate.swift in Sources */,
+				F191874F259D3B91002A255F /* customTabBarController.swift in Sources */,
 				F1084DF725995FBC009AD713 /* Step1ViewController.swift in Sources */,
 				F1084DFC25995FD7009AD713 /* AddressViewController.swift in Sources */,
 				F1084DB42595C7F7009AD713 /* Catapult.xcdatamodeld in Sources */,

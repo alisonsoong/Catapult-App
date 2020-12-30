@@ -18,20 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        storyboard.instantiateViewController(withIdentifier: "Step1")
-
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let yourVC = storyboard.instantiateViewController(identifier: "Step1")
-//
-//        let navController = UINavigationController(rootViewController: Step1ViewController)
-//        navController.modalPresentationStyle = .fullScreen
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let secondVC = storyboard.instantiateViewController(identifier: "Step1ViewController")
-//
-//        show(secondVC, sender: self)
-        
         return true
     }
 

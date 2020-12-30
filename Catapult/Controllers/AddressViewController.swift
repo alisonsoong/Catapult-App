@@ -13,10 +13,18 @@ class AddressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NextButton.layer.cornerRadius = NextButton.frame.size.height / 5
+        navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func NextPressed(_ sender: UIButton) {
+        // set lastSeenScreen to Photos
+    }
+    @IBAction func SettingsFromAddress(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
