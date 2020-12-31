@@ -244,13 +244,14 @@
                                                                         <color key="textColor" name="BrandGreen"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-m0-DIr">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-m0-DIr">
                                                                         <rect key="frame" x="0.0" y="50" width="354" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="7a0-U0-V4S"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <color key="textColor" red="0.43317064430000002" green="0.48422420030000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -276,13 +277,14 @@
                                                                         <color key="textColor" name="BrandGreen"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAy-r9-fcP">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-WZ-dZY">
                                                                         <rect key="frame" x="0.0" y="50" width="354" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="83t-02-0eA"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="a1t-Nq-uxg"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <color key="textColor" red="0.43317064430000002" green="0.48422420030000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -308,13 +310,14 @@
                                                                         <color key="textColor" name="BrandGreen"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bVB-hv-m1f">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6ox-2i-Zpp">
                                                                         <rect key="frame" x="0.0" y="50" width="354" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="9S5-Fn-QkY"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="df2-gf-x03"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <color key="textColor" red="0.43317064430000002" green="0.48422420030000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -343,13 +346,14 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="CtP-xH-5oO">
                                                                         <rect key="frame" x="0.0" y="50" width="354" height="40"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBh-HG-oIk">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="o5Z-rh-Qat">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="172.5" height="40"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="40" id="zCh-o8-gMP"/>
+                                                                                    <constraint firstAttribute="height" constant="40" id="5q7-wJ-wQe"/>
                                                                                 </constraints>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <color key="textColor" red="0.43317064430000002" green="0.48422420030000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                                                             </textField>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVZ-kM-PaJ">
                                                                                 <rect key="frame" x="181.5" y="0.0" width="172.5" height="40"/>

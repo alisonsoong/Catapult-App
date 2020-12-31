@@ -13,6 +13,11 @@ class Step1ViewController: UIViewController {
     let screenKey = "startScreenIndex"
     let settingsKey = "settingsFrom"
     let settingsIndexKey = "settingsIndex"
+    let firstNameKey = "firstName"
+    let lastNameKey = "lastName"
+    let phoneKey = "phone"
+    let emailKey = "email"
+    let emailDomainKey = "emailDomain"
 
     @IBOutlet weak var DoneButton: UIButton!
     override func viewDidLoad() {
