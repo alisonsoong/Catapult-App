@@ -736,6 +736,7 @@
                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
+                                                                            <action selector="finishButtonPressed:" destination="C7R-Nh-fhf" eventType="touchUpInside" id="msB-3a-UH3"/>
                                                                             <segue destination="gc2-bX-Z79" kind="presentation" modalPresentationStyle="fullScreen" id="8Aq-bY-dYo"/>
                                                                         </connections>
                                                                     </button>
@@ -2265,8 +2266,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q5R-Ge-LjV"/>
-        <segue reference="4Jy-VJ-dbU"/>
+        <segue reference="G3o-8f-hNQ"/>
+        <segue reference="xxi-BF-xh0"/>
         <segue reference="O3e-12-rzA"/>
         <segue reference="qOv-J8-amk"/>
         <segue reference="Vys-yh-QQu"/>
