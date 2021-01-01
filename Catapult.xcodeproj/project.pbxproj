@@ -24,6 +24,8 @@
 		F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */; };
 		F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E1225996024009AD713 /* CompleteViewController.swift */; };
 		F191874F259D3B91002A255F /* customTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191874E259D3B91002A255F /* customTabBarController.swift */; };
+		F1918761259FCDAD002A255F /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1918760259FCDAD002A255F /* DropDownCell.swift */; };
+		F191876B259FCE42002A255F /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191876A259FCE42002A255F /* DropDownTextField.swift */; };
 		F1CF521E259AB7C1001753EF /* BathroomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePhotoCategoryViewController.swift; sourceTree = "<group>"; };
 		F1084E1225996024009AD713 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		F191874E259D3B91002A255F /* customTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabBarController.swift; sourceTree = "<group>"; };
+		F1918760259FCDAD002A255F /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		F191876A259FCE42002A255F /* DropDownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
 		F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathroomsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +123,7 @@
 		F1084DA82595C7F7009AD713 /* Catapult */ = {
 			isa = PBXGroup;
 			children = (
+				F1918766259FCDC1002A255F /* Models */,
 				F1084DE725983879009AD713 /* Navigation Controllers */,
 				F1084DE525983824009AD713 /* Controllers */,
 				F1084DE62598382F009AD713 /* Views */,
@@ -180,6 +185,15 @@
 				F1084DAB2595C7F7009AD713 /* SceneDelegate.swift */,
 			);
 			path = "Navigation Controllers";
+			sourceTree = "<group>";
+		};
+		F1918766259FCDC1002A255F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1918760259FCDAD002A255F /* DropDownCell.swift */,
+				F191876A259FCE42002A255F /* DropDownTextField.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,7 +335,9 @@
 				F191874F259D3B91002A255F /* customTabBarController.swift in Sources */,
 				F1084DF725995FBC009AD713 /* Step1ViewController.swift in Sources */,
 				F1084DFC25995FD7009AD713 /* AddressViewController.swift in Sources */,
+				F191876B259FCE42002A255F /* DropDownTextField.swift in Sources */,
 				F1084DB42595C7F7009AD713 /* Catapult.xcdatamodeld in Sources */,
+				F1918761259FCDAD002A255F /* DropDownCell.swift in Sources */,
 				F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */,
 				F1CF521E259AB7C1001753EF /* BathroomsViewController.swift in Sources */,
 				F1084E0125995FE3009AD713 /* SettingsViewController.swift in Sources */,

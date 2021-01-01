@@ -24,12 +24,20 @@ class Step1ViewController: UIViewController {
     @IBOutlet weak var lastNameInput: UITextField!
     @IBOutlet weak var phoneInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var DropDownButton: UIButton!
+    @IBOutlet weak var CloseDropDownButton: UIButton!
+    @IBOutlet weak var DropDownView: UIView!
+    @IBOutlet weak var DomainTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         DoneButton.layer.cornerRadius = DoneButton.frame.size.height / 5
         navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        CloseDropDownButton.isHidden = true;
+        DropDownButton.isHidden = false;
+        DropDownView.isHidden = true;
         
         
         nameInput.text = self.defaults.string(forKey: self.firstNameKey)
@@ -85,6 +93,19 @@ class Step1ViewController: UIViewController {
         
     }
     
+    
+    @IBAction func DropDownPressed(_ sender: UIButton) {
+        CloseDropDownButton.isHidden = false;
+        DropDownButton.isHidden = true;
+        DropDownView.isHidden = false;
+    }
+    
+    @IBAction func CloseDropDown(_ sender: UIButton) {
+        CloseDropDownButton.isHidden = true;
+        DropDownButton.isHidden = false;
+        DropDownView.isHidden = true;
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -96,3 +117,5 @@ class Step1ViewController: UIViewController {
     */
 
 }
+
+
