@@ -370,8 +370,8 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YM2-z3-0yR">
                                                                                 <rect key="frame" x="181.5" y="0.0" width="172.5" height="40"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Select Domain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYM-op-edI">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="40"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Domain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYM-op-edI">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="142.5" height="40"/>
                                                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                                                                         <color key="textColor" name="BrandGreen"/>
                                                                                         <nil key="highlightedColor"/>
@@ -383,7 +383,7 @@
                                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ds-H4-Opq">
                                                                                         <rect key="frame" x="-0.5" y="0.0" width="172.5" height="40"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
                                                                                         <state key="normal">
                                                                                             <color key="titleColor" red="0.40970116449999999" green="0.42770463199999997" blue="0.41534206000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                         </state>
@@ -392,27 +392,14 @@
                                                                                             <action selector="DropDownPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="Jvb-Ds-aDX"/>
                                                                                         </connections>
                                                                                     </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJ8-te-cGz">
-                                                                                        <rect key="frame" x="-0.5" y="0.0" width="172.5" height="40"/>
-                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                                                                        <state key="normal">
-                                                                                            <color key="titleColor" red="0.40970116449999999" green="0.42770463199999997" blue="0.41534206000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                                        </state>
-                                                                                        <connections>
-                                                                                            <action selector="CloseDropDown:" destination="aBh-pk-1vC" eventType="touchUpInside" id="mf1-04-f67"/>
-                                                                                            <action selector="DoneButtonPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="Tcz-Vl-yp2"/>
-                                                                                            <action selector="DropDownPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="qfB-CA-2LV"/>
-                                                                                        </connections>
-                                                                                    </button>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="bottom" secondItem="5lI-BW-swA" secondAttribute="bottom" constant="5.5" id="DwH-vy-dG6"/>
                                                                                     <constraint firstItem="5lI-BW-swA" firstAttribute="top" secondItem="YM2-z3-0yR" secondAttribute="top" constant="6" id="EZT-mK-mso"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="FYM-op-edI" secondAttribute="trailing" id="IVC-Fj-BU2"/>
                                                                                     <constraint firstAttribute="bottom" secondItem="FYM-op-edI" secondAttribute="bottom" id="OxL-Cn-fCn"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="5lI-BW-swA" secondAttribute="trailing" constant="10" id="Y6O-wm-FfG"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="FYM-op-edI" secondAttribute="trailing" constant="30" id="bs0-p4-dHJ"/>
                                                                                     <constraint firstItem="FYM-op-edI" firstAttribute="top" secondItem="YM2-z3-0yR" secondAttribute="top" id="hzT-iF-gsk"/>
                                                                                     <constraint firstItem="FYM-op-edI" firstAttribute="leading" secondItem="YM2-z3-0yR" secondAttribute="leading" id="oED-pL-AOC"/>
                                                                                 </constraints>
@@ -440,37 +427,71 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUZ-eN-xi6">
                                                                         <rect key="frame" x="0.0" y="0.0" width="182" height="100"/>
                                                                     </view>
-                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f8n-Sk-3sa">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEV-YT-BMn">
                                                                         <rect key="frame" x="192" y="0.0" width="182" height="100"/>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                        <prototypes>
-                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1iJ-ys-nxH">
-                                                                                <rect key="frame" x="0.0" y="28" width="182" height="43.5"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1iJ-ys-nxH" id="DiR-S4-Coi">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="43.5"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                                </tableViewCellContentView>
-                                                                            </tableViewCell>
-                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6XP-I7-m8l">
-                                                                                <rect key="frame" x="0.0" y="71.5" width="182" height="43.5"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6XP-I7-m8l" id="ega-lF-vAY">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="43.5"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                                </tableViewCellContentView>
-                                                                            </tableViewCell>
-                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="WYP-xc-kqe">
-                                                                                <rect key="frame" x="0.0" y="115" width="182" height="1.1920928955078125e-07"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WYP-xc-kqe" id="FeC-NF-Dgx">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="1.1920928955078125e-07"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                                </tableViewCellContentView>
-                                                                            </tableViewCell>
-                                                                        </prototypes>
-                                                                        <sections/>
-                                                                    </tableView>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="940-1N-apU">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="167" height="100"/>
+                                                                                <subviews>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alq-a4-7b0">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="23.5"/>
+                                                                                        <color key="backgroundColor" red="0.88623231650000001" green="0.87667179110000004" blue="0.87320798639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
+                                                                                        <state key="normal" title="@gmail.com">
+                                                                                            <color key="titleColor" red="0.40970116449999999" green="0.42770463199999997" blue="0.41534206000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        </state>
+                                                                                        <connections>
+                                                                                            <action selector="DoneButtonPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="SkL-oq-hls"/>
+                                                                                            <action selector="DropDownPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="Xqp-Ma-rzh"/>
+                                                                                            <action selector="gmailSelected:" destination="aBh-pk-1vC" eventType="touchUpInside" id="vWY-Va-1fX"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTp-0A-a2I">
+                                                                                        <rect key="frame" x="0.0" y="25.5" width="167" height="23.5"/>
+                                                                                        <color key="backgroundColor" red="0.88623231650000001" green="0.87667179110000004" blue="0.87320798639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
+                                                                                        <state key="normal" title="@yahoo.com">
+                                                                                            <color key="titleColor" red="0.40970116449999999" green="0.42770463199999997" blue="0.41534206000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        </state>
+                                                                                        <connections>
+                                                                                            <action selector="DoneButtonPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="Crm-o2-RwH"/>
+                                                                                            <action selector="DropDownPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="MNi-WE-UtJ"/>
+                                                                                            <action selector="yahooSelected:" destination="aBh-pk-1vC" eventType="touchUpInside" id="a52-YK-UsT"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Tw-a4-95M">
+                                                                                        <rect key="frame" x="0.0" y="51" width="167" height="23.5"/>
+                                                                                        <color key="backgroundColor" red="0.88623231650000001" green="0.87667179110000004" blue="0.87320798639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
+                                                                                        <state key="normal" title="@hotmail.com">
+                                                                                            <color key="titleColor" red="0.40970116449999999" green="0.42770463199999997" blue="0.41534206000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        </state>
+                                                                                        <connections>
+                                                                                            <action selector="DoneButtonPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="XyG-RL-OrV"/>
+                                                                                            <action selector="DropDownPressed:" destination="aBh-pk-1vC" eventType="touchUpInside" id="4Qn-PC-JQb"/>
+                                                                                            <action selector="hotmailSelected:" destination="aBh-pk-1vC" eventType="touchUpInside" id="fcu-mW-zup"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-aE-dq0">
+                                                                                        <rect key="frame" x="0.0" y="76.5" width="167" height="23.5"/>
+                                                                                        <color key="textColor" red="0.43317064430000002" green="0.48422420030000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                                                        <connections>
+                                                                                            <action selector="otherDomainInput:" destination="aBh-pk-1vC" eventType="editingChanged" id="fl7-PC-ElU"/>
+                                                                                            <action selector="phoneEdit:" destination="aBh-pk-1vC" eventType="editingDidEnd" id="yb6-KB-lRR"/>
+                                                                                        </connections>
+                                                                                    </textField>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="940-1N-apU" firstAttribute="leading" secondItem="XEV-YT-BMn" secondAttribute="leading" id="5gi-2Z-fYh"/>
+                                                                            <constraint firstItem="940-1N-apU" firstAttribute="top" secondItem="XEV-YT-BMn" secondAttribute="top" id="SQ6-nr-WMI"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="940-1N-apU" secondAttribute="bottom" id="iA0-NM-Ra9"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="940-1N-apU" secondAttribute="trailing" constant="15" id="nxF-hb-sFC"/>
+                                                                        </constraints>
+                                                                    </view>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="EKa-QS-Cbz"/>
@@ -564,14 +585,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="2Jd-o1-jgG"/>
                     <connections>
-                        <outlet property="CloseDropDownButton" destination="zJ8-te-cGz" id="c60-Rm-97e"/>
-                        <outlet property="DomainTableView" destination="f8n-Sk-3sa" id="cTP-Dy-6gp"/>
+                        <outlet property="DomainLabel" destination="FYM-op-edI" id="CeQ-6R-zyw"/>
                         <outlet property="DoneButton" destination="Pdw-pQ-TLE" id="lUI-HO-LjB"/>
                         <outlet property="DropDownButton" destination="2ds-H4-Opq" id="2E9-Cb-Oe4"/>
                         <outlet property="DropDownView" destination="yT0-jz-FLI" id="qFR-L1-I1y"/>
                         <outlet property="emailInput" destination="o5Z-rh-Qat" id="fOr-cU-t0g"/>
                         <outlet property="lastNameInput" destination="Hbx-WZ-dZY" id="0C2-5Q-DUo"/>
                         <outlet property="nameInput" destination="PRv-m0-DIr" id="6Zz-xr-M5N"/>
+                        <outlet property="otherDomainInput" destination="NOA-aE-dq0" id="eVb-2H-vHa"/>
                         <outlet property="phoneInput" destination="6ox-2i-Zpp" id="CSt-a2-62n"/>
                     </connections>
                 </viewController>

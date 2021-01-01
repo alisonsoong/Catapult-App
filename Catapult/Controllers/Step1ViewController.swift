@@ -25,9 +25,11 @@ class Step1ViewController: UIViewController {
     @IBOutlet weak var phoneInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var DropDownButton: UIButton!
-    @IBOutlet weak var CloseDropDownButton: UIButton!
     @IBOutlet weak var DropDownView: UIView!
-    @IBOutlet weak var DomainTableView: UITableView!
+    @IBOutlet weak var DomainLabel: UILabel!
+    @IBOutlet weak var otherDomainInput: UITextField!
+    var dropDownToggle = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DoneButton.layer.cornerRadius = DoneButton.frame.size.height / 5
@@ -35,15 +37,23 @@ class Step1ViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-        CloseDropDownButton.isHidden = true;
         DropDownButton.isHidden = false;
         DropDownView.isHidden = true;
-        
         
         nameInput.text = self.defaults.string(forKey: self.firstNameKey)
         lastNameInput.text = self.defaults.string(forKey: self.lastNameKey)
         phoneInput.text = self.defaults.string(forKey: self.phoneKey)
         emailInput.text = self.defaults.string(forKey: self.emailKey)
+        if (self.defaults.string(forKey: self.emailDomainKey) == "" || self.defaults.string(forKey: self.emailDomainKey) == nil){
+            DomainLabel.text = "Select Domain"
+            otherDomainInput.text = "";
+        } else {
+            DomainLabel.text = self.defaults.string(forKey: self.emailDomainKey)
+            if (DomainLabel.text != "@gmail.com" && DomainLabel.text != "@yahoo.com" && DomainLabel.text != "@hotmail.com"){
+                otherDomainInput.text = DomainLabel.text
+            }
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -95,16 +105,42 @@ class Step1ViewController: UIViewController {
     
     
     @IBAction func DropDownPressed(_ sender: UIButton) {
-        CloseDropDownButton.isHidden = false;
-        DropDownButton.isHidden = true;
-        DropDownView.isHidden = false;
+        if (dropDownToggle){
+            DropDownView.isHidden = true;
+            dropDownToggle = false;
+        } else {
+            dropDownToggle = true;
+            DropDownView.isHidden = false;
+        }
     }
     
-    @IBAction func CloseDropDown(_ sender: UIButton) {
-        CloseDropDownButton.isHidden = true;
-        DropDownButton.isHidden = false;
+    @IBAction func gmailSelected(_ sender: UIButton) {
         DropDownView.isHidden = true;
+        dropDownToggle = false;
+        DomainLabel.text = "@gmail.com"
+        self.defaults.set("@gmail.com", forKey: self.emailDomainKey)
     }
+    
+    @IBAction func yahooSelected(_ sender: UIButton) {
+        DropDownView.isHidden = true;
+        dropDownToggle = false;
+        DomainLabel.text = "@yahoo.com"
+        self.defaults.set("@yahoo.com", forKey: self.emailDomainKey)
+    }
+    
+    @IBAction func hotmailSelected(_ sender: UIButton) {
+        DropDownView.isHidden = true;
+        dropDownToggle = false;
+        DomainLabel.text = "@hotmail.com"
+        self.defaults.set("@hotmail.com", forKey: self.emailDomainKey)
+    }
+    
+    @IBAction func otherDomainInput(_ sender: UITextField) {
+        DomainLabel.text = otherDomainInput.text
+        self.defaults.set(otherDomainInput.text, forKey: self.emailDomainKey)
+    }
+    
+    
     
     /*
     // MARK: - Navigation
