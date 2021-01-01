@@ -20,13 +20,22 @@ class Step1ViewController: UIViewController {
     let emailDomainKey = "emailDomain"
 
     @IBOutlet weak var DoneButton: UIButton!
+    @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var lastNameInput: UITextField!
+    @IBOutlet weak var phoneInput: UITextField!
+    @IBOutlet weak var emailInput: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         DoneButton.layer.cornerRadius = DoneButton.frame.size.height / 5
         navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        // Do any additional setup after loading the view.
+        
+        
+        nameInput.text = self.defaults.string(forKey: self.firstNameKey)
+        lastNameInput.text = self.defaults.string(forKey: self.lastNameKey)
+        phoneInput.text = self.defaults.string(forKey: self.phoneKey)
+        emailInput.text = self.defaults.string(forKey: self.emailKey)
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -39,6 +48,21 @@ class Step1ViewController: UIViewController {
         self.defaults.set(false, forKey: self.settingsKey)
     }
     
+    @IBAction func firstNameEdit(_ sender: UITextField) {
+        self.defaults.set(nameInput.text, forKey: self.firstNameKey)
+        
+    }
+    @IBAction func lastNameEdit(_ sender: UITextField) {
+        self.defaults.set(lastNameInput.text, forKey: self.lastNameKey)
+    }
+    @IBAction func phoneEdit(_ sender: UITextField) {
+        self.defaults.set(phoneInput.text, forKey: self.phoneKey)
+    }
+    
+    @IBAction func emailEdit(_ sender: UITextField) {
+        self.defaults.set(emailInput.text, forKey: self.emailKey)
+    }
+    
     @IBAction func DoneButtonPressed(_ sender: UIButton) {
         
         // set lastSeenScreen to address
@@ -49,6 +73,16 @@ class Step1ViewController: UIViewController {
     @IBAction func SettingsFromStep1(_ sender: UIButton) {
         self.defaults.set(true, forKey: self.settingsKey)
         self.defaults.set(1, forKey: self.settingsIndexKey)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        self.defaults.set(nameInput.text, forKey: self.firstNameKey)
+        self.defaults.set(lastNameInput.text, forKey: self.lastNameKey)
+        self.defaults.set(phoneInput.text, forKey: self.phoneKey)
+        self.defaults.set(emailInput.text, forKey: self.emailKey)
+        
     }
     
     /*

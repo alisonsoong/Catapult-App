@@ -13,15 +13,46 @@ class AddressViewController: UIViewController {
     let screenKey = "startScreenIndex"
     let settingsKey = "settingsFrom"
     let settingsIndexKey = "settingsIndex"
+    let addressLine1Key = "addressLine1"
+    let addressLine2Key = "addressLine2"
+    let cityKey = "city"
+    let stateKey = "state"
+    let postalKey = "postal"
     
     @IBOutlet weak var NextButton: UIButton!
+    @IBOutlet weak var addressLine1: UITextField!
+    @IBOutlet weak var addressLine2: UITextField!
+    @IBOutlet weak var cityInput: UITextField!
+    @IBOutlet weak var stateInput: UITextField!
+    @IBOutlet weak var postalInput: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         NextButton.layer.cornerRadius = NextButton.frame.size.height / 5
         navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        // Do any additional setup after loading the view.
+        
+        addressLine1.text = self.defaults.string(forKey: self.addressLine1Key)
+        addressLine2.text = self.defaults.string(forKey: self.addressLine2Key)
+        cityInput.text = self.defaults.string(forKey: self.cityKey)
+        stateInput.text = self.defaults.string(forKey: self.stateKey)
+        postalInput.text = self.defaults.string(forKey: self.postalKey)
+        
+    }
+    @IBAction func addressLine1Edit(_ sender: UITextField) {
+        self.defaults.set(addressLine1.text, forKey: self.addressLine1Key)
+    }
+    @IBAction func addressLine2Edit(_ sender: UITextField) {
+        self.defaults.set(addressLine2.text, forKey: self.addressLine2Key)
+    }
+    @IBAction func cityEdit(_ sender: UITextField) {
+        self.defaults.set(cityInput.text, forKey: self.cityKey)
+    }
+    @IBAction func stateEdit(_ sender: UITextField) {
+        self.defaults.set(stateInput.text, forKey: self.stateKey)
+    }
+    @IBAction func postalEdit(_ sender: UITextField) {
+        self.defaults.set(postalInput.text, forKey: self.postalKey)
     }
     
     @IBAction func NextPressed(_ sender: UIButton) {
@@ -36,6 +67,18 @@ class AddressViewController: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         self.defaults.set(1, forKey: self.screenKey)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        self.defaults.set(addressLine1.text, forKey: self.addressLine1Key)
+        self.defaults.set(addressLine2.text, forKey: self.addressLine2Key)
+        self.defaults.set(cityInput.text, forKey: self.cityKey)
+        self.defaults.set(stateInput.text, forKey: self.stateKey)
+        self.defaults.set(postalInput.text, forKey: self.postalKey)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
