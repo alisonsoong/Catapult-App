@@ -54,6 +54,9 @@ class Step1ViewController: UIViewController {
             }
         }
         
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -155,3 +158,17 @@ class Step1ViewController: UIViewController {
 }
 
 
+
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+}

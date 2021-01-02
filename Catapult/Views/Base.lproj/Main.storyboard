@@ -178,7 +178,7 @@
                                         <rect key="frame" x="0.0" y="9" width="414" height="950"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Prf-Vh-tAq">
-                                                <rect key="frame" x="20" y="24" width="374" height="700"/>
+                                                <rect key="frame" x="20" y="24" width="374" height="760"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n59-go-3Zj">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
@@ -419,23 +419,23 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yT0-jz-FLI">
-                                                        <rect key="frame" x="0.0" y="500" width="374" height="90"/>
+                                                        <rect key="frame" x="0.0" y="500" width="374" height="150"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gP7-ey-Mdg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUZ-eN-xi6">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="182" height="100"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="182" height="150"/>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEV-YT-BMn">
-                                                                        <rect key="frame" x="192" y="0.0" width="182" height="100"/>
+                                                                        <rect key="frame" x="192" y="0.0" width="182" height="150"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="940-1N-apU">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="167" height="100"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="167" height="150"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alq-a4-7b0">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="23.5"/>
-                                                                                        <color key="backgroundColor" red="0.88623231650000001" green="0.87667179110000004" blue="0.87320798639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="36"/>
+                                                                                        <color key="backgroundColor" red="0.94549095812182737" green="0.94549095812182737" blue="0.94549095812182737" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
                                                                                         <state key="normal" title="@gmail.com">
                                                                                             <color key="titleColor" red="0.40970116449999999" green="0.42770463199999997" blue="0.41534206000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -447,8 +447,8 @@
                                                                                         </connections>
                                                                                     </button>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTp-0A-a2I">
-                                                                                        <rect key="frame" x="0.0" y="25.5" width="167" height="23.5"/>
-                                                                                        <color key="backgroundColor" red="0.88623231650000001" green="0.87667179110000004" blue="0.87320798639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        <rect key="frame" x="0.0" y="38" width="167" height="36"/>
+                                                                                        <color key="backgroundColor" red="0.94549095809999995" green="0.94549095809999995" blue="0.94549095809999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
                                                                                         <state key="normal" title="@yahoo.com">
                                                                                             <color key="titleColor" red="0.40970116449999999" green="0.42770463199999997" blue="0.41534206000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -460,8 +460,8 @@
                                                                                         </connections>
                                                                                     </button>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Tw-a4-95M">
-                                                                                        <rect key="frame" x="0.0" y="51" width="167" height="23.5"/>
-                                                                                        <color key="backgroundColor" red="0.88623231650000001" green="0.87667179110000004" blue="0.87320798639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        <rect key="frame" x="0.0" y="76" width="167" height="36"/>
+                                                                                        <color key="backgroundColor" red="0.94549095809999995" green="0.94549095809999995" blue="0.94549095809999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
                                                                                         <state key="normal" title="@hotmail.com">
                                                                                             <color key="titleColor" red="0.40970116449999999" green="0.42770463199999997" blue="0.41534206000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -473,7 +473,7 @@
                                                                                         </connections>
                                                                                     </button>
                                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-aE-dq0">
-                                                                                        <rect key="frame" x="0.0" y="76.5" width="167" height="23.5"/>
+                                                                                        <rect key="frame" x="0.0" y="114" width="167" height="36"/>
                                                                                         <color key="textColor" red="0.43317064430000002" green="0.48422420030000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
@@ -494,20 +494,20 @@
                                                                     </view>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="100" id="EKa-QS-Cbz"/>
+                                                                    <constraint firstAttribute="height" constant="150" id="EKa-QS-Cbz"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="gP7-ey-Mdg" secondAttribute="trailing" id="Fp5-GB-GiG"/>
-                                                            <constraint firstAttribute="height" constant="90" id="KYl-D9-7qJ"/>
+                                                            <constraint firstAttribute="height" constant="150" id="KYl-D9-7qJ"/>
                                                             <constraint firstItem="gP7-ey-Mdg" firstAttribute="leading" secondItem="yT0-jz-FLI" secondAttribute="leading" id="efu-Ix-S3P"/>
                                                             <constraint firstItem="gP7-ey-Mdg" firstAttribute="top" secondItem="yT0-jz-FLI" secondAttribute="top" id="h5q-Ye-6ia"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZh-aK-bQa">
-                                                        <rect key="frame" x="0.0" y="600" width="374" height="100"/>
+                                                        <rect key="frame" x="0.0" y="660" width="374" height="100"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgL-tU-QZY">
                                                                 <rect key="frame" x="0.0" y="30" width="374" height="70"/>

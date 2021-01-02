@@ -38,6 +38,9 @@ class AddressViewController: UIViewController {
         stateInput.text = self.defaults.string(forKey: self.stateKey)
         postalInput.text = self.defaults.string(forKey: self.postalKey)
         
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        
     }
     @IBAction func addressLine1Edit(_ sender: UITextField) {
         self.defaults.set(addressLine1.text, forKey: self.addressLine1Key)
