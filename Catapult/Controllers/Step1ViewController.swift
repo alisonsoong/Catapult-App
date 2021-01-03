@@ -54,6 +54,13 @@ class Step1ViewController: UIViewController {
             }
         }
         
+        nameInput.delegate = self;
+        lastNameInput.delegate = self;
+        phoneInput.delegate = self;
+        emailInput.delegate = self;
+        otherDomainInput.delegate = self;
+        
+        
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
@@ -169,6 +176,14 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+}
+
+extension UIViewController : UITextFieldDelegate {
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.endEditing(false)
     }
     
 }

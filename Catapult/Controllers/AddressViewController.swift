@@ -38,6 +38,12 @@ class AddressViewController: UIViewController {
         stateInput.text = self.defaults.string(forKey: self.stateKey)
         postalInput.text = self.defaults.string(forKey: self.postalKey)
         
+        addressLine1.delegate = self
+        addressLine2.delegate = self
+        cityInput.delegate = self
+        stateInput.delegate = self
+        postalInput.delegate = self
+        
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
