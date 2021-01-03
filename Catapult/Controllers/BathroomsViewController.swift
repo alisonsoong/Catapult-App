@@ -7,10 +7,11 @@
 
 import UIKit
 
-class BathroomsViewController: UIViewController {
+class BathroomsViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var AddPhotosButton: UIButton!
     @IBOutlet weak var TakePhotosButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +26,7 @@ class BathroomsViewController: UIViewController {
     @IBAction func TakePhotosPressed(_ sender: UIButton) {
     }
     
+    
     /*
     // MARK: - Navigation
 
@@ -36,3 +38,4 @@ class BathroomsViewController: UIViewController {
     */
 
 }
+
