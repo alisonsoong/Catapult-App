@@ -27,6 +27,9 @@
 		F191874F259D3B91002A255F /* customTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191874E259D3B91002A255F /* customTabBarController.swift */; };
 		F1918761259FCDAD002A255F /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1918760259FCDAD002A255F /* DropDownCell.swift */; };
 		F191876B259FCE42002A255F /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191876A259FCE42002A255F /* DropDownTextField.swift */; };
+		F1956DB525A1AC110051B817 /* ViewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1956DB425A1AC110051B817 /* ViewPhotoViewController.swift */; };
+		F1956DBA25A1AC380051B817 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1956DB925A1AC380051B817 /* TakePhotoViewController.swift */; };
+		F1956DBF25A1AC460051B817 /* GetPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1956DBE25A1AC460051B817 /* GetPhotoViewController.swift */; };
 		F1CF521E259AB7C1001753EF /* BathroomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		F191874E259D3B91002A255F /* customTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabBarController.swift; sourceTree = "<group>"; };
 		F1918760259FCDAD002A255F /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
 		F191876A259FCE42002A255F /* DropDownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
+		F1956DB425A1AC110051B817 /* ViewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoViewController.swift; sourceTree = "<group>"; };
+		F1956DB925A1AC380051B817 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
+		F1956DBE25A1AC460051B817 /* GetPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotoViewController.swift; sourceTree = "<group>"; };
 		F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathroomsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +175,9 @@
 				F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */,
 				F191874E259D3B91002A255F /* customTabBarController.swift */,
 				F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */,
+				F1956DB425A1AC110051B817 /* ViewPhotoViewController.swift */,
+				F1956DB925A1AC380051B817 /* TakePhotoViewController.swift */,
+				F1956DBE25A1AC460051B817 /* GetPhotoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,6 +342,7 @@
 				F1084E0625995FF9009AD713 /* HouseInfoPhotosViewController.swift in Sources */,
 				F11BFB00259FEEBF00FFBEA6 /* customTextFieldController.swift in Sources */,
 				F1084DAE2595C7F7009AD713 /* ViewController.swift in Sources */,
+				F1956DBA25A1AC380051B817 /* TakePhotoViewController.swift in Sources */,
 				F1084DAA2595C7F7009AD713 /* AppDelegate.swift in Sources */,
 				F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */,
 				F1084DAC2595C7F7009AD713 /* SceneDelegate.swift in Sources */,
@@ -340,9 +350,11 @@
 				F1084DF725995FBC009AD713 /* Step1ViewController.swift in Sources */,
 				F1084DFC25995FD7009AD713 /* AddressViewController.swift in Sources */,
 				F191876B259FCE42002A255F /* DropDownTextField.swift in Sources */,
+				F1956DB525A1AC110051B817 /* ViewPhotoViewController.swift in Sources */,
 				F1084DB42595C7F7009AD713 /* Catapult.xcdatamodeld in Sources */,
 				F1918761259FCDAD002A255F /* DropDownCell.swift in Sources */,
 				F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */,
+				F1956DBF25A1AC460051B817 /* GetPhotoViewController.swift in Sources */,
 				F1CF521E259AB7C1001753EF /* BathroomsViewController.swift in Sources */,
 				F1084E0125995FE3009AD713 /* SettingsViewController.swift in Sources */,
 			);
