@@ -11,8 +11,8 @@ class Step1ViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     let screenKey = "startScreenIndex"
-    let settingsKey = "settingsFrom"
-    let settingsIndexKey = "settingsIndex"
+//    let settingsKey = "settingsFrom"
+//    let settingsIndexKey = "settingsIndex"
     let firstNameKey = "firstName"
     let lastNameKey = "lastName"
     let phoneKey = "phone"
@@ -69,13 +69,13 @@ class Step1ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(true)
         
-        if (self.defaults.bool(forKey: self.settingsKey) && self.defaults.integer(forKey: self.settingsIndexKey) != 1){
-            self.navigationController?.tabBarController?.selectedIndex = self.defaults.integer(forKey: self.settingsIndexKey)
-        }
+//        if (self.defaults.bool(forKey: self.settingsKey) && self.defaults.integer(forKey: self.settingsIndexKey) != 1){
+//            self.navigationController?.tabBarController?.selectedIndex = self.defaults.integer(forKey: self.settingsIndexKey)
+//        }
         
-        self.defaults.set(false, forKey: self.settingsKey)
+//        self.defaults.set(false, forKey: self.settingsKey)
     }
-    
+
     @IBAction func firstNameEdit(_ sender: UITextField) {
         self.defaults.set(nameInput.text, forKey: self.firstNameKey)
         
@@ -99,8 +99,8 @@ class Step1ViewController: UIViewController {
     }
     
     @IBAction func SettingsFromStep1(_ sender: UIButton) {
-        self.defaults.set(true, forKey: self.settingsKey)
-        self.defaults.set(1, forKey: self.settingsIndexKey)
+//        self.defaults.set(true, forKey: self.settingsKey)
+//        self.defaults.set(1, forKey: self.settingsIndexKey)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

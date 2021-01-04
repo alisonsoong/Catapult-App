@@ -24,6 +24,9 @@ class TakePhotoViewController: UIViewController {
         InitialTakePhoto.isHidden = false
         
     }
+    @IBAction func cancelPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func didTapButton(){
         let picker = UIImagePickerController()

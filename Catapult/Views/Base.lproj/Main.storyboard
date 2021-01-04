@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vp7-N0-4e5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9kV-Za-BtS">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1369,7 +1369,7 @@
                                                         <rect key="frame" x="0.0" y="30" width="42" height="52"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <connections>
-                                                            <segue destination="9kV-Za-BtS" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="GQM-k7-2J9"/>
+                                                            <action selector="dismissButtonPressed:" destination="a5H-NZ-2Nw" eventType="touchUpInside" id="5vr-DJ-8lL"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -2374,7 +2374,7 @@
         <!--Item-->
         <scene sceneID="Eou-NO-3h1">
             <objects>
-                <navigationController storyboardIdentifier="Pictures" id="S0e-vM-WOX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Pictures" id="S0e-vM-WOX" customClass="CategoriesNavigationController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="iRo-QP-IJ2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K0E-TJ-vFZ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -2474,7 +2474,7 @@
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="9kV-Za-BtS" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="PIK-zw-GCV"/>
+                                            <action selector="cancelPressed:" destination="Vp7-N0-4e5" eventType="touchUpInside" id="rZA-1J-cC4"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjs-QU-VHc">
@@ -2767,13 +2767,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tjl-I7-tRu"/>
         <segue reference="G3o-8f-hNQ"/>
         <segue reference="xxi-BF-xh0"/>
-        <segue reference="h4i-Vo-YOa"/>
+        <segue reference="O3e-12-rzA"/>
         <segue reference="qOv-J8-amk"/>
         <segue reference="Vys-yh-QQu"/>
-        <segue reference="PIK-zw-GCV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="354" height="342"/>

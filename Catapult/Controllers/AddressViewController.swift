@@ -11,8 +11,8 @@ class AddressViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     let screenKey = "startScreenIndex"
-    let settingsKey = "settingsFrom"
-    let settingsIndexKey = "settingsIndex"
+//    let settingsKey = "settingsFrom"
+//    let settingsIndexKey = "settingsIndex"
     let addressLine1Key = "addressLine1"
     let addressLine2Key = "addressLine2"
     let cityKey = "city"
@@ -69,8 +69,8 @@ class AddressViewController: UIViewController {
         self.defaults.set(3, forKey: self.screenKey)
     }
     @IBAction func SettingsFromAddress(_ sender: UIButton) {
-        self.defaults.set(true, forKey: self.settingsKey)
-        self.defaults.set(2, forKey: self.settingsIndexKey)
+//        self.defaults.set(true, forKey: self.settingsKey)
+//        self.defaults.set(2, forKey: self.settingsIndexKey)
     }
     
     @IBAction func backButton(_ sender: UIButton) {

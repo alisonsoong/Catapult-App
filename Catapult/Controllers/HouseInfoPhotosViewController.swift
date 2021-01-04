@@ -11,8 +11,8 @@ class HouseInfoPhotosViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     let screenKey = "startScreenIndex"
-    let settingsKey = "settingsFrom"
-    let settingsIndexKey = "settingsIndex"
+//    let settingsKey = "settingsFrom"
+//    let settingsIndexKey = "settingsIndex"
     let categoryKey = "photoCategory"
     
     @IBOutlet weak var FinishButton: UIButton!
@@ -31,12 +31,14 @@ class HouseInfoPhotosViewController: UIViewController {
         super.viewWillAppear(false)
         if (self.defaults.string(forKey: self.categoryKey) == "bathroom") {
             self.performSegue(withIdentifier: "toBathroom", sender: self)
+            
         }
     }
+
     
     @IBAction func SettingsFromPictures(_ sender: UIButton) {
-        self.defaults.set(true, forKey: self.settingsKey)
-        self.defaults.set(3, forKey: self.settingsIndexKey)
+//        self.defaults.set(true, forKey: self.settingsKey)
+//        self.defaults.set(3, forKey: self.settingsIndexKey)
     }
     
     @IBAction func backButton(_ sender: UIButton) {

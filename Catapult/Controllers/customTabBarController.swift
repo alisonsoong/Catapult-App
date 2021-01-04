@@ -27,17 +27,21 @@ class customTabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
-        if (self.defaults.bool(forKey: self.settingsKey) && self.defaults.integer(forKey: self.settingsIndexKey) != 1){
-            self.selectedIndex = self.defaults.integer(forKey: self.settingsIndexKey)
-        }
+//        if (self.defaults.bool(forKey: self.settingsKey) && self.defaults.integer(forKey: self.settingsIndexKey) != 0){
+//            self.selectedIndex = self.defaults.integer(forKey: self.settingsIndexKey)
+//            self.defaults.set(false, forKey: self.settingsKey)
+//        } else {
+//            if (self.defaults.string(forKey: self.categoryKey) == "bathroom") {
+//                self.selectedIndex = 3
+//            } else {
+                self.selectedIndex = self.defaults.integer(forKey:self.screenKey)
+//            }
+//        }
         
-        if (self.defaults.string(forKey: self.categoryKey) == "bathroom") {
-            self.selectedIndex = 3
-        }
         
-        self.defaults.set(false, forKey: self.settingsKey)
         
-//        self.selectedIndex = self.defaults.integer(forKey:self.screenKey)
+        
+        
     }
     
 
