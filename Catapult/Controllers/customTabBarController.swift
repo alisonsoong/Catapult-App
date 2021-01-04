@@ -18,7 +18,7 @@ class customTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.selectedIndex = self.defaults.integer(forKey:self.screenKey)
+
 
 
         // Do any additional setup after loading the view.
@@ -36,6 +36,8 @@ class customTabBarController: UITabBarController {
         }
         
         self.defaults.set(false, forKey: self.settingsKey)
+        
+//        self.selectedIndex = self.defaults.integer(forKey:self.screenKey)
     }
     
 
