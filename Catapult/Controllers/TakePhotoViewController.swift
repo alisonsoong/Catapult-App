@@ -29,9 +29,30 @@ class TakePhotoViewController: UIViewController {
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.delegate = self
+//        picker.allowsEditing = false
         present(picker, animated: true)
         InitialTakePhoto.isHidden = true
     }
+    
+    @IBAction func savePhoto(_ sender: AnyObject){
+        let imageData = imageTake.image?.jpegData(compressionQuality: 1.0)
+        let compressedImage = UIImage(data: imageData!)
+//        let orientationFixedImage = compressedImage?.correctlyOrientedImage()
+        let orientationFixedImage = compressedImage?.correctlyOrientedImage()
+        
+        UIImageWriteToSavedPhotosAlbum(orientationFixedImage!, nil, nil, nil)
+                
+        let alert = UIAlertController(title: "Saved", message: "Your image has been added and saved", preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        // leave 
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 
 }
 
@@ -53,10 +74,27 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate, UINavigation
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }
+
         
         imageTake.image = image
         
         
-        
     }
+    
+    
+}
+
+extension UIImage {
+
+    public func correctlyOrientedImage() -> UIImage {
+        guard imageOrientation != .up else { return self }
+
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(in: CGRect(origin: .zero, size: size))
+        let normalizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        return normalizedImage
+    }
+
 }

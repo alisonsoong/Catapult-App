@@ -9,6 +9,9 @@ import UIKit
 
 class BathroomsViewController: UIViewController, UINavigationControllerDelegate {
 
+    let defaults = UserDefaults.standard
+    let categoryKey = "photoCategory"
+    
     @IBOutlet weak var AddPhotosButton: UIButton!
     @IBOutlet weak var TakePhotosButton: UIButton!
 
@@ -18,6 +21,10 @@ class BathroomsViewController: UIViewController, UINavigationControllerDelegate 
         AddPhotosButton.layer.cornerRadius = AddPhotosButton.frame.size.height / 5
         TakePhotosButton.layer.cornerRadius = TakePhotosButton.frame.size.height / 5
         // Do any additional setup after loading the view.
+    }
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        
+        self.defaults.set("", forKey: self.categoryKey)
     }
     
     @IBAction func AddPhotosPressed(_ sender: UIButton) {

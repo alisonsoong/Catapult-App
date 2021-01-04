@@ -13,6 +13,7 @@ class customTabBarController: UITabBarController {
     let screenKey = "startScreenIndex"
     let settingsKey = "settingsFrom"
     let settingsIndexKey = "settingsIndex"
+    let categoryKey = "photoCategory"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,10 @@ class customTabBarController: UITabBarController {
         
         if (self.defaults.bool(forKey: self.settingsKey) && self.defaults.integer(forKey: self.settingsIndexKey) != 1){
             self.selectedIndex = self.defaults.integer(forKey: self.settingsIndexKey)
+        }
+        
+        if (self.defaults.string(forKey: self.categoryKey) == "bathroom") {
+            self.selectedIndex = 3
         }
         
         self.defaults.set(false, forKey: self.settingsKey)

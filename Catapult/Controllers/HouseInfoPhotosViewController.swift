@@ -13,6 +13,7 @@ class HouseInfoPhotosViewController: UIViewController {
     let screenKey = "startScreenIndex"
     let settingsKey = "settingsFrom"
     let settingsIndexKey = "settingsIndex"
+    let categoryKey = "photoCategory"
     
     @IBOutlet weak var FinishButton: UIButton!
     @IBOutlet weak var BathroomButton: UIButton!
@@ -23,6 +24,13 @@ class HouseInfoPhotosViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        if (self.defaults.string(forKey: self.categoryKey) == "bathroom") {
+            self.performSegue(withIdentifier: "toBathroom", sender: self)
+        }
+    }
+    @IBAction func bathroomButton(_ sender: UIButton) {
+        self.defaults.set("bathroom", forKey: self.categoryKey)
     }
     
     @IBAction func SettingsFromPictures(_ sender: UIButton) {
