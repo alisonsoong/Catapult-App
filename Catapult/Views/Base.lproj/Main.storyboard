@@ -1875,7 +1875,7 @@
         <!--About-->
         <scene sceneID="cfQ-L8-JUg">
             <objects>
-                <viewController storyboardIdentifier="About" title="About" id="IUB-lK-cP5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="About" title="About" id="IUB-lK-cP5" customClass="AboutViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="APe-iZ-bRJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1965,7 +1965,7 @@
                                                                         <rect key="frame" x="0.0" y="30" width="42" height="52"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <connections>
-                                                                            <segue destination="a5H-NZ-2Nw" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="bZ1-jy-PNW"/>
+                                                                            <action selector="dismissButtonPressed:" destination="IUB-lK-cP5" eventType="touchUpInside" id="77d-3X-8Ig"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -2030,7 +2030,7 @@
         <!--Privacy Policy-->
         <scene sceneID="sNa-Ei-ypB">
             <objects>
-                <viewController storyboardIdentifier="PrivacyPolicy" title="Privacy Policy" id="zIR-7V-BRF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrivacyPolicy" title="Privacy Policy" id="zIR-7V-BRF" customClass="PrivacyPolicyViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rNI-fg-r2n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2120,7 +2120,7 @@
                                                                         <rect key="frame" x="0.0" y="30" width="42" height="52"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <connections>
-                                                                            <segue destination="a5H-NZ-2Nw" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="R9w-ib-w77"/>
+                                                                            <action selector="dismissButtonPressed:" destination="zIR-7V-BRF" eventType="touchUpInside" id="H4s-Np-AC2"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -2185,7 +2185,7 @@
         <!--FAQs-->
         <scene sceneID="xKm-f2-JgL">
             <objects>
-                <viewController storyboardIdentifier="FAQs" title="FAQs" id="bCp-iK-2e1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FAQs" title="FAQs" id="bCp-iK-2e1" customClass="FAQViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D7O-SX-KFU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2275,7 +2275,7 @@
                                                                         <rect key="frame" x="0.0" y="30" width="42" height="52"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <connections>
-                                                                            <segue destination="a5H-NZ-2Nw" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="kix-WM-tSD"/>
+                                                                            <action selector="dismissButtonPressed:" destination="bCp-iK-2e1" eventType="touchUpInside" id="LRn-9z-z5w"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>

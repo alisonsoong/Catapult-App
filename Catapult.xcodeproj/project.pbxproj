@@ -25,6 +25,9 @@
 		F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E1225996024009AD713 /* CompleteViewController.swift */; };
 		F11BFB00259FEEBF00FFBEA6 /* customTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */; };
 		F15B078525A3801200B023B6 /* CategoriesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */; };
+		F15B078A25A3847400B023B6 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B078925A3847400B023B6 /* FAQViewController.swift */; };
+		F15B078F25A3848F00B023B6 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B078E25A3848F00B023B6 /* PrivacyPolicyViewController.swift */; };
+		F15B079725A3849F00B023B6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B079625A3849F00B023B6 /* AboutViewController.swift */; };
 		F191874F259D3B91002A255F /* customTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191874E259D3B91002A255F /* customTabBarController.swift */; };
 		F1918761259FCDAD002A255F /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1918760259FCDAD002A255F /* DropDownCell.swift */; };
 		F191876B259FCE42002A255F /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191876A259FCE42002A255F /* DropDownTextField.swift */; };
@@ -76,6 +79,9 @@
 		F1084E1225996024009AD713 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTextFieldController.swift; sourceTree = "<group>"; };
 		F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesNavigationController.swift; sourceTree = "<group>"; };
+		F15B078925A3847400B023B6 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FAQViewController.swift; path = Catapult/Controllers/FAQViewController.swift; sourceTree = SOURCE_ROOT; };
+		F15B078E25A3848F00B023B6 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		F15B079625A3849F00B023B6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F191874E259D3B91002A255F /* customTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabBarController.swift; sourceTree = "<group>"; };
 		F1918760259FCDAD002A255F /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
 		F191876A259FCE42002A255F /* DropDownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
@@ -181,6 +187,9 @@
 				F1956DB925A1AC380051B817 /* TakePhotoViewController.swift */,
 				F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */,
 				F1956DBE25A1AC460051B817 /* GetPhotoViewController.swift */,
+				F15B078925A3847400B023B6 /* FAQViewController.swift */,
+				F15B078E25A3848F00B023B6 /* PrivacyPolicyViewController.swift */,
+				F15B079625A3849F00B023B6 /* AboutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -342,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1084DF225984A95009AD713 /* InitialViewController.swift in Sources */,
+				F15B078F25A3848F00B023B6 /* PrivacyPolicyViewController.swift in Sources */,
 				F15B078525A3801200B023B6 /* CategoriesNavigationController.swift in Sources */,
 				F1084E0625995FF9009AD713 /* HouseInfoPhotosViewController.swift in Sources */,
 				F11BFB00259FEEBF00FFBEA6 /* customTextFieldController.swift in Sources */,
@@ -359,8 +369,10 @@
 				F1918761259FCDAD002A255F /* DropDownCell.swift in Sources */,
 				F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */,
 				F1956DBF25A1AC460051B817 /* GetPhotoViewController.swift in Sources */,
+				F15B078A25A3847400B023B6 /* FAQViewController.swift in Sources */,
 				F1CF521E259AB7C1001753EF /* BathroomsViewController.swift in Sources */,
 				F1084E0125995FE3009AD713 /* SettingsViewController.swift in Sources */,
+				F15B079725A3849F00B023B6 /* AboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
