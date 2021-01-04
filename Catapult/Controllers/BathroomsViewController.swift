@@ -26,6 +26,9 @@ class BathroomsViewController: UIViewController, UINavigationControllerDelegate 
         
         self.defaults.set("", forKey: self.categoryKey)
     }
+    @IBAction func takePictureButtonPressed(_ sender: UIButton) {
+        self.defaults.set("bathroom", forKey: self.categoryKey)
+    }
     
     @IBAction func AddPhotosPressed(_ sender: UIButton) {
     }

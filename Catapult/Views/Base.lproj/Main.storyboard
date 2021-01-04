@@ -824,8 +824,7 @@
                                                                             <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="bathroomButton:" destination="C7R-Nh-fhf" eventType="touchUpInside" id="d3k-qQ-eG1"/>
-                                                                            <segue destination="ijx-HH-vJ0" kind="presentation" identifier="toBathroom" modalPresentationStyle="fullScreen" id="HH2-SE-jyp"/>
+                                                                            <segue destination="ijx-HH-vJ0" kind="presentation" identifier="toBathroom" animates="NO" modalPresentationStyle="fullScreen" id="tjl-I7-tRu"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1704,6 +1703,10 @@
                                                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="takePictureButtonPressed:" destination="ijx-HH-vJ0" eventType="touchUpInside" id="vDO-eJ-dgk"/>
+                                                                            <segue destination="Vp7-N0-4e5" kind="presentation" modalPresentationStyle="fullScreen" id="e7g-4c-TYE"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvN-GX-3Mo">
                                                                         <rect key="frame" x="97" y="0.0" width="110" height="70"/>
@@ -2764,6 +2767,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="tjl-I7-tRu"/>
         <segue reference="G3o-8f-hNQ"/>
         <segue reference="xxi-BF-xh0"/>
         <segue reference="h4i-Vo-YOa"/>

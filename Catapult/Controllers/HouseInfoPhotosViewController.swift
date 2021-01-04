@@ -24,13 +24,14 @@ class HouseInfoPhotosViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         if (self.defaults.string(forKey: self.categoryKey) == "bathroom") {
             self.performSegue(withIdentifier: "toBathroom", sender: self)
         }
-    }
-    @IBAction func bathroomButton(_ sender: UIButton) {
-        self.defaults.set("bathroom", forKey: self.categoryKey)
     }
     
     @IBAction func SettingsFromPictures(_ sender: UIButton) {
