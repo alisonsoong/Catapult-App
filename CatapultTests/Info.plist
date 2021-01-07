@@ -18,11 +18,11 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-    <key>NSCameraUsageDescription</key>
-    <string>This app will use camera.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>You can select photos to attach.</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Please allow access to save photo in your photo library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app will use camera.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow access to your photo library</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow access to save photo in your photo library</string>
 </dict>
 </plist>

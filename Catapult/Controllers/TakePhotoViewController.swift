@@ -24,6 +24,7 @@ class TakePhotoViewController: UIViewController {
         InitialTakePhoto.isHidden = false
         
     }
+    
     @IBAction func cancelPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -34,7 +35,6 @@ class TakePhotoViewController: UIViewController {
         picker.delegate = self
 //        picker.allowsEditing = false
         present(picker, animated: true)
-        InitialTakePhoto.isHidden = true
     }
     
     @IBAction func savePhoto(_ sender: AnyObject){

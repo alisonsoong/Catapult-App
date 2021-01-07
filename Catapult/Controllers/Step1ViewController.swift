@@ -148,6 +148,9 @@ class Step1ViewController: UIViewController {
     @IBAction func otherDomainInput(_ sender: UITextField) {
         DomainLabel.text = otherDomainInput.text
         self.defaults.set(otherDomainInput.text, forKey: self.emailDomainKey)
+        if (otherDomainInput.text == ""){
+            DomainLabel.text = "Select Domain"
+        }
     }
     
     
