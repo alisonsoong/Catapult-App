@@ -23,6 +23,7 @@ class TakePhotoViewController: UIViewController {
         Background.isHidden = true
         InitialTakePhoto.isHidden = false
         
+        
     }
     
     @IBAction func cancelPressed(_ sender: UIButton) {
@@ -33,7 +34,6 @@ class TakePhotoViewController: UIViewController {
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.delegate = self
-//        picker.allowsEditing = false
         present(picker, animated: true)
     }
     
@@ -71,6 +71,7 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate, UINavigation
         UsePhotoStack.isHidden = false
         RetakePhotoStack.isHidden = false
         Background.isHidden = false
+        InitialTakePhoto.isHidden = true
         
         picker.dismiss(animated: true, completion: nil)
         

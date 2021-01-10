@@ -12,11 +12,14 @@ class GetPhotoViewController: UIViewController {
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var stack: UIStackView!
     @IBOutlet weak var imagePreview: UIImageView!
+    @IBOutlet weak var initialButton: UIView!
+    @IBOutlet weak var reselectButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         stack.isHidden = true
         background.isHidden = true
-        
+        reselectButton.isHidden = true
+        initialButton.isHidden = false
         // Do any additional setup after loading the view.
     }
     
@@ -32,9 +35,9 @@ class GetPhotoViewController: UIViewController {
         image.sourceType = .photoLibrary
 
         image.allowsEditing = false
-
+        reselectButton.isHidden = false
+        initialButton.isHidden = true
         self.present(image, animated:true){
-
         }
         
     }
@@ -42,9 +45,10 @@ class GetPhotoViewController: UIViewController {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         if let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
             imagePreview.image = image
-            stack.isHidden = false
-            background.isHidden = false
+            
         }
+        stack.isHidden = false
+        background.isHidden = false
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
