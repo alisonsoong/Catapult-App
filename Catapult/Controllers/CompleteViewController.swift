@@ -10,6 +10,7 @@ import UIKit
 class CompleteViewController: UIViewController {
 
     let defaults = UserDefaults.standard
+    let screenKey = "startScreenIndex"
     let addressLine1Key = "addressLine1"
     let addressLine2Key = "addressLine2"
     let cityKey = "city"
@@ -24,7 +25,8 @@ class CompleteViewController: UIViewController {
     @IBOutlet weak var CloseButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    
         CloseButton.layer.cornerRadius = CloseButton.frame.size.height / 5
         
     }
@@ -58,3 +60,5 @@ class CompleteViewController: UIViewController {
     */
 
 }
+
+

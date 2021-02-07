@@ -77,6 +77,19 @@ class AddressViewController: UIViewController {
         self.defaults.set(1, forKey: self.screenKey)
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == "step2done"){
+            if (self.defaults.string(forKey: self.addressLine1Key) == "" || self.defaults.string(forKey: self.addressLine1Key) == " " || self.defaults.string(forKey: self.postalKey) == "" || self.defaults.string(forKey: self.postalKey) == " " || self.defaults.string(forKey: self.cityKey) == "" || self.defaults.string(forKey: self.cityKey) == " " || self.defaults.string(forKey: self.stateKey) == "" || self.defaults.string(forKey: self.stateKey) == " "){
+                let submitErrorAlert = UIAlertController(title: "Make sure all input boxes are filled in!", message: "Please review your submission.", preferredStyle: UIAlertController.Style.alert)
+                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                submitErrorAlert.addAction(cancelAction)
+                self.present(submitErrorAlert, animated: true, completion: nil)
+                return false;
+            }
+        }
+        return true
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         

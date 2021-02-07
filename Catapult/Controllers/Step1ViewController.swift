@@ -93,6 +93,7 @@ class Step1ViewController: UIViewController {
     
     @IBAction func DoneButtonPressed(_ sender: UIButton) {
         
+        
         // set lastSeenScreen to address
         self.defaults.set(2, forKey: self.screenKey)
         
@@ -101,6 +102,22 @@ class Step1ViewController: UIViewController {
     @IBAction func SettingsFromStep1(_ sender: UIButton) {
 //        self.defaults.set(true, forKey: self.settingsKey)
 //        self.defaults.set(1, forKey: self.settingsIndexKey)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == "step1done") {
+            if (self.defaults.string(forKey: self.lastNameKey) == "" || self.defaults.string(forKey: self.lastNameKey) == " " || self.defaults.string(forKey: self.firstNameKey) == "" || self.defaults.string(forKey: self.firstNameKey) == " " || self.defaults.string(forKey: self.phoneKey) == "" || self.defaults.string(forKey: self.phoneKey) == " " || self.defaults.string(forKey: self.emailKey) == "" || self.defaults.string(forKey: self.emailKey) == " " || self.defaults.string(forKey: self.emailDomainKey) == "" || self.defaults.string(forKey: self.emailDomainKey) == " ") {
+                
+                let submitErrorAlert = UIAlertController(title: "Make sure all input boxes are filled in!", message: "Please review your submission.", preferredStyle: UIAlertController.Style.alert)
+                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                submitErrorAlert.addAction(cancelAction)
+                self.present(submitErrorAlert, animated: true, completion: nil)
+                return false;
+            }
+
+      
+        }
+        return true
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -24,6 +24,7 @@
 		F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */; };
 		F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E1225996024009AD713 /* CompleteViewController.swift */; };
 		F11BFB00259FEEBF00FFBEA6 /* customTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */; };
+		F14EB79A25CF68A2008217FD /* Step1DoneSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EB79925CF68A2008217FD /* Step1DoneSegue.swift */; };
 		F15B078525A3801200B023B6 /* CategoriesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */; };
 		F15B078A25A3847400B023B6 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B078925A3847400B023B6 /* FAQViewController.swift */; };
 		F15B078F25A3848F00B023B6 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B078E25A3848F00B023B6 /* PrivacyPolicyViewController.swift */; };
@@ -82,6 +83,7 @@
 		F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePhotoCategoryViewController.swift; sourceTree = "<group>"; };
 		F1084E1225996024009AD713 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTextFieldController.swift; sourceTree = "<group>"; };
+		F14EB79925CF68A2008217FD /* Step1DoneSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1DoneSegue.swift; sourceTree = "<group>"; };
 		F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesNavigationController.swift; sourceTree = "<group>"; };
 		F15B078925A3847400B023B6 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FAQViewController.swift; path = Catapult/Controllers/FAQViewController.swift; sourceTree = SOURCE_ROOT; };
 		F15B078E25A3848F00B023B6 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				F15B078925A3847400B023B6 /* FAQViewController.swift */,
 				F15B078E25A3848F00B023B6 /* PrivacyPolicyViewController.swift */,
 				F15B079625A3849F00B023B6 /* AboutViewController.swift */,
+				F14EB79925CF68A2008217FD /* Step1DoneSegue.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				F191874F259D3B91002A255F /* customTabBarController.swift in Sources */,
 				F1084DF725995FBC009AD713 /* Step1ViewController.swift in Sources */,
 				F1084DFC25995FD7009AD713 /* AddressViewController.swift in Sources */,
+				F14EB79A25CF68A2008217FD /* Step1DoneSegue.swift in Sources */,
 				F191876B259FCE42002A255F /* DropDownTextField.swift in Sources */,
 				F1956DB525A1AC110051B817 /* ViewPhotoViewController.swift in Sources */,
 				F1084DB42595C7F7009AD713 /* Catapult.xcdatamodeld in Sources */,

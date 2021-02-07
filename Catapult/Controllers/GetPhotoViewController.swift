@@ -21,6 +21,19 @@ class GetPhotoViewController: UIViewController {
         reselectButton.isHidden = true
         initialButton.isHidden = false
         // Do any additional setup after loading the view.
+        
+        let image = UIImagePickerController()
+        image.delegate = self
+
+        image.sourceType = .photoLibrary
+
+        image.allowsEditing = false
+        self.present(image, animated:true){
+            self.initialButton.isHidden = true
+            self.stack.isHidden = false
+            self.background.isHidden = false
+            self.reselectButton.isHidden = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

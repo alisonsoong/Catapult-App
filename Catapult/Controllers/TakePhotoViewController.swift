@@ -23,6 +23,14 @@ class TakePhotoViewController: UIViewController {
         Background.isHidden = true
         InitialTakePhoto.isHidden = false
         
+        let picker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+            picker.delegate = self
+            present(picker, animated: true)
+        } else {
+                fatalError("Camera is not available, please use real device.")
+        }
         
     }
     
@@ -32,9 +40,13 @@ class TakePhotoViewController: UIViewController {
     
     @IBAction func didTapButton(){
         let picker = UIImagePickerController()
-        picker.sourceType = .camera
-        picker.delegate = self
-        present(picker, animated: true)
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+            picker.delegate = self
+            present(picker, animated: true)
+        } else {
+                fatalError("Camera is not available, please use real device.")
+        }
     }
     
     @IBAction func savePhoto(_ sender: AnyObject){
