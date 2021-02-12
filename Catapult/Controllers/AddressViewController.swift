@@ -91,7 +91,7 @@ class AddressViewController: UIViewController {
 //                submitErrorAlert.addAction(cancelAction)
 //                self.present(submitErrorAlert, animated: true, completion: nil)
                 changed()
-                
+                self.defaults.set(2, forKey: self.screenKey)
                 return false
             }
         }

@@ -117,6 +117,7 @@ class Step1ViewController: UIViewController {
 //                submitErrorAlert.addAction(cancelAction)
 //                self.present(submitErrorAlert, animated: true, completion: nil)
                 ErrorMessage.isHidden = false
+                self.defaults.set(1, forKey: self.screenKey)
                 return false;
                 
                 
