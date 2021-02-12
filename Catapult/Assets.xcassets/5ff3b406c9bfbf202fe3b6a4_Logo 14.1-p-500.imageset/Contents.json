@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "logo.pdf",
+      "filename" : "5ff3b406c9bfbf202fe3b6a4_Logo 14.1-p-500.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "logo-1.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logo-2.pdf",
       "idiom" : "universal",
       "scale" : "3x"
     }

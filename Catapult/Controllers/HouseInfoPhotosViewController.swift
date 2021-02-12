@@ -58,6 +58,7 @@ class HouseInfoPhotosViewController: UIViewController {
     
     @IBAction func backButton(_ sender: UIButton) {
         self.defaults.set(2, forKey: self.screenKey)
+        
     }
     
     @IBAction func finishButtonPressed(_ sender: UIButton) {

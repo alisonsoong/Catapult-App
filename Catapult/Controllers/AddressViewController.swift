@@ -19,6 +19,7 @@ class AddressViewController: UIViewController {
     let stateKey = "state"
     let postalKey = "postal"
     
+    @IBOutlet weak var ErrorMessage: UIView!
     @IBOutlet weak var NextButton: UIButton!
     @IBOutlet weak var addressLine1: UITextField!
     @IBOutlet weak var addressLine2: UITextField!
@@ -31,6 +32,7 @@ class AddressViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        ErrorMessage.isHidden = true
         
         addressLine1.text = self.defaults.string(forKey: self.addressLine1Key)
         addressLine2.text = self.defaults.string(forKey: self.addressLine2Key)
@@ -50,23 +52,27 @@ class AddressViewController: UIViewController {
     }
     @IBAction func addressLine1Edit(_ sender: UITextField) {
         self.defaults.set(addressLine1.text, forKey: self.addressLine1Key)
+        changed()
     }
     @IBAction func addressLine2Edit(_ sender: UITextField) {
         self.defaults.set(addressLine2.text, forKey: self.addressLine2Key)
+        changed()
     }
     @IBAction func cityEdit(_ sender: UITextField) {
         self.defaults.set(cityInput.text, forKey: self.cityKey)
+        changed()
     }
     @IBAction func stateEdit(_ sender: UITextField) {
         self.defaults.set(stateInput.text, forKey: self.stateKey)
+        changed()
     }
     @IBAction func postalEdit(_ sender: UITextField) {
         self.defaults.set(postalInput.text, forKey: self.postalKey)
+        changed()
     }
     
     @IBAction func NextPressed(_ sender: UIButton) {
-        // set lastSeenScreen to Photos
-        self.defaults.set(3, forKey: self.screenKey)
+    
     }
     @IBAction func SettingsFromAddress(_ sender: UIButton) {
 //        self.defaults.set(true, forKey: self.settingsKey)
@@ -80,14 +86,28 @@ class AddressViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier == "step2done"){
             if (self.defaults.string(forKey: self.addressLine1Key) == "" || self.defaults.string(forKey: self.addressLine1Key) == " " || self.defaults.string(forKey: self.postalKey) == "" || self.defaults.string(forKey: self.postalKey) == " " || self.defaults.string(forKey: self.cityKey) == "" || self.defaults.string(forKey: self.cityKey) == " " || self.defaults.string(forKey: self.stateKey) == "" || self.defaults.string(forKey: self.stateKey) == " "){
-                let submitErrorAlert = UIAlertController(title: "Make sure all input boxes are filled in!", message: "Please review your submission.", preferredStyle: UIAlertController.Style.alert)
-                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                submitErrorAlert.addAction(cancelAction)
-                self.present(submitErrorAlert, animated: true, completion: nil)
-                return false;
+//                let submitErrorAlert = UIAlertController(title: "Make sure all input boxes are filled in!", message: "Please review your submission.", preferredStyle: UIAlertController.Style.alert)
+//                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+//                submitErrorAlert.addAction(cancelAction)
+//                self.present(submitErrorAlert, animated: true, completion: nil)
+                changed()
+                
+                return false
             }
         }
+        // set lastSeenScreen to photos
+        self.defaults.set(3, forKey: self.screenKey)
         return true
+    }
+    
+    func changed(){
+        if (self.defaults.string(forKey: self.addressLine1Key) == "" || self.defaults.string(forKey: self.addressLine1Key) == " " || self.defaults.string(forKey: self.postalKey) == "" || self.defaults.string(forKey: self.postalKey) == " " || self.defaults.string(forKey: self.cityKey) == "" || self.defaults.string(forKey: self.cityKey) == " " || self.defaults.string(forKey: self.stateKey) == "" || self.defaults.string(forKey: self.stateKey) == " "){
+                
+            ErrorMessage.isHidden = false
+        } else {
+            ErrorMessage.isHidden = true
+        }
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {

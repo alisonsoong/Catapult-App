@@ -28,6 +28,7 @@ class Step1ViewController: UIViewController {
     @IBOutlet weak var DropDownView: UIView!
     @IBOutlet weak var DomainLabel: UILabel!
     @IBOutlet weak var otherDomainInput: UITextField!
+    @IBOutlet weak var ErrorMessage: UIView!
     var dropDownToggle = false;
     
     override func viewDidLoad() {
@@ -39,6 +40,7 @@ class Step1ViewController: UIViewController {
         
         DropDownButton.isHidden = false;
         DropDownView.isHidden = true;
+        ErrorMessage.isHidden = true;
         
         nameInput.text = self.defaults.string(forKey: self.firstNameKey)
         lastNameInput.text = self.defaults.string(forKey: self.lastNameKey)
@@ -78,24 +80,26 @@ class Step1ViewController: UIViewController {
 
     @IBAction func firstNameEdit(_ sender: UITextField) {
         self.defaults.set(nameInput.text, forKey: self.firstNameKey)
-        
+        changed()
     }
     @IBAction func lastNameEdit(_ sender: UITextField) {
         self.defaults.set(lastNameInput.text, forKey: self.lastNameKey)
+        changed()
     }
     @IBAction func phoneEdit(_ sender: UITextField) {
         self.defaults.set(phoneInput.text, forKey: self.phoneKey)
+        changed()
     }
     
     @IBAction func emailEdit(_ sender: UITextField) {
         self.defaults.set(emailInput.text, forKey: self.emailKey)
+        changed()
     }
     
     @IBAction func DoneButtonPressed(_ sender: UIButton) {
         
         
-        // set lastSeenScreen to address
-        self.defaults.set(2, forKey: self.screenKey)
+        
         
     }
     
@@ -108,15 +112,20 @@ class Step1ViewController: UIViewController {
         if (identifier == "step1done") {
             if (self.defaults.string(forKey: self.lastNameKey) == "" || self.defaults.string(forKey: self.lastNameKey) == " " || self.defaults.string(forKey: self.firstNameKey) == "" || self.defaults.string(forKey: self.firstNameKey) == " " || self.defaults.string(forKey: self.phoneKey) == "" || self.defaults.string(forKey: self.phoneKey) == " " || self.defaults.string(forKey: self.emailKey) == "" || self.defaults.string(forKey: self.emailKey) == " " || self.defaults.string(forKey: self.emailDomainKey) == "" || self.defaults.string(forKey: self.emailDomainKey) == " ") {
                 
-                let submitErrorAlert = UIAlertController(title: "Make sure all input boxes are filled in!", message: "Please review your submission.", preferredStyle: UIAlertController.Style.alert)
-                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                submitErrorAlert.addAction(cancelAction)
-                self.present(submitErrorAlert, animated: true, completion: nil)
+//                let submitErrorAlert = UIAlertController(title: "Make sure all input boxes are filled in!", message: "Please review your submission.", preferredStyle: UIAlertController.Style.alert)
+//                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+//                submitErrorAlert.addAction(cancelAction)
+//                self.present(submitErrorAlert, animated: true, completion: nil)
+                ErrorMessage.isHidden = false
                 return false;
+                
+                
             }
 
       
         }
+        // set lastSeenScreen to address
+        self.defaults.set(2, forKey: self.screenKey)
         return true
     }
     
@@ -146,6 +155,7 @@ class Step1ViewController: UIViewController {
         dropDownToggle = false;
         DomainLabel.text = "@gmail.com"
         self.defaults.set("@gmail.com", forKey: self.emailDomainKey)
+        changed()
     }
     
     @IBAction func yahooSelected(_ sender: UIButton) {
@@ -153,6 +163,7 @@ class Step1ViewController: UIViewController {
         dropDownToggle = false;
         DomainLabel.text = "@yahoo.com"
         self.defaults.set("@yahoo.com", forKey: self.emailDomainKey)
+        changed()
     }
     
     @IBAction func hotmailSelected(_ sender: UIButton) {
@@ -160,6 +171,7 @@ class Step1ViewController: UIViewController {
         dropDownToggle = false;
         DomainLabel.text = "@hotmail.com"
         self.defaults.set("@hotmail.com", forKey: self.emailDomainKey)
+        changed()
     }
     
     @IBAction func otherDomainInput(_ sender: UITextField) {
@@ -167,6 +179,16 @@ class Step1ViewController: UIViewController {
         self.defaults.set(otherDomainInput.text, forKey: self.emailDomainKey)
         if (otherDomainInput.text == ""){
             DomainLabel.text = "Select Domain"
+        }
+        changed()
+    }
+    
+    func changed(){
+        if (self.defaults.string(forKey: self.lastNameKey) == "" || self.defaults.string(forKey: self.lastNameKey) == " " || self.defaults.string(forKey: self.firstNameKey) == "" || self.defaults.string(forKey: self.firstNameKey) == " " || self.defaults.string(forKey: self.phoneKey) == "" || self.defaults.string(forKey: self.phoneKey) == " " || self.defaults.string(forKey: self.emailKey) == "" || self.defaults.string(forKey: self.emailKey) == " " || self.defaults.string(forKey: self.emailDomainKey) == "" || self.defaults.string(forKey: self.emailDomainKey) == " ") {
+            
+            ErrorMessage.isHidden = false
+        } else {
+            ErrorMessage.isHidden = true
         }
     }
     
