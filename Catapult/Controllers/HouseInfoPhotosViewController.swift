@@ -144,9 +144,13 @@ class HouseInfoPhotosViewController: UIViewController {
             self.present(sendMailErrorAlert, animated: true, completion: nil)
 
         }
+        
 
 
     }
+    
+    
+   
     
     /*
     // MARK: - Navigation
@@ -170,7 +174,6 @@ extension HouseInfoPhotosViewController: MFMailComposeViewControllerDelegate {
         if let _ = error {
             controller.dismiss(animated: true)
         }
-        
         
         controller.dismiss(animated: true)
     }

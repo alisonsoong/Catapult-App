@@ -771,7 +771,7 @@
                                                                 </constraints>
                                                                 <connections>
                                                                     <action selector="SettingsFromPictures:" destination="C7R-Nh-fhf" eventType="touchUpInside" id="D8n-S2-XT4"/>
-                                                                    <segue destination="a5H-NZ-2Nw" kind="presentation" modalPresentationStyle="fullScreen" id="G3o-8f-hNQ"/>
+                                                                    <segue destination="a5H-NZ-2Nw" kind="presentation" identifier="" modalPresentationStyle="fullScreen" id="G3o-8f-hNQ"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Details + Pictures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1a-aO-TSt">
@@ -2950,7 +2950,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q5R-Ge-LjV"/>
+        <segue reference="G3o-8f-hNQ"/>
         <segue reference="xxi-BF-xh0"/>
         <segue reference="O3e-12-rzA"/>
         <segue reference="qOv-J8-amk"/>
