@@ -1594,6 +1594,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="restartButtonPressed:" destination="a5H-NZ-2Nw" eventType="touchUpInside" id="LWl-BK-Q5k"/>
+                                                            <segue destination="MAa-eP-b5Y" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Sz4-2o-7AT"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -2239,12 +2240,14 @@
                                                             <constraint firstItem="V3y-37-aF8" firstAttribute="leading" secondItem="6oT-kP-oq2" secondAttribute="leading" id="2Wh-dO-zuf"/>
                                                             <constraint firstAttribute="trailing" secondItem="xgX-DP-Ry6" secondAttribute="trailing" id="3JS-4J-Z1m"/>
                                                             <constraint firstAttribute="trailing" secondItem="bxQ-IG-Fce" secondAttribute="trailing" id="89Z-mQ-Ku6"/>
+                                                            <constraint firstItem="RDu-72-C7G" firstAttribute="leading" secondItem="6oT-kP-oq2" secondAttribute="leading" id="8Lh-kM-Fz7"/>
                                                             <constraint firstItem="MlR-ph-lOL" firstAttribute="leading" secondItem="6oT-kP-oq2" secondAttribute="leading" id="CNX-03-VA8"/>
                                                             <constraint firstItem="xgX-DP-Ry6" firstAttribute="leading" secondItem="6oT-kP-oq2" secondAttribute="leading" id="DOB-8N-Dnc"/>
                                                             <constraint firstItem="mrS-Gq-PHC" firstAttribute="leading" secondItem="6oT-kP-oq2" secondAttribute="leading" id="Dfp-QM-AYB"/>
                                                             <constraint firstAttribute="trailing" secondItem="MlR-ph-lOL" secondAttribute="trailing" id="KAb-xj-67a"/>
                                                             <constraint firstAttribute="trailing" secondItem="V3y-37-aF8" secondAttribute="trailing" id="KU2-6v-oZI"/>
                                                             <constraint firstItem="bxQ-IG-Fce" firstAttribute="leading" secondItem="6oT-kP-oq2" secondAttribute="leading" id="O4g-12-KhA"/>
+                                                            <constraint firstAttribute="trailing" secondItem="RDu-72-C7G" secondAttribute="trailing" id="SD5-po-7gH"/>
                                                             <constraint firstAttribute="trailing" secondItem="Dgv-tp-7Kn" secondAttribute="trailing" id="Zoq-DZ-Iuw"/>
                                                             <constraint firstItem="xgY-nA-YxH" firstAttribute="leading" secondItem="6oT-kP-oq2" secondAttribute="leading" id="fwt-l7-gDI"/>
                                                             <constraint firstAttribute="trailing" secondItem="mrS-Gq-PHC" secondAttribute="trailing" id="n23-UF-Ofg"/>
@@ -2914,7 +2917,7 @@
         <segue reference="4Jy-VJ-dbU"/>
         <segue reference="O3e-12-rzA"/>
         <segue reference="qOv-J8-amk"/>
-        <segue reference="Vys-yh-QQu"/>
+        <segue reference="Sz4-2o-7AT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="1366" height="768"/>

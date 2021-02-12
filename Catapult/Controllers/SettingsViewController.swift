@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController {
         
         // go back to original screen
         self.defaults.set(0, forKey: self.screenKey)
-        self.dismiss(animated: true, completion: nil)
+        
         
     }
     /*
