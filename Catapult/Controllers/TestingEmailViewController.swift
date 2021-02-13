@@ -8,12 +8,12 @@
 import UIKit
 import SwiftSMTP
 
-let smtp = SMTP(
-    hostname: "smtp.gmail.com",     // SMTP server address
-    email: "asoongtesting@gmail.com",        // username to login
-    password: "a1s2d3f4%"            // password to login
-
-)
+//let smtp = SMTP(
+//    hostname: "smtp.gmail.com",     // SMTP server address
+//    email: "asoongtesting@gmail.com",        // username to login
+//    password: "a1s2d3f4%"            // password to login
+//
+//)
 
 
 class TestingEmailViewController: UIViewController {
