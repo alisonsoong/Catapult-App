@@ -90,7 +90,7 @@ class AddressViewController: UIViewController {
 //                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
 //                submitErrorAlert.addAction(cancelAction)
 //                self.present(submitErrorAlert, animated: true, completion: nil)
-                changed()
+                ErrorMessage.isHidden = false
                 self.defaults.set(2, forKey: self.screenKey)
                 return false
             }
