@@ -11,9 +11,12 @@ import SwiftSMTP
 
 let smtp = SMTP(
     hostname: "smtp.gmail.com",     // SMTP server address
-    email: "asoongtesting@gmail.com",        // username to login
+    // testing
+    email: "asoongtesting@gmail.com",        // username to login // TODO: change email
     password: "a1s2d3f4%"            // password to login
 
+    // testing other domain // TODO: DOESN'T WORK
+    
 )
 
 class HouseInfoPhotosViewController: UIViewController {
@@ -147,8 +150,8 @@ class HouseInfoPhotosViewController: UIViewController {
                 Pictures:
         """
         
-        let me = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com")
-        let user = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com")
+        let me = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
+        let user = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
         
         let mail = Mail(
             from: user,
@@ -191,7 +194,7 @@ class HouseInfoPhotosViewController: UIViewController {
         if MFMailComposeViewController.canSendMail() {
             let composer = MFMailComposeViewController()
             composer.mailComposeDelegate = self
-            composer.setToRecipients(["alisonsoong@gmail.com"])
+            composer.setToRecipients(["asoongtesting@gmail.com"]) // TODO: email change
             let subjectString = "Submission, \(self.defaults.string(forKey: self.firstNameKey) ?? "Name Not Given") \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")"
             composer.setSubject(subjectString)
             
@@ -275,6 +278,10 @@ extension HouseInfoPhotosViewController: MFMailComposeViewControllerDelegate {
             controller.dismiss(animated: true)
         }
         
+        
+        
         controller.dismiss(animated: true)
     }
+    
+
 }
