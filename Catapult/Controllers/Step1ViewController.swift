@@ -185,12 +185,7 @@ class Step1ViewController: UIViewController {
     }
     
     func changed(){
-        if (self.defaults.string(forKey: self.lastNameKey) == "" || self.defaults.string(forKey: self.lastNameKey) == " " || self.defaults.string(forKey: self.firstNameKey) == "" || self.defaults.string(forKey: self.firstNameKey) == " " || self.defaults.string(forKey: self.phoneKey) == "" || self.defaults.string(forKey: self.phoneKey) == " " || self.defaults.string(forKey: self.emailKey) == "" || self.defaults.string(forKey: self.emailKey) == " " || self.defaults.string(forKey: self.emailDomainKey) == "" || self.defaults.string(forKey: self.emailDomainKey) == " ") {
-            
-            ErrorMessage.isHidden = false
-        } else {
-            ErrorMessage.isHidden = true
-        }
+        ErrorMessage.isHidden = true
     }
     
     

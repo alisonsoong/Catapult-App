@@ -101,12 +101,8 @@ class AddressViewController: UIViewController {
     }
     
     func changed(){
-        if (self.defaults.string(forKey: self.addressLine1Key) == "" || self.defaults.string(forKey: self.addressLine1Key) == " " || self.defaults.string(forKey: self.postalKey) == "" || self.defaults.string(forKey: self.postalKey) == " " || self.defaults.string(forKey: self.cityKey) == "" || self.defaults.string(forKey: self.cityKey) == " " || self.defaults.string(forKey: self.stateKey) == "" || self.defaults.string(forKey: self.stateKey) == " "){
-                
-            ErrorMessage.isHidden = false
-        } else {
-            ErrorMessage.isHidden = true
-        }
+        ErrorMessage.isHidden = true
+
 
     }
     
