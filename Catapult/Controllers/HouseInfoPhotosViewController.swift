@@ -7,6 +7,14 @@
 
 import UIKit
 import MessageUI
+import SwiftSMTP
+
+//let smtp = SMTP(
+//    hostname: "smtp.gmail.com",     // SMTP server address
+//    email: "asoongtesting@gmail.com",        // username to login
+//    password: "a1s2d3f4%"            // password to login
+//
+//)
 
 class HouseInfoPhotosViewController: UIViewController {
     
@@ -63,18 +71,110 @@ class HouseInfoPhotosViewController: UIViewController {
     
     @IBAction func finishButtonPressed(_ sender: UIButton) {
         
-        // alert
-        let alert = UIAlertController(title: "Review", message: "Please review your submission.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-        NSLog("The \"OK\" alert occured.")
-            // show mail to review
-            self.showMailComposer()
-        }))
-        self.present(alert, animated: true, completion: nil)
+//        // alert
+//        let alert = UIAlertController(title: "Review", message: "Please review your submission.", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+//        NSLog("The \"OK\" alert occured.")
+//            // show mail to review
+//            self.showMailComposer()
+//        }))
+//        self.present(alert, animated: true, completion: nil)
         
-        
+        // are you sure you want to submit?
+        var refreshAlert = UIAlertController(title: "Submit?", message: "Are you sure you want to submit?", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            // Handle Ok logic here
+            self.submit()
+            
+            
+          }))
+
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            // Handle Cancel Logic here
+            
+          }))
+
+        present(refreshAlert, animated: true, completion: nil)
         
  
+    }
+
+    
+    
+    func submit(){
+        // make email!
+    
+        let subjectString = "Submission, \(self.defaults.string(forKey: self.firstNameKey) ?? "Name Not Given") \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")"
+        
+        let fullName = "\(self.defaults.string(forKey: self.firstNameKey) ?? "Name Not Given") \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")"
+        
+        let email = self.defaults.string(forKey: self.emailKey) ?? "EmailNotGiven"
+        var flag = false
+        var newEmail = ""
+        for char in email{
+            if (char == "@"){
+                flag = true
+            }
+            if (char != " "){
+                newEmail += String(char)
+            }
+        }
+        if (!flag){
+            newEmail += "\(self.defaults.string(forKey: self.emailDomainKey) ?? "Email Domain Not Given")"
+        }
+        
+        var address = "\(self.defaults.string(forKey: self.addressLine1Key) ?? "Address Not Given")"
+        let second = "\(self.defaults.string(forKey: self.addressLine2Key) ?? " ")"
+        if (second == " " || second == ""){
+            
+        } else {
+            address += "\n\(second)"
+        }
+        
+        let bodyString = """
+            Submission
+                First Name: \(self.defaults.string(forKey: self.firstNameKey) ?? "First Name Not Given")
+                Last Name: \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")
+                Phone: \(self.defaults.string(forKey: self.phoneKey) ?? "Phone Number Not Given")
+                Email: \(newEmail)
+                
+            Home Information
+                Address:
+                    \(address)
+                    \(self.defaults.string(forKey: self.cityKey) ?? "City Not Given"), \(self.defaults.string(forKey: self.stateKey) ?? "State Not Given") \(self.defaults.string(forKey: self.postalKey) ?? "Postal Not Given")
+                
+                Pictures:
+        """
+        
+        let me = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com")
+        let user = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com")
+        
+        let mail = Mail(
+            from: user,
+            to: [me],
+            subject: subjectString,
+            text: bodyString
+        
+        )
+
+        smtp.send(mail) { (error) in
+            if let error = error {
+                print(error)
+                // alert
+                let alert = UIAlertController(title: "Error", message: "Please try submitting again, and make sure you have connection.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+                    // show mail to review
+                    self.showMailComposer()
+                }))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+        }
+        
+        performSegue(withIdentifier: "toCompleteScreen", sender: nil)
+        
     }
     
     func showMailComposer() {

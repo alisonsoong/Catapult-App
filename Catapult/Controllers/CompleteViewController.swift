@@ -44,6 +44,7 @@ class CompleteViewController: UIViewController {
         self.defaults.set("", forKey: self.lastNameKey)
         self.defaults.set("", forKey: self.phoneKey)
         self.defaults.set("", forKey: self.emailKey)
+        self.defaults.set("", forKey: self.emailDomainKey)
         
     }
     

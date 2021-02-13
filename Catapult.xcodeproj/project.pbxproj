@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,8 @@
 		F1B944FD25A6F1E0008382BF /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B944FC25A6F1E0008382BF /* PhotosModel.swift */; };
 		F1B9450325A6F34C008382BF /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9450225A6F34C008382BF /* Photos.swift */; };
 		F1B9450825A6F54E008382BF /* PreviewPhotosTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9450725A6F54E008382BF /* PreviewPhotosTableView.swift */; };
+		F1BA424C25D7BA28002D6BA2 /* SwiftSMTP in Frameworks */ = {isa = PBXBuildFile; productRef = F1BA424B25D7BA28002D6BA2 /* SwiftSMTP */; };
+		F1BA425125D7BA81002D6BA2 /* TestingEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BA425025D7BA81002D6BA2 /* TestingEmailViewController.swift */; };
 		F1CF521E259AB7C1001753EF /* BathroomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,7 @@
 		F1B944FC25A6F1E0008382BF /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		F1B9450225A6F34C008382BF /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		F1B9450725A6F54E008382BF /* PreviewPhotosTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotosTableView.swift; sourceTree = "<group>"; };
+		F1BA425025D7BA81002D6BA2 /* TestingEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingEmailViewController.swift; sourceTree = "<group>"; };
 		F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathroomsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1BA424C25D7BA28002D6BA2 /* SwiftSMTP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				F1084DAD2595C7F7009AD713 /* ViewController.swift */,
+				F1BA425025D7BA81002D6BA2 /* TestingEmailViewController.swift */,
 				F1084DF125984A95009AD713 /* InitialViewController.swift */,
 				F1084E0025995FE3009AD713 /* SettingsViewController.swift */,
 				F1084DF625995FBC009AD713 /* Step1ViewController.swift */,
@@ -251,6 +256,9 @@
 			dependencies = (
 			);
 			name = Catapult;
+			packageProductDependencies = (
+				F1BA424B25D7BA28002D6BA2 /* SwiftSMTP */,
+			);
 			productName = Catapult;
 			productReference = F1084DA62595C7F7009AD713 /* Catapult.app */;
 			productType = "com.apple.product-type.application";
@@ -322,6 +330,9 @@
 				Base,
 			);
 			mainGroup = F1084D9D2595C7F6009AD713;
+			packageReferences = (
+				F1BA424A25D7BA28002D6BA2 /* XCRemoteSwiftPackageReference "Swift-SMTP" */,
+			);
 			productRefGroup = F1084DA72595C7F7009AD713 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -378,6 +389,7 @@
 				F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */,
 				F1084DAC2595C7F7009AD713 /* SceneDelegate.swift in Sources */,
 				F191874F259D3B91002A255F /* customTabBarController.swift in Sources */,
+				F1BA425125D7BA81002D6BA2 /* TestingEmailViewController.swift in Sources */,
 				F1084DF725995FBC009AD713 /* Step1ViewController.swift in Sources */,
 				F1084DFC25995FD7009AD713 /* AddressViewController.swift in Sources */,
 				F14EB79A25CF68A2008217FD /* Step1DoneSegue.swift in Sources */,
@@ -727,6 +739,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F1BA424A25D7BA28002D6BA2 /* XCRemoteSwiftPackageReference "Swift-SMTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Swift-SMTP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.200;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1BA424B25D7BA28002D6BA2 /* SwiftSMTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1BA424A25D7BA28002D6BA2 /* XCRemoteSwiftPackageReference "Swift-SMTP" */;
+			productName = SwiftSMTP;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F1084DB22595C7F7009AD713 /* Catapult.xcdatamodeld */ = {
