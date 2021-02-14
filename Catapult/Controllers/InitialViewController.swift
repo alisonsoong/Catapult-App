@@ -12,6 +12,17 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var StartButton: UIButton!
     let defaults = UserDefaults.standard
     let screenKey = "startScreenIndex"
+
+    let addressLine1Key = "addressLine1"
+    let addressLine2Key = "addressLine2"
+    let cityKey = "city"
+    let stateKey = "state"
+    let postalKey = "postal"
+    let firstNameKey = "firstName"
+    let lastNameKey = "lastName"
+    let phoneKey = "phone"
+    let emailKey = "email"
+    let emailDomainKey = "emailDomain"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +40,18 @@ class InitialViewController: UIViewController {
         if (self.defaults.integer(forKey:"startScreenIndex") != 0){
             self.defaults.set(0, forKey: self.screenKey)
         }
+        
+        // reset everything
+        self.defaults.set("123 Somewhere", forKey: self.addressLine1Key)
+        self.defaults.set("", forKey: self.addressLine2Key)
+        self.defaults.set("A City", forKey: self.cityKey)
+        self.defaults.set("CA", forKey: self.stateKey)
+        self.defaults.set("00000", forKey: self.postalKey)
+        self.defaults.set("Testing", forKey: self.firstNameKey)
+        self.defaults.set("Email", forKey: self.lastNameKey)
+        self.defaults.set(0000000000, forKey: self.phoneKey)
+        self.defaults.set("asoongtesting", forKey: self.emailKey)
+        self.defaults.set("@gmail.com", forKey: self.emailDomainKey)
        
         
     }

@@ -35,16 +35,16 @@ class CompleteViewController: UIViewController {
         super.viewWillDisappear(true)
         
         // reset everything
-        self.defaults.set("", forKey: self.addressLine1Key)
-        self.defaults.set("", forKey: self.addressLine2Key)
-        self.defaults.set("", forKey: self.cityKey)
-        self.defaults.set("", forKey: self.stateKey)
-        self.defaults.set("", forKey: self.postalKey)
-        self.defaults.set("", forKey: self.firstNameKey)
-        self.defaults.set("", forKey: self.lastNameKey)
-        self.defaults.set("", forKey: self.phoneKey)
-        self.defaults.set("", forKey: self.emailKey)
-        self.defaults.set("", forKey: self.emailDomainKey)
+//        self.defaults.set("", forKey: self.addressLine1Key)
+//        self.defaults.set("", forKey: self.addressLine2Key)
+//        self.defaults.set("", forKey: self.cityKey)
+//        self.defaults.set("", forKey: self.stateKey)
+//        self.defaults.set("", forKey: self.postalKey)
+//        self.defaults.set("", forKey: self.firstNameKey)
+//        self.defaults.set("", forKey: self.lastNameKey)
+//        self.defaults.set("", forKey: self.phoneKey)
+//        self.defaults.set("", forKey: self.emailKey)
+//        self.defaults.set("", forKey: self.emailDomainKey)
         
     }
     

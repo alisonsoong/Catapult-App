@@ -12,7 +12,7 @@ import SwiftSMTP
 let smtp = SMTP(
     hostname: "smtp.gmail.com",     // SMTP server address
     // testing
-    email: "asoongtesting@gmail.com",        // username to login // TODO: change email
+    email: "submit@getcatapult.app",        // username to login // TODO: change email
     password: "a1s2d3f4%"            // password to login
 
     // testing other domain // TODO: DOESN'T WORK
@@ -150,8 +150,8 @@ class HouseInfoPhotosViewController: UIViewController {
                 Pictures:
         """
         
-        let me = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
-        let user = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
+        let me = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
+        let user = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
         
         let mail = Mail(
             from: user,
@@ -169,7 +169,7 @@ class HouseInfoPhotosViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                 NSLog("The \"OK\" alert occured.")
                     // show mail to review
-                    self.showMailComposer()
+//                    self.showMailComposer()
                 }))
                 self.present(alert, animated: true, completion: nil)
                 return
