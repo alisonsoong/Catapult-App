@@ -1668,10 +1668,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8U-8x-rEQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rcw-ei-goW">
-                                                <rect key="frame" x="20" y="24" width="374" height="869"/>
+                                                <rect key="frame" x="20" y="24" width="374" height="1199"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrL-FE-Qlv">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
@@ -1856,7 +1856,7 @@
                                                                             <constraint firstAttribute="height" constant="360" id="2SO-ex-YQ0"/>
                                                                         </constraints>
                                                                         <prototypes>
-                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="162" id="fKg-On-cbf" customClass="PreviewCell" customModule="Catapult" customModuleProvider="target">
+                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellID" rowHeight="162" id="fKg-On-cbf" customClass="PreviewCell" customModule="Catapult" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="28" width="334" height="162"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKg-On-cbf" id="rCF-3Z-yBT">
@@ -1905,6 +1905,13 @@
                                                             <constraint firstAttribute="trailing" secondItem="32Y-Vp-4Mv" secondAttribute="trailing" constant="20" id="csd-dS-1qs"/>
                                                         </constraints>
                                                     </view>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZnL-43-sYH">
+                                                        <rect key="frame" x="0.0" y="899" width="374" height="300"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="300" id="hBq-bf-xPp"/>
+                                                            <constraint firstAttribute="width" constant="374" id="rn0-R9-GkA"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -1912,7 +1919,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="rcw-ei-goW" secondAttribute="trailing" constant="20" id="1gK-ob-KET"/>
-                                            <constraint firstAttribute="height" constant="1000" id="9v0-B9-Uvp"/>
+                                            <constraint firstAttribute="height" constant="1400" id="9v0-B9-Uvp"/>
                                             <constraint firstItem="rcw-ei-goW" firstAttribute="leading" secondItem="D8U-8x-rEQ" secondAttribute="leading" constant="20" id="BBh-6J-dBU"/>
                                             <constraint firstItem="rcw-ei-goW" firstAttribute="top" secondItem="D8U-8x-rEQ" secondAttribute="top" constant="24" id="IIQ-1P-t4U"/>
                                         </constraints>
@@ -1946,6 +1953,7 @@
                     <connections>
                         <outlet property="AddPhotosButton" destination="Bet-6z-eeI" id="JLz-DZ-Lkd"/>
                         <outlet property="TakePhotosButton" destination="jva-Il-hR8" id="abG-i7-uwE"/>
+                        <outlet property="testingImage" destination="ZnL-43-sYH" id="NlM-r0-itf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoq-Mn-tyO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2844,6 +2852,9 @@
                                                         <state key="normal">
                                                             <imageReference key="image" image="photo.on.rectangle.angled" catalog="system" symbolScale="large"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="usePhoto:" destination="XPb-An-b2X" eventType="touchUpInside" id="sNW-jo-PYW"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMT-0x-HSX">
                                                         <rect key="frame" x="0.0" y="40" width="374" height="40"/>
@@ -2854,6 +2865,9 @@
                                                         <state key="normal" title="Use Photo">
                                                             <color key="titleColor" name="OfficialDarkGrey"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="usePhoto:" destination="XPb-An-b2X" eventType="touchUpInside" id="Lne-go-u58"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -2968,9 +2982,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Wb6-G7-axE"/>
-        <segue reference="4Jy-VJ-dbU"/>
-        <segue reference="O3e-12-rzA"/>
+        <segue reference="G3o-8f-hNQ"/>
+        <segue reference="xxi-BF-xh0"/>
+        <segue reference="h4i-Vo-YOa"/>
         <segue reference="aFS-5t-hMh"/>
         <segue reference="Sz4-2o-7AT"/>
     </inferredMetricsTieBreakers>

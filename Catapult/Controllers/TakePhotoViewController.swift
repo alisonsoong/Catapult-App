@@ -61,11 +61,22 @@ class TakePhotoViewController: UIViewController {
 
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         
-        // leave 
+        // save photo
         
         alert.addAction(okAction)
         
         self.present(alert, animated: true, completion: nil)
+        
+        // add photo
+        
+        
+        
+        // leave
+        
+        self.dismiss(animated: false, completion: nil)
+        
+        
+        
     }
     
 
@@ -114,3 +125,6 @@ extension UIImage {
     }
 
 }
+
+
+

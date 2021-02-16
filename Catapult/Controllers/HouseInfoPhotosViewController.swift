@@ -11,12 +11,16 @@ import SwiftSMTP
 
 let smtp = SMTP(
     hostname: "smtp.gmail.com",     // SMTP server address
-    // testing
-    email: "submit@getcatapult.app",        // username to login // TODO: change email
-    password: "a1s2d3f4%"            // password to login
-
-    // testing other domain // TODO: DOESN'T WORK
+    // real
+//    email: "submit@getcatapult.app",        // username to login
+//    password: "notavailable"            // password to login
     
+    // testing
+    email: "asoongtesting@gmail.com",        // username to login // TODO: change email
+    password: "a1s2d3f4%"            // password to login
+    
+    
+
 )
 
 class HouseInfoPhotosViewController: UIViewController {
@@ -55,6 +59,7 @@ class HouseInfoPhotosViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
+        // go to correct last screen, TODO: add other screens in too
         if (self.defaults.string(forKey: self.categoryKey) == "bathroom") {
             self.performSegue(withIdentifier: "toBathroom", sender: self)
             
@@ -150,8 +155,14 @@ class HouseInfoPhotosViewController: UIViewController {
                 Pictures:
         """
         
-        let me = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
-        let user = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
+        // real code
+//        let me = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
+//        let user = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
+        
+        // testing purposes
+        let me = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
+        let user = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
+        
         
         let mail = Mail(
             from: user,
@@ -165,7 +176,7 @@ class HouseInfoPhotosViewController: UIViewController {
             if let error = error {
                 print(error)
                 // alert
-                let alert = UIAlertController(title: "Error", message: "Please try submitting again, and make sure you have connection.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error: Please try submitting again", message: "Please check your internet connection.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                 NSLog("The \"OK\" alert occured.")
                     // show mail to review

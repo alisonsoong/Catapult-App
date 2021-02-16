@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GetPhotoViewController: UIViewController {
 
@@ -14,6 +15,16 @@ class GetPhotoViewController: UIViewController {
     @IBOutlet weak var imagePreview: UIImageView!
     @IBOutlet weak var initialButton: UIView!
     @IBOutlet weak var reselectButton: UIButton!
+    
+    let defaults = UserDefaults.standard
+    let categoryKey = "photoCategory"
+    let bathroomPhotosKey = "bathroomPhotoPaths"
+    let bathroomFolderKey = "bathroomFolder"
+    // etc, TODO: make the keys
+    
+    var curImage = UIImage()
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         stack.isHidden = true
@@ -34,6 +45,8 @@ class GetPhotoViewController: UIViewController {
             self.background.isHidden = false
             self.reselectButton.isHidden = false
         }
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,16 +68,79 @@ class GetPhotoViewController: UIViewController {
             self.reselectButton.isHidden = false
         }
         
+        
     }
   
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         if let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
             imagePreview.image = image
-
+            self.curImage = image
         }
         
 
     }
+    
+    @IBAction func usePhoto(_ sender: UIButton) {
+        
+        if (self.defaults.string(forKey: self.categoryKey) == "bathroom"){
+            
+            
+            var arr: [URL] = []
+            arr = self.defaults.object(forKey: self.bathroomPhotosKey) as? [URL] ?? []
+            let size = Int(arr.count)
+            let selectedImageTag = size + 1
+            print("SELECTED IMAGE TAG \(selectedImageTag)")
+            
+            // get access to shared instance of the file manager
+            let fileManager = FileManager.default
+            
+            // Get the URL for the users home directory
+            let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+            
+            // Get the document URL as a string
+            let documentPath = documentsURL.path
+            
+            // Create filePath URL by appending final path component (name of image)
+            let filePath = documentsURL.appendingPathComponent("\(String(selectedImageTag)).png")
+            
+            do {
+                let files = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
+                
+                for file in files {
+                    if "\(documentPath)/\(file)" == filePath.path {
+                        try fileManager.removeItem(atPath: filePath.path)
+                    }
+                }
+            } catch {
+                print("Could not add image from document directory: \(error)")
+            }
+            
+            
+            print("FILE PATH \(filePath)")
+            do {
+                
+                if let pngImageData = curImage.pngData(){
+                    print("YES")
+                    try pngImageData.write(to: filePath, options: .atomic)
+                    arr.append(filePath)
+                    
+                    self.defaults.set(arr, forKey: self.bathroomPhotosKey)
+                }
+            } catch {
+                print("Couldn't write image")
+            }
+            
+            print("NUMBER OF ITEMS \(arr.count)")
+            
+        }
+        
+        
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
