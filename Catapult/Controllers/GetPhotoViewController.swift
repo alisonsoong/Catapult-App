@@ -87,8 +87,17 @@ class GetPhotoViewController: UIViewController {
             
             var arr: [URL] = []
             arr = self.defaults.object(forKey: self.bathroomPhotosKey) as? [URL] ?? []
+            
+            
             let size = Int(arr.count)
-            let selectedImageTag = size + 1
+            let newIndex = size + 1
+            var selectedImageTag = "Bathroom"
+            selectedImageTag += String(newIndex)
+            
+   
+            for val in arr {
+                print("---\(val)")
+            }
             print("SELECTED IMAGE TAG \(selectedImageTag)")
             
             // get access to shared instance of the file manager

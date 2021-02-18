@@ -24,6 +24,20 @@ class BathroomsViewController: UIViewController, UINavigationControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var arr: [URL] = []
+        arr = self.defaults.object(forKey: self.bathroomPhotosKey) as? [URL] ?? []
+        
+        let size = Int(arr.count)
+        print("SIZE: \(size)")
+        let newIndex = size + 1
+        var selectedImageTag = "Bathroom"
+        selectedImageTag += String(newIndex)
+        
+
+        for val in arr {
+            print("HERE ---\(val)")
+        }
+        
         AddPhotosButton.layer.cornerRadius = AddPhotosButton.frame.size.height / 5
         TakePhotosButton.layer.cornerRadius = TakePhotosButton.frame.size.height / 5
         // Do any additional setup after loading the view.
@@ -39,11 +53,15 @@ class BathroomsViewController: UIViewController, UINavigationControllerDelegate 
 //        appDelegate.saveContext()
 //
         fetchData()
+        
+        
 
 
     }
     
     func fetchData(){
+        
+        
         let container = appDelegate.persistentContainer
         let context = container.viewContext
         let fetchRequest = NSFetchRequest<Image>(entityName: "Image")
@@ -51,29 +69,32 @@ class BathroomsViewController: UIViewController, UINavigationControllerDelegate 
         print("___________START____________")
         var arr: [URL] = []
         arr = self.defaults.object(forKey: self.bathroomPhotosKey) as? [URL] ?? []
+    
         
+    
         if (arr.count > 0){
-            let filePath = arr.first
-            print("FILE_ PATH_________")
-            print(filePath)
-            print(")______ ___________")
-            do {
-                let images = try context.fetch(fetchRequest)
-                
-                for image in images {
-                    if let placement = image.placement, let filePath = image.filePath {
-                        if FileManager.default.fileExists(atPath: filePath){
-                            if let contentsOfFilePath = UIImage(contentsOfFile: filePath) {
-                                if let im = contentsOfFilePath as? UIImage {
-                                    testingImage.image = im
-                                    print(filePath)
+            for filePath in arr {
+                print("FILE_ PATH_________")
+                print(filePath)
+                print(")______ ___________")
+                do {
+                    let images = try context.fetch(fetchRequest)
+                    
+                    for image in images {
+                        if let placement = image.placement, let filePath = image.filePath {
+                            if FileManager.default.fileExists(atPath: filePath){
+                                if let contentsOfFilePath = UIImage(contentsOfFile: filePath) {
+                                    if let im = contentsOfFilePath as? UIImage {
+                                        testingImage.image = im
+                                        print(filePath)
+                                    }
                                 }
                             }
                         }
                     }
+                } catch {
+                    print("entered catch for image fetch request")
                 }
-            } catch {
-                print("entered catch for image fetch request")
             }
         }
         
