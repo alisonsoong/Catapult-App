@@ -38,6 +38,14 @@ class SettingsViewController: UIViewController {
             
             UIApplication.shared.open(URL(string:"https://catapult-2854f1.webflow.io/about")! as URL, options: [:], completionHandler: nil)
           }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            // Handle Cancel Logic here
+            
+          }))
+
+        present(refreshAlert, animated: true, completion: nil)
+        
     }
     @IBAction func FAQButtonPressed(_ sender: UIButton) {
         
@@ -49,6 +57,13 @@ class SettingsViewController: UIViewController {
             
             UIApplication.shared.open(URL(string:"https://catapult-2854f1.webflow.io/faqs")! as URL, options: [:], completionHandler: nil)
           }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            // Handle Cancel Logic here
+            
+          }))
+
+        present(refreshAlert, animated: true, completion: nil)
     }
     
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
