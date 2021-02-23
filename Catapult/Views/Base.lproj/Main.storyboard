@@ -1571,7 +1571,7 @@
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="bCp-iK-2e1" kind="presentation" modalPresentationStyle="fullScreen" id="xzl-d7-lRl"/>
+                                                                    <action selector="FAQButtonPressed:" destination="a5H-NZ-2Nw" eventType="touchUpInside" id="3kb-D0-5uT"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1614,7 +1614,7 @@
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="IUB-lK-cP5" kind="presentation" modalPresentationStyle="fullScreen" id="gm6-u2-CpR"/>
+                                                                    <action selector="aboutButtonPressed:" destination="a5H-NZ-2Nw" eventType="touchUpInside" id="QuS-Dd-A6a"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -3040,11 +3040,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="tjl-I7-tRu"/>
         <segue reference="G3o-8f-hNQ"/>
         <segue reference="xxi-BF-xh0"/>
         <segue reference="h4i-Vo-YOa"/>
         <segue reference="qOv-J8-amk"/>
-        <segue reference="Vys-yh-QQu"/>
+        <segue reference="Sz4-2o-7AT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="1366" height="768"/>

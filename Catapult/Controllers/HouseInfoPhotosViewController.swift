@@ -94,8 +94,7 @@ class HouseInfoPhotosViewController: UIViewController {
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             // Handle Ok logic here
             self.submit()
-            
-            
+        
           }))
 
         refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in

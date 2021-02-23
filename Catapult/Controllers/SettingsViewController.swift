@@ -28,6 +28,28 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func aboutButtonPressed(_ sender: UIButton) {
+        
+        // are you sure you want to submit?
+        let refreshAlert = UIAlertController(title: "View Page", message: "Are you sure you want to leave the app? All your progress will be saved.", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            // Handle Ok logic here
+            
+            UIApplication.shared.open(URL(string:"https://catapult-2854f1.webflow.io/about")! as URL, options: [:], completionHandler: nil)
+          }))
+    }
+    @IBAction func FAQButtonPressed(_ sender: UIButton) {
+        
+        // are you sure you want to submit?
+        let refreshAlert = UIAlertController(title: "View Page", message: "Are you sure you want to leave the app? All your progress will be saved.", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            // Handle Ok logic here
+            
+            UIApplication.shared.open(URL(string:"https://catapult-2854f1.webflow.io/faqs")! as URL, options: [:], completionHandler: nil)
+          }))
+    }
     
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
