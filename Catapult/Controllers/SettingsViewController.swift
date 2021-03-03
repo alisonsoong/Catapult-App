@@ -70,9 +70,40 @@ class SettingsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == "resetSegue") {
+            return false
+
+        }
+
+        return true
+    }
+    
     @IBAction func restartButtonPressed(_ sender: UIButton) {
         
-        // reset everything
+        var refreshAlert = UIAlertController(title: "Reset", message: "Are you sure you want to restart? All your progress will be lost.", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            // Handle Ok logic here
+            self.reset()
+
+          }))
+
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            // Handle Cancel Logic here
+
+          }))
+
+        present(refreshAlert, animated: true, completion: nil)
+        
+   
+        
+        
+        
+        
+    }
+    
+    func reset(){
         self.defaults.set("", forKey: self.addressLine1Key)
         self.defaults.set("", forKey: self.addressLine2Key)
         self.defaults.set("", forKey: self.cityKey)
@@ -87,7 +118,7 @@ class SettingsViewController: UIViewController {
         // go back to original screen
         self.defaults.set(0, forKey: self.screenKey)
         
-        
+        self.performSegue(withIdentifier: "resetSegue", sender: nil)
     }
     /*
     // MARK: - Navigation

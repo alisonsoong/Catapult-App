@@ -110,7 +110,7 @@ class Step1ViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier == "step1done") {
-            if (self.defaults.string(forKey: self.lastNameKey) == "" || self.defaults.string(forKey: self.lastNameKey) == " " || self.defaults.string(forKey: self.firstNameKey) == "" || self.defaults.string(forKey: self.firstNameKey) == " " || self.defaults.string(forKey: self.phoneKey) == "" || self.defaults.string(forKey: self.phoneKey) == " " || self.defaults.string(forKey: self.emailKey) == "" || self.defaults.string(forKey: self.emailKey) == " " || self.defaults.string(forKey: self.emailDomainKey) == "" || self.defaults.string(forKey: self.emailDomainKey) == " ") {
+            if (self.defaults.string(forKey: self.lastNameKey) == "" || self.defaults.string(forKey: self.lastNameKey) == " " || self.defaults.string(forKey: self.firstNameKey) == "" || self.defaults.string(forKey: self.firstNameKey) == " " || self.defaults.string(forKey: self.phoneKey) == nil || self.defaults.string(forKey: self.emailKey) == "" || self.defaults.string(forKey: self.emailKey) == " " || self.defaults.string(forKey: self.emailDomainKey) == "" || self.defaults.string(forKey: self.emailDomainKey) == " ") {
                 
 //                let submitErrorAlert = UIAlertController(title: "Make sure all input boxes are filled in!", message: "Please review your submission.", preferredStyle: UIAlertController.Style.alert)
 //                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
