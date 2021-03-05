@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9kV-Za-BtS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I3p-ln-ajF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -40,25 +40,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTf-ub-dBl">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mix-kd-MYl">
+                                <rect key="frame" x="140" y="381" width="118" height="30"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="pressedButton:" destination="I3p-ln-ajF" eventType="touchUpInside" id="cMc-Hv-bLw"/>
+                                    <action selector="importImageWith_sender:" destination="I3p-ln-ajF" eventType="touchUpInside" id="w8J-ty-slT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTf-ub-dBl">
+                                <rect key="frame" x="158" y="783" width="83" height="30"/>
+                                <state key="normal" title="Display"/>
+                                <connections>
+                                    <action selector="display:" destination="I3p-ln-ajF" eventType="touchUpInside" id="zA4-3B-e8I"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZxK-nx-HS9">
+                                <rect key="frame" x="79" y="538" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="uBf-Yo-d5g"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHX-B1-ERY">
+                                <rect key="frame" x="79" y="217" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Enu-jN-uRK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ty4-Cb-En4">
+                                <rect key="frame" x="140" y="455" width="118" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="I3p-ln-ajF" eventType="touchUpInside" id="xzO-Wn-v95"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mjX-Po-wbA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aTf-ub-dBl" firstAttribute="centerX" secondItem="jRS-ui-ZJU" secondAttribute="centerX" id="9HY-Jn-lN4"/>
-                            <constraint firstItem="aTf-ub-dBl" firstAttribute="centerY" secondItem="jRS-ui-ZJU" secondAttribute="centerY" id="yYS-RX-FNd"/>
+                            <constraint firstItem="mjX-Po-wbA" firstAttribute="bottom" secondItem="ZxK-nx-HS9" secondAttribute="bottom" constant="196" id="2nO-hn-2H1"/>
+                            <constraint firstItem="bHX-B1-ERY" firstAttribute="top" secondItem="mjX-Po-wbA" secondAttribute="top" constant="173" id="6w6-uv-4wH"/>
+                            <constraint firstItem="mjX-Po-wbA" firstAttribute="trailing" secondItem="bHX-B1-ERY" secondAttribute="trailing" constant="95" id="CJn-aj-15W"/>
+                            <constraint firstItem="mjX-Po-wbA" firstAttribute="trailing" secondItem="ZxK-nx-HS9" secondAttribute="trailing" constant="95" id="FAI-Vf-BTJ"/>
+                            <constraint firstItem="aTf-ub-dBl" firstAttribute="leading" secondItem="mjX-Po-wbA" secondAttribute="leading" constant="158" id="TJx-zo-xKH"/>
+                            <constraint firstItem="mjX-Po-wbA" firstAttribute="bottom" secondItem="aTf-ub-dBl" secondAttribute="bottom" constant="49" id="Ukx-Rg-IbJ"/>
+                            <constraint firstItem="ty4-Cb-En4" firstAttribute="top" secondItem="mix-kd-MYl" secondAttribute="bottom" constant="44" id="fYw-Pq-zRJ"/>
+                            <constraint firstItem="ZxK-nx-HS9" firstAttribute="leading" secondItem="mjX-Po-wbA" secondAttribute="leading" constant="79" id="gPn-Lc-XX7"/>
+                            <constraint firstItem="mjX-Po-wbA" firstAttribute="trailing" secondItem="mix-kd-MYl" secondAttribute="trailing" constant="156" id="iEd-ch-pdf"/>
+                            <constraint firstItem="ty4-Cb-En4" firstAttribute="leading" secondItem="mjX-Po-wbA" secondAttribute="leading" constant="140" id="jmL-nZ-rtX"/>
+                            <constraint firstItem="mix-kd-MYl" firstAttribute="top" secondItem="bHX-B1-ERY" secondAttribute="bottom" constant="36" id="q4E-Ta-Bap"/>
+                            <constraint firstItem="mix-kd-MYl" firstAttribute="leading" secondItem="mjX-Po-wbA" secondAttribute="leading" constant="140" id="sqO-N9-yhK"/>
+                            <constraint firstItem="bHX-B1-ERY" firstAttribute="leading" secondItem="mjX-Po-wbA" secondAttribute="leading" constant="79" id="tLq-J3-2ea"/>
+                            <constraint firstItem="mjX-Po-wbA" firstAttribute="trailing" secondItem="ty4-Cb-En4" secondAttribute="trailing" constant="156" id="v15-01-scm"/>
+                            <constraint firstItem="mjX-Po-wbA" firstAttribute="trailing" secondItem="aTf-ub-dBl" secondAttribute="trailing" constant="173" id="vXF-hN-ahb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageToSaveImageView" destination="bHX-B1-ERY" id="6XI-kA-f0C"/>
+                        <outlet property="savedImageDisplayImageView" destination="ZxK-nx-HS9" id="bTW-6d-Tif"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tD-6P-GFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3048" y="-428"/>
+            <point key="canvasLocation" x="-3049.275362318841" y="-428.57142857142856"/>
         </scene>
         <!--Item-->
         <scene sceneID="cHl-uK-Sqo">
