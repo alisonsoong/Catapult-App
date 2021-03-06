@@ -84,17 +84,20 @@ class GetPhotoViewController: UIViewController {
     @IBAction func usePhoto(_ sender: UIButton) {
         print("TEST 1")
         
-        saveImageToDocumentDirectory(image: curImage)
         
-        // check
-        print("CHECK")
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let documentDirectory = paths[0]
-        if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
-            print(allItems)
+        if (curImage.size.width != 0){
+            saveImageToDocumentDirectory(image: curImage)
+            
+            // check
+            print("CHECK")
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+            let documentDirectory = paths[0]
+            if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
+                print(allItems)
+            }
+            print("END")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
-        print("END")
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         self.dismiss(animated: true, completion: nil)
     }
     

@@ -173,7 +173,8 @@ class HouseInfoPhotosViewController: UIViewController {
             print(x)
             let filePath = "\(dirPath)/\(x).png"
             let fileAttachment = Attachment(filePath: filePath)
-            if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            
+            if (fileManager.fileExists(atPath: filePath) && tryFile(x)) {
                 arrAttachments.append(fileAttachment)
             }
         }
@@ -302,6 +303,15 @@ class HouseInfoPhotosViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func tryFile(_ nameOfImage : String) -> Bool {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            if UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(nameOfImage).path) != nil {
+                return true
+            }
+        }
+        return false
+    }
 
 }
 
