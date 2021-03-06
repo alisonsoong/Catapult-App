@@ -19,8 +19,18 @@ class TakePhotoViewController: UIViewController {
     let defaults = UserDefaults.standard
     let categoryKey = "photoCategory"
     let bathroomPhotosKey = "bathroomPhotoPaths"
+    let livingPhotosKey = "livingPhotosPaths"
+    let exteriorPhotosKey = "exteriorPhotosPaths"
+    let kitchenPhotosKey = "kitchenPhotosPath"
+    let bedroomPhotosKey = "bedroomPhotosPath"
+    let otherPhotosKey = "otherPhotosPath"
+    
     let bathroomIndexKey = "bathroomHighestIndex"
-    // etc, TODO: make the keys
+    let livingIndexKey = "livingHighestIndex"
+    let exteriorIndexKey = "exteriorHighestIndex"
+    let bedroomIndexKey = "bedroomHighestIndex"
+    let otherIndexKey = "otherHighestIndex"
+    let kitchenIndexKey = "kitchenHighestIndex"
     
     var curImage = UIImage()
     
@@ -85,27 +95,132 @@ class TakePhotoViewController: UIViewController {
     
     // saves image to document directory
     func saveImageToDocumentDirectory(image: UIImage ) -> Bool {
-        
         var arr = [String]()
-        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
-            arr = [String]()
-            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
-        } else {
-            arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
-        }
-        print("TEST 2")
-        let newIndex = self.defaults.integer(forKey: self.bathroomIndexKey) + 1
-        self.defaults.setValue(newIndex, forKey: bathroomIndexKey)
+        var newIndex = -1
         var selectedImageTag = ""
-        if (self.defaults.string(forKey: self.categoryKey) == "bathroom"){
+        if (self.defaults.string(forKey: categoryKey) == "bathroom"){
+            if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+                arr = [String]()
+                self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+            } else {
+                arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+            }
+            print("TEST 2")
+            newIndex = self.defaults.integer(forKey: self.bathroomIndexKey) + 1
+            self.defaults.setValue(newIndex, forKey: bathroomIndexKey)
             selectedImageTag = "Bathroom"
-        }
-      
-        selectedImageTag += String(newIndex)
-        print("TEST 3: \(selectedImageTag)")
-        arr.append(selectedImageTag)
+            
+            selectedImageTag += String(newIndex)
+            print("TEST 3: \(selectedImageTag)")
+            arr.append(selectedImageTag)
+            self.defaults.set(arr, forKey: self.bathroomPhotosKey)
+            
+        } else if (self.defaults.string(forKey: categoryKey) == "living") {
+            
+            if (self.defaults.object(forKey: self.livingPhotosKey) == nil){
+                arr = [String]()
+                self.defaults.set([String](), forKey: self.livingPhotosKey)
+            } else {
+                arr = self.defaults.object(forKey: self.livingPhotosKey) as! [String]
+            }
+            
+            newIndex = self.defaults.integer(forKey: self.livingIndexKey) + 1
+            self.defaults.setValue(newIndex, forKey: livingIndexKey)
+            
+            selectedImageTag = "Living"
+            
+            selectedImageTag += String(newIndex)
+            arr.append(selectedImageTag)
+            self.defaults.set(arr, forKey: self.livingPhotosKey)
         
-        self.defaults.set(arr, forKey: self.bathroomPhotosKey)
+        } else if (self.defaults.string(forKey: categoryKey) == "exterior") {
+            
+            // change 3
+            if (self.defaults.object(forKey: self.exteriorPhotosKey) == nil){
+                arr = [String]()
+                self.defaults.set([String](), forKey: self.exteriorPhotosKey)
+            } else {
+                arr = self.defaults.object(forKey: self.exteriorPhotosKey) as! [String]
+            }
+            
+            // change 2
+            newIndex = self.defaults.integer(forKey: self.exteriorIndexKey) + 1
+            self.defaults.setValue(newIndex, forKey: exteriorIndexKey)
+            
+            // change name
+            selectedImageTag = "Exterior"
+            
+            // change 1
+            selectedImageTag += String(newIndex)
+            arr.append(selectedImageTag)
+            self.defaults.set(arr, forKey: self.exteriorPhotosKey)
+        
+        } else if (self.defaults.string(forKey: categoryKey) == "kitchen") {
+            
+            // change 3
+            if (self.defaults.object(forKey: self.kitchenPhotosKey) == nil){
+                arr = [String]()
+                self.defaults.set([String](), forKey: self.kitchenPhotosKey)
+            } else {
+                arr = self.defaults.object(forKey: self.kitchenPhotosKey) as! [String]
+            }
+            
+            // change 2
+            newIndex = self.defaults.integer(forKey: self.kitchenIndexKey) + 1
+            self.defaults.setValue(newIndex, forKey: kitchenIndexKey)
+            
+            // change name
+            selectedImageTag = "Kitchen"
+            
+            // change 1
+            selectedImageTag += String(newIndex)
+            arr.append(selectedImageTag)
+            self.defaults.set(arr, forKey: self.kitchenPhotosKey)
+        
+        } else if (self.defaults.string(forKey: categoryKey) == "bedroom") {
+            
+            // change 3
+            if (self.defaults.object(forKey: self.bedroomPhotosKey) == nil){
+                arr = [String]()
+                self.defaults.set([String](), forKey: self.bedroomPhotosKey)
+            } else {
+                arr = self.defaults.object(forKey: self.bedroomPhotosKey) as! [String]
+            }
+            
+            // change 2
+            newIndex = self.defaults.integer(forKey: self.bedroomIndexKey) + 1
+            self.defaults.setValue(newIndex, forKey: bedroomIndexKey)
+            
+            // change name
+            selectedImageTag = "Bedroom"
+            
+            // change 1
+            selectedImageTag += String(newIndex)
+            arr.append(selectedImageTag)
+            self.defaults.set(arr, forKey: self.bedroomPhotosKey)
+        
+        } else {
+            // if it's other
+            // change 3
+            if (self.defaults.object(forKey: self.otherPhotosKey) == nil){
+                arr = [String]()
+                self.defaults.set([String](), forKey: self.otherPhotosKey)
+            } else {
+                arr = self.defaults.object(forKey: self.otherPhotosKey) as! [String]
+            }
+            
+            // change 2
+            newIndex = self.defaults.integer(forKey: self.otherIndexKey) + 1
+            self.defaults.setValue(newIndex, forKey: otherIndexKey)
+            
+            // change name
+            selectedImageTag = "Other"
+            
+            // change 1
+            selectedImageTag += String(newIndex)
+            arr.append(selectedImageTag)
+            self.defaults.set(arr, forKey: self.otherPhotosKey)
+        }
 
         print(arr)
         

@@ -958,7 +958,7 @@
                                                                             <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <segue destination="SEi-jF-e2l" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="Mho-ph-ccK"/>
+                                                                            <segue destination="SEi-jF-e2l" kind="presentation" identifier="toExterior" animates="NO" modalPresentationStyle="fullScreen" id="Mho-ph-ccK"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1000,7 +1000,7 @@
                                                                             <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <segue destination="s7Y-rh-YJH" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="0zd-81-qyT"/>
+                                                                            <segue destination="s7Y-rh-YJH" kind="presentation" identifier="toLiving" animates="NO" modalPresentationStyle="fullScreen" id="0zd-81-qyT"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1042,7 +1042,7 @@
                                                                             <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <segue destination="C3A-ez-3Q4" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="Eg6-iK-Hco"/>
+                                                                            <segue destination="C3A-ez-3Q4" kind="presentation" identifier="toKitchen" animates="NO" modalPresentationStyle="fullScreen" id="Eg6-iK-Hco"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1084,7 +1084,7 @@
                                                                             <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <segue destination="Wk7-3X-WhI" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="K4M-pk-aKZ"/>
+                                                                            <segue destination="Wk7-3X-WhI" kind="presentation" identifier="toBedroom" animates="NO" modalPresentationStyle="fullScreen" id="K4M-pk-aKZ"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1168,7 +1168,7 @@
                                                                             <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <segue destination="JzG-pf-l3v" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="4Ff-9U-YxF"/>
+                                                                            <segue destination="JzG-pf-l3v" kind="presentation" identifier="toOther" animates="NO" modalPresentationStyle="fullScreen" id="4Ff-9U-YxF"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -5122,11 +5122,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JuQ-cn-Oe6"/>
-        <segue reference="kG6-Yd-sgd"/>
+        <segue reference="aH8-z3-K19"/>
+        <segue reference="e7g-4c-TYE"/>
         <segue reference="G3o-8f-hNQ"/>
         <segue reference="xxi-BF-xh0"/>
-        <segue reference="Fh3-ic-isD"/>
+        <segue reference="TXZ-2h-x2L"/>
         <segue reference="qOv-J8-amk"/>
         <segue reference="dIG-hD-gkI"/>
     </inferredMetricsTieBreakers>
