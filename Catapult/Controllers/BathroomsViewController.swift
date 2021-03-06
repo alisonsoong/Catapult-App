@@ -14,6 +14,7 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
     let defaults = UserDefaults.standard
     let categoryKey = "photoCategory"
     let bathroomPhotosKey = "bathroomPhotoPaths"
+    let tbdKey = "toBeDisplayedKey"
     
     var photoList = [String]()
     
@@ -197,6 +198,13 @@ extension BathroomsViewController:  ImageTableViewCellDelegate {
         if (row >= 0) {
             let indexPath = IndexPath(item: row, section: 0)
             let image = loadImageFromDocumentDirectory(nameOfImage: self.photoList[indexPath.row])
+            
+            self.defaults.set(self.photoList[indexPath.row], forKey: self.tbdKey)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ViewPhoto")
+            
+            self.present(vc, animated: true)
         
             // bring up another screen
             
