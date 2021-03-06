@@ -4179,7 +4179,7 @@
         <!--Exterior Category-->
         <scene sceneID="wOv-Ng-MKC">
             <objects>
-                <viewController storyboardIdentifier="Exterior" title="Exterior Category" id="SEi-jF-e2l" customClass="BathroomsViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Exterior" title="Exterior Category" id="SEi-jF-e2l" customClass="ExteriorViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hBZ-fe-mjO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4289,6 +4289,7 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="AddPhotosPressed:" destination="SEi-jF-e2l" eventType="touchUpInside" id="Sc8-Qq-UiP"/>
+                                                                            <segue destination="XPb-An-b2X" kind="presentation" modalPresentationStyle="fullScreen" id="E7D-IE-Tik"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgd-qF-NWe">
@@ -4329,6 +4330,7 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="takePictureButtonPressed:" destination="SEi-jF-e2l" eventType="touchUpInside" id="c10-GI-JdH"/>
+                                                                            <segue destination="Vp7-N0-4e5" kind="presentation" modalPresentationStyle="fullScreen" id="JM1-gB-8Yd"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLo-NV-aHT">
@@ -5122,11 +5124,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aH8-z3-K19"/>
-        <segue reference="e7g-4c-TYE"/>
+        <segue reference="E7D-IE-Tik"/>
+        <segue reference="JM1-gB-8Yd"/>
         <segue reference="G3o-8f-hNQ"/>
         <segue reference="xxi-BF-xh0"/>
-        <segue reference="TXZ-2h-x2L"/>
+        <segue reference="4UD-a9-7Pg"/>
         <segue reference="qOv-J8-amk"/>
         <segue reference="dIG-hD-gkI"/>
     </inferredMetricsTieBreakers>

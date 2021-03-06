@@ -24,6 +24,7 @@
 		F1084E0E25996014009AD713 /* ExamplePhotoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */; };
 		F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E1225996024009AD713 /* CompleteViewController.swift */; };
 		F10BDFAA25F43D8700231D3D /* LivingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10BDFA925F43D8700231D3D /* LivingViewController.swift */; };
+		F10BDFAF25F444D100231D3D /* ExteriorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10BDFAE25F444D100231D3D /* ExteriorViewController.swift */; };
 		F11BFB00259FEEBF00FFBEA6 /* customTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */; };
 		F14EB79A25CF68A2008217FD /* Step1DoneSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EB79925CF68A2008217FD /* Step1DoneSegue.swift */; };
 		F15B078525A3801200B023B6 /* CategoriesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */; };
@@ -89,6 +90,7 @@
 		F1084E0D25996014009AD713 /* ExamplePhotoCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePhotoCategoryViewController.swift; sourceTree = "<group>"; };
 		F1084E1225996024009AD713 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		F10BDFA925F43D8700231D3D /* LivingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingViewController.swift; sourceTree = "<group>"; };
+		F10BDFAE25F444D100231D3D /* ExteriorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorViewController.swift; sourceTree = "<group>"; };
 		F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTextFieldController.swift; sourceTree = "<group>"; };
 		F14EB79925CF68A2008217FD /* Step1DoneSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1DoneSegue.swift; sourceTree = "<group>"; };
 		F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesNavigationController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				F1084E1225996024009AD713 /* CompleteViewController.swift */,
 				F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */,
 				F10BDFA925F43D8700231D3D /* LivingViewController.swift */,
+				F10BDFAE25F444D100231D3D /* ExteriorViewController.swift */,
 				F191874E259D3B91002A255F /* customTabBarController.swift */,
 				F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */,
 				F1956DB425A1AC110051B817 /* ViewPhotoViewController.swift */,
@@ -421,6 +424,7 @@
 				F10BDFAA25F43D8700231D3D /* LivingViewController.swift in Sources */,
 				F1084E0125995FE3009AD713 /* SettingsViewController.swift in Sources */,
 				F15B079725A3849F00B023B6 /* AboutViewController.swift in Sources */,
+				F10BDFAF25F444D100231D3D /* ExteriorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
