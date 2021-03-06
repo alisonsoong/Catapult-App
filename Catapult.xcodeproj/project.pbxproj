@@ -25,6 +25,7 @@
 		F1084E1325996024009AD713 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1084E1225996024009AD713 /* CompleteViewController.swift */; };
 		F10BDFAA25F43D8700231D3D /* LivingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10BDFA925F43D8700231D3D /* LivingViewController.swift */; };
 		F10BDFAF25F444D100231D3D /* ExteriorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10BDFAE25F444D100231D3D /* ExteriorViewController.swift */; };
+		F10BDFB425F4467600231D3D /* KitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10BDFB325F4467600231D3D /* KitchenViewController.swift */; };
 		F11BFB00259FEEBF00FFBEA6 /* customTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */; };
 		F14EB79A25CF68A2008217FD /* Step1DoneSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EB79925CF68A2008217FD /* Step1DoneSegue.swift */; };
 		F15B078525A3801200B023B6 /* CategoriesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */; };
@@ -91,6 +92,7 @@
 		F1084E1225996024009AD713 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		F10BDFA925F43D8700231D3D /* LivingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingViewController.swift; sourceTree = "<group>"; };
 		F10BDFAE25F444D100231D3D /* ExteriorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorViewController.swift; sourceTree = "<group>"; };
+		F10BDFB325F4467600231D3D /* KitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenViewController.swift; sourceTree = "<group>"; };
 		F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTextFieldController.swift; sourceTree = "<group>"; };
 		F14EB79925CF68A2008217FD /* Step1DoneSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1DoneSegue.swift; sourceTree = "<group>"; };
 		F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesNavigationController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				F1084E1225996024009AD713 /* CompleteViewController.swift */,
 				F1CF521D259AB7C0001753EF /* BathroomsViewController.swift */,
 				F10BDFA925F43D8700231D3D /* LivingViewController.swift */,
+				F10BDFB325F4467600231D3D /* KitchenViewController.swift */,
 				F10BDFAE25F444D100231D3D /* ExteriorViewController.swift */,
 				F191874E259D3B91002A255F /* customTabBarController.swift */,
 				F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */,
@@ -411,6 +414,7 @@
 				F1084DFC25995FD7009AD713 /* AddressViewController.swift in Sources */,
 				F14EB79A25CF68A2008217FD /* Step1DoneSegue.swift in Sources */,
 				F191876B259FCE42002A255F /* DropDownTextField.swift in Sources */,
+				F10BDFB425F4467600231D3D /* KitchenViewController.swift in Sources */,
 				F1956DB525A1AC110051B817 /* ViewPhotoViewController.swift in Sources */,
 				F1084DB42595C7F7009AD713 /* Catapult.xcdatamodeld in Sources */,
 				F1918761259FCDAD002A255F /* DropDownCell.swift in Sources */,
