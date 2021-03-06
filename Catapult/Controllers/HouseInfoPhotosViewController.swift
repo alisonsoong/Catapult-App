@@ -47,13 +47,31 @@ class HouseInfoPhotosViewController: UIViewController {
     
     // photos
     let bathroomPhotosKey = "bathroomPhotoPaths"
+    let livingPhotosKey = "livingPhotosPaths"
+    let exteriorPhotosKey = "exteriorPhotosPaths"
+    let kitchenPhotosKey = "kitchenPhotosPath"
+    let bedroomPhotosKey = "bedroomPhotosPath"
+    let otherPhotosKey = "otherPhotosPath"
+    
     
     @IBOutlet weak var FinishButton: UIButton!
     @IBOutlet weak var BathroomButton: UIButton!
+    @IBOutlet weak var LivingButton: UIButton!
+    @IBOutlet weak var KitchenButton: UIButton!
+    @IBOutlet weak var BedroomButton: UIButton!
+    @IBOutlet weak var OtherButton: UIButton!
+    @IBOutlet weak var ExteriorButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         FinishButton.layer.cornerRadius = FinishButton.frame.size.height / 5
+        ExteriorButton.layer.cornerRadius = BathroomButton.frame.size.height / 5
+        KitchenButton.layer.cornerRadius = BathroomButton.frame.size.height / 5
+        LivingButton.layer.cornerRadius = BathroomButton.frame.size.height / 5
         BathroomButton.layer.cornerRadius = BathroomButton.frame.size.height / 5
+        BedroomButton.layer.cornerRadius = BathroomButton.frame.size.height / 5
+        OtherButton.layer.cornerRadius = BathroomButton.frame.size.height / 5
+        
         self.tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -170,7 +188,24 @@ Pictures:
         }
         
         
-        let arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+        var arr = [String]()
+        
+    
+        // add exteriorPhotosKey photos
+        arr = self.defaults.object(forKey: self.exteriorPhotosKey) as! [String]
+        
+        for x in arr {
+            print(x)
+            let filePath = "\(dirPath)/\(x).png"
+            let fileAttachment = Attachment(filePath: filePath)
+            
+            if (fileManager.fileExists(atPath: filePath) && tryFile(x)) {
+                arrAttachments.append(fileAttachment)
+            }
+        }
+        
+        // add livingPhotosKey photos
+        arr = self.defaults.object(forKey: self.livingPhotosKey) as! [String]
         
         for x in arr {
             print(x)
@@ -183,7 +218,57 @@ Pictures:
         }
         
         
+        // add kitchenPhotosKey photos
+        arr = self.defaults.object(forKey: self.kitchenPhotosKey) as! [String]
         
+        for x in arr {
+            print(x)
+            let filePath = "\(dirPath)/\(x).png"
+            let fileAttachment = Attachment(filePath: filePath)
+            
+            if (fileManager.fileExists(atPath: filePath) && tryFile(x)) {
+                arrAttachments.append(fileAttachment)
+            }
+        }
+        
+        // add bedroomPhotosKey photos
+        arr = self.defaults.object(forKey: self.bedroomPhotosKey) as! [String]
+        
+        for x in arr {
+            print(x)
+            let filePath = "\(dirPath)/\(x).png"
+            let fileAttachment = Attachment(filePath: filePath)
+            
+            if (fileManager.fileExists(atPath: filePath) && tryFile(x)) {
+                arrAttachments.append(fileAttachment)
+            }
+        }
+        
+        // add bathroomPhotosKey photos
+        arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+        
+        for x in arr {
+            print(x)
+            let filePath = "\(dirPath)/\(x).png"
+            let fileAttachment = Attachment(filePath: filePath)
+            
+            if (fileManager.fileExists(atPath: filePath) && tryFile(x)) {
+                arrAttachments.append(fileAttachment)
+            }
+        }
+        
+        // add otherPhotosKey photos
+        arr = self.defaults.object(forKey: self.otherPhotosKey) as! [String]
+        
+        for x in arr {
+            print(x)
+            let filePath = "\(dirPath)/\(x).png"
+            let fileAttachment = Attachment(filePath: filePath)
+            
+            if (fileManager.fileExists(atPath: filePath) && tryFile(x)) {
+                arrAttachments.append(fileAttachment)
+            }
+        }
         
         // real code
 //        let me = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email

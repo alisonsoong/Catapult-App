@@ -24,8 +24,18 @@ class InitialViewController: UIViewController {
     let emailKey = "email"
     let emailDomainKey = "emailDomain"
     let bathroomPhotosKey = "bathroomPhotoPaths"
+    let livingPhotosKey = "livingPhotosPaths"
+    let exteriorPhotosKey = "exteriorPhotosPaths"
+    let kitchenPhotosKey = "kitchenPhotosPath"
+    let bedroomPhotosKey = "bedroomPhotosPath"
+    let otherPhotosKey = "otherPhotosPath"
     
     let bathroomIndexKey = "bathroomHighestIndex"
+    let livingIndexKey = "livingHighestIndex"
+    let exteriorIndexKey = "exteriorHighestIndex"
+    let bedroomIndexKey = "bedroomHighestIndex"
+    let otherIndexKey = "otherHighestIndex"
+    let kitchenIndexKey = "kitchenHighestIndex"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +66,20 @@ class InitialViewController: UIViewController {
         self.defaults.set("asdf", forKey: self.emailKey)
         self.defaults.set("asdf", forKey: self.emailDomainKey)
         self.defaults.set([String](), forKey: self.bathroomPhotosKey)
-        self.defaults.set(0, forKey: bathroomIndexKey)
-       
+        self.defaults.set([String](), forKey: self.livingPhotosKey)
+        self.defaults.set([String](), forKey: self.exteriorPhotosKey)
+        self.defaults.set([String](), forKey: self.kitchenPhotosKey)
+        self.defaults.set([String](), forKey: self.bedroomPhotosKey)
+        self.defaults.set([String](), forKey: self.otherPhotosKey)
+        
+        
+        
+        self.defaults.set(0, forKey: self.bathroomIndexKey)
+        self.defaults.set(0, forKey: self.livingIndexKey)
+        self.defaults.set(0, forKey: self.exteriorIndexKey)
+        self.defaults.set(0, forKey: self.bedroomIndexKey)
+        self.defaults.set(0, forKey: self.kitchenIndexKey)
+        self.defaults.set(0, forKey: self.otherIndexKey)
         
     }
     

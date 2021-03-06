@@ -1254,7 +1254,12 @@
                     <navigationItem key="navigationItem" id="h0q-1w-IOf"/>
                     <connections>
                         <outlet property="BathroomButton" destination="abs-hP-mBD" id="yeP-TV-Glb"/>
+                        <outlet property="BedroomButton" destination="m4g-Dm-7Ts" id="rq8-j5-p9Z"/>
+                        <outlet property="ExteriorButton" destination="Qx4-Z8-jkF" id="PTd-ga-ABi"/>
                         <outlet property="FinishButton" destination="sRq-T5-rh2" id="kFh-Uu-3gE"/>
+                        <outlet property="KitchenButton" destination="Xyv-hm-n2P" id="F5n-A8-qVO"/>
+                        <outlet property="LivingButton" destination="v09-el-wMy" id="euL-yP-4Jb"/>
+                        <outlet property="OtherButton" destination="t1X-H4-9Bb" id="nc8-lP-mmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2l-f9-okJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

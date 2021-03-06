@@ -22,6 +22,11 @@ class SettingsViewController: UIViewController {
     let emailKey = "email"
     let emailDomainKey = "emailDomain"
     let bathroomPhotosKey = "bathroomPhotoPaths"
+    let livingPhotosKey = "livingPhotosPaths"
+    let exteriorPhotosKey = "exteriorPhotosPaths"
+    let kitchenPhotosKey = "kitchenPhotosPath"
+    let bedroomPhotosKey = "bedroomPhotosPath"
+    let otherPhotosKey = "otherPhotosPath"
     
 
     override func viewDidLoad() {
@@ -127,14 +132,14 @@ class SettingsViewController: UIViewController {
         }
         
         
-        var photoList = [String]()
-        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
-            photoList = [String]()
-            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
-        } else {
-            photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
-            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
-        }
+//        var photoList = [String]()
+//        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+//            photoList = [String]()
+//            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+//        } else {
+//            photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+//            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+//        }
 //        print(photoList)
 //        for x in photoList{
 //            removeImage(itemName: x, fileExtension: "png")
