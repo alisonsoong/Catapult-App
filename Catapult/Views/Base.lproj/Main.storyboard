@@ -1939,7 +1939,7 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="AddPhotosPressed:" destination="ijx-HH-vJ0" eventType="touchUpInside" id="1QE-eu-hcw"/>
-                                                                            <segue destination="XPb-An-b2X" kind="presentation" modalPresentationStyle="fullScreen" id="aH8-z3-K19"/>
+                                                                            <segue destination="Vp7-N0-4e5" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="qCX-dE-mqZ"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wke-CH-Ie2">
@@ -1980,7 +1980,6 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="takePictureButtonPressed:" destination="ijx-HH-vJ0" eventType="touchUpInside" id="vDO-eJ-dgk"/>
-                                                                            <segue destination="Vp7-N0-4e5" kind="presentation" modalPresentationStyle="fullScreen" id="e7g-4c-TYE"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvN-GX-3Mo">
@@ -2005,7 +2004,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-pP-S9o">
                                                         <rect key="frame" x="0.0" y="427" width="374" height="772"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-Vp-4Mv">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-Vp-4Mv">
                                                                 <rect key="frame" x="20" y="0.0" width="334" height="772"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uploaded Photos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wK-5Z-KWy">
@@ -2015,7 +2014,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OAP-52-Aw6">
-                                                                        <rect key="frame" x="0.0" y="27.5" width="334" height="744.5"/>
+                                                                        <rect key="frame" x="0.0" y="37.5" width="334" height="734.5"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <prototypes>
                                                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageTableViewCell" rowHeight="185" id="9Qq-Yq-E1e" customClass="ImageTableViewCell" customModule="Catapult" customModuleProvider="target">
@@ -3163,7 +3162,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aH8-z3-K19"/>
         <segue reference="1A1-Mj-1ti"/>
         <segue reference="G3o-8f-hNQ"/>
         <segue reference="xxi-BF-xh0"/>

@@ -8,15 +8,7 @@
 import UIKit
 import CoreData
 
-class GetPhotoViewController: UIViewController, RefreshDataDelegate {
-    
-    func refreshData() {
-        var viewDelegate: RefreshDataDelegate?
-        viewDelegate!.refreshData()
-    }
-    
-    
-    
+class GetPhotoViewController: UIViewController {
 
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var stack: UIStackView!
@@ -77,7 +69,6 @@ class GetPhotoViewController: UIViewController, RefreshDataDelegate {
         }
         
         
-        
     }
   
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
@@ -93,7 +84,6 @@ class GetPhotoViewController: UIViewController, RefreshDataDelegate {
         print("TEST 1")
         
         saveImageToDocumentDirectory(image: curImage)
-        
         
         // check
         print("CHECK")
@@ -132,23 +122,10 @@ class GetPhotoViewController: UIViewController, RefreshDataDelegate {
 
         print(arr)
         
-        
-        
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileName = selectedImageTag // name of the image to be saved
         let fileURL = documentsDirectory.appendingPathComponent(fileName)
         print(fileURL)
-//        if let data = curImage.jpegData(compressionQuality: 1.0), createFile(atPath: fileURL.path, contents: data) {
-//            do {
-//                try data.write(to: fileURL)
-//                print("file saved")
-//
-//            } catch {
-//                print("error saving file:", error)
-//            }
-//            print("Done")
-//        }
-        
         
         guard let data = image.jpegData(compressionQuality: 1) ?? image.pngData() else {
             return false
@@ -167,23 +144,7 @@ class GetPhotoViewController: UIViewController, RefreshDataDelegate {
         if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
             print(allItems)
         }
-        
-//        if let data = curImage.jpegData(compressionQuality: 1.0),!FileManager.default.fileExists(atPath: fileURL.path){
-//            print("OK")
-//            do {
-//                try data.write(to: fileURL)
-//                print("file saved")
-//
-//            } catch {
-//                print("error saving file:", error)
-//            }
-//        } else if let data = curImage.jpegData(compressionQuality: 1.0) {
-//            print("s1")
-//        } else if !FileManager.default.fileExists(atPath: fileURL.path) {
-//            print("s2")
-//        } else {
-//            print("fails")
-//        }
+
         print("DONE")
         return true
     }
@@ -198,15 +159,6 @@ class GetPhotoViewController: UIViewController, RefreshDataDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(false)
@@ -237,7 +189,6 @@ extension GetPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
         
     }
     
-    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (self.defaults.string(forKey: self.categoryKey) == "bathroom"){
             if (identifier == "fromGetToBathroom"){
@@ -253,15 +204,4 @@ extension GetPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
     }
     
     
-}
-
-
-protocol RefreshDataDelegate {
-    func refreshData()
-}
-
-extension BathroomsViewController: RefreshDataDelegate {
-    func refreshData() {
-        photoTableView.reloadData()
-    }
 }

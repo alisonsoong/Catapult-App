@@ -16,6 +16,13 @@ class TakePhotoViewController: UIViewController {
     @IBOutlet weak var Background: UIView!
     @IBOutlet weak var InitialTakePhoto: UIView!
     
+    let defaults = UserDefaults.standard
+    let categoryKey = "photoCategory"
+    let bathroomPhotosKey = "bathroomPhotoPaths"
+    // etc, TODO: make the keys
+    
+    var curImage = UIImage()
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         UsePhotoStack.isHidden = true
@@ -59,18 +66,12 @@ class TakePhotoViewController: UIViewController {
         
         UIImageWriteToSavedPhotosAlbum(orientationFixedImage!, nil, nil, nil)
                 
-        let alert = UIAlertController(title: "Saved", message: "Your image has been added and saved", preferredStyle: .alert)
-
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        
-        // save photo
-        
-        alert.addAction(okAction)
-        
-        self.present(alert, animated: true, completion: nil)
         
         // add photo
-        
+        curImage = orientationFixedImage ?? UIImage()
+        saveImageToDocumentDirectory(image: curImage)
+
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         
         
         // leave
@@ -79,6 +80,58 @@ class TakePhotoViewController: UIViewController {
         
         
         
+    }
+    
+    // saves image to document directory
+    func saveImageToDocumentDirectory(image: UIImage ) -> Bool {
+        
+        var arr = [String]()
+        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+            arr = [String]()
+            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+        } else {
+            arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+        }
+        print("TEST 2")
+        let size = Int(arr.count)
+        let newIndex = size + 1
+        var selectedImageTag = ""
+        if (self.defaults.string(forKey: self.categoryKey) == "bathroom"){
+            selectedImageTag = "Bathroom"
+        }
+        selectedImageTag += String(newIndex)
+        print("TEST 3: \(selectedImageTag)")
+        arr.append(selectedImageTag)
+        
+        self.defaults.set(arr, forKey: self.bathroomPhotosKey)
+
+        print(arr)
+        
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileName = selectedImageTag // name of the image to be saved
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        print(fileURL)
+        
+        guard let data = image.jpegData(compressionQuality: 1) ?? image.pngData() else {
+            return false
+        }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+            return false
+        }
+        do {
+            try data.write(to: directory.appendingPathComponent("\(selectedImageTag).png")!)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectory = paths[0]
+        if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
+            print(allItems)
+        }
+
+        print("DONE")
+        return true
     }
     
 
