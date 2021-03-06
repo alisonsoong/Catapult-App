@@ -8,7 +8,15 @@
 import UIKit
 import CoreData
 
-class GetPhotoViewController: UIViewController {
+class GetPhotoViewController: UIViewController, RefreshDataDelegate {
+    
+    func refreshData() {
+        var viewDelegate: RefreshDataDelegate?
+        viewDelegate!.refreshData()
+    }
+    
+    
+    
 
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var stack: UIStackView!
@@ -19,7 +27,6 @@ class GetPhotoViewController: UIViewController {
     let defaults = UserDefaults.standard
     let categoryKey = "photoCategory"
     let bathroomPhotosKey = "bathroomPhotoPaths"
-    let bathroomFolderKey = "bathroomFolder"
     // etc, TODO: make the keys
     
     var curImage = UIImage()
@@ -45,6 +52,7 @@ class GetPhotoViewController: UIViewController {
             self.background.isHidden = false
             self.reselectButton.isHidden = false
         }
+        
 
         
     }
@@ -69,6 +77,7 @@ class GetPhotoViewController: UIViewController {
         }
         
         
+        
     }
   
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
@@ -81,75 +90,58 @@ class GetPhotoViewController: UIViewController {
     }
     
     @IBAction func usePhoto(_ sender: UIButton) {
+        print("TEST 1")
         
-        if (self.defaults.string(forKey: self.categoryKey) == "bathroom"){
-            
-            
-            var arr: [URL] = []
-            arr = self.defaults.object(forKey: self.bathroomPhotosKey) as? [URL] ?? []
-            
-            
-            let size = Int(arr.count)
-            let newIndex = size + 1
-            var selectedImageTag = "Bathroom"
-            selectedImageTag += String(newIndex)
-            
-   
-            for val in arr {
-                print("---\(val)")
-            }
-            print("SELECTED IMAGE TAG \(selectedImageTag)")
-            
-            // get access to shared instance of the file manager
-            let fileManager = FileManager.default
-            
-            // Get the URL for the users home directory
-            let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-            
-            // Get the document URL as a string
-            let documentPath = documentsURL.path
-            
-            // Create filePath URL by appending final path component (name of image)
-            let filePath = documentsURL.appendingPathComponent("\(String(selectedImageTag)).png")
-            
-            do {
-                let files = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
-                
-                for file in files {
-                    if "\(documentPath)/\(file)" == filePath.path {
-                        try fileManager.removeItem(atPath: filePath.path)
-                    }
-                }
-            } catch {
-                print("Could not add image from document directory: \(error)")
-            }
-            
-            
-            print("FILE PATH \(filePath)")
-            do {
-                
-                if let pngImageData = curImage.pngData(){
-                    print("YES")
-                    try pngImageData.write(to: filePath, options: .atomic)
-                    arr.append(filePath)
-                    
-                    self.defaults.set(arr, forKey: self.bathroomPhotosKey)
-                }
-            } catch {
-                print("Couldn't write image")
-            }
-            
-            print("NUMBER OF ITEMS \(arr.count)")
-            
+        saveImageToDocumentDirectory(image: curImage)
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectory = paths[0]
+        if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
+            print(allItems)
         }
         
-        
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         self.dismiss(animated: true, completion: nil)
     }
     
     
-    
+    // saves image to document directory
+    func saveImageToDocumentDirectory(image: UIImage ) {
+        
+        var arr = [String]()
+        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+            arr = [String]()
+            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+        } else {
+            arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+        }
+        print("TEST 2")
+        let size = Int(arr.count)
+        let newIndex = size + 1
+        var selectedImageTag = ""
+        if (self.defaults.string(forKey: self.categoryKey) == "bathroom"){
+            selectedImageTag = "Bathroom"
+        }
+        selectedImageTag += String(newIndex)
+        print("TEST 3")
+        arr.append(selectedImageTag)
+        self.defaults.set(arr, forKey: self.bathroomPhotosKey)
+        
+        print(arr)
+        
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileName = "\(selectedImageTag).png" // name of the image to be saved
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        if let data = image.jpegData(compressionQuality: 1.0),!FileManager.default.fileExists(atPath: fileURL.path){
+            do {
+                try data.write(to: fileURL)
+                print("file saved")
+
+            } catch {
+                print("error saving file:", error)
+            }
+        }
+    }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -164,6 +156,12 @@ class GetPhotoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
+        ModalTransitionMediator.instance.sendPopoverDismissed(modelChanged: true)
+    }
 
 }
 
@@ -189,4 +187,15 @@ extension GetPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
     }
     
     
+}
+
+
+protocol RefreshDataDelegate {
+    func refreshData()
+}
+
+extension BathroomsViewController: RefreshDataDelegate {
+    func refreshData() {
+        photoTableView.reloadData()
+    }
 }

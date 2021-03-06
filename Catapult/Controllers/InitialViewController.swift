@@ -23,6 +23,7 @@ class InitialViewController: UIViewController {
     let phoneKey = "phone"
     let emailKey = "email"
     let emailDomainKey = "emailDomain"
+    let bathroomPhotosKey = "bathroomPhotoPaths"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,7 @@ class InitialViewController: UIViewController {
         self.defaults.set(nil, forKey: self.phoneKey)
         self.defaults.set("", forKey: self.emailKey)
         self.defaults.set("", forKey: self.emailDomainKey)
+        self.defaults.set([String](), forKey: self.bathroomPhotosKey)
        
         
     }

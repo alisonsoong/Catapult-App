@@ -8,17 +8,14 @@
 import UIKit
 import CoreData
 
-class BathroomsViewController: UIViewController, UITableViewDataSource, UINavigationControllerDelegate, UITableViewDelegate {
-    
+class BathroomsViewController: UIViewController, UITableViewDataSource, UINavigationControllerDelegate, UITableViewDelegate, ModalTransitionListener {
     
 
     let defaults = UserDefaults.standard
     let categoryKey = "photoCategory"
     let bathroomPhotosKey = "bathroomPhotoPaths"
-    let bathroomFolderKey = "bathroomFolder"
     
-    
-    let photosTesting = ["img001"]
+    var photoList = [String]()
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -42,10 +39,44 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
         // Do any additional setup after loading the view.
         self.defaults.set("bathroom", forKey: self.categoryKey)
         
+        
         photoTableView.dataSource = self
         photoTableView.delegate = self
+        
+        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+            self.photoList = [String]()
+            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+        } else {
+            self.photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+        
+            
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
+
+        ModalTransitionMediator.instance.setListener(listener: self)
+        photoTableView.reloadData()
 
 
+    }
+    
+    @objc func loadList(notification: NSNotification){
+        //load data here
+        self.photoTableView.reloadData()
+    }
+    
+    func popoverDismissed() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async { self.photoTableView.reloadData() }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        photoTableView.dataSource = self
+        photoTableView.delegate = self
+        photoTableView.reloadData()
+        
     }
     
 //    let sections = [1, 1]
@@ -72,7 +103,6 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
 //
 //    }
     
-    
  
     @IBAction func backButtonPressed(_ sender: UIButton) {
         
@@ -85,13 +115,14 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
     }
     
     @IBAction func AddPhotosPressed(_ sender: UIButton) {
+        
     }
     
     @IBAction func TakePhotosPressed(_ sender: UIButton) {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return photosTesting.count
+        return photoList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,7 +133,7 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
       // Create an object of the dynamic cell "PlainCell"
       let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
       // Depending on the section, fill the textLabel with the relevant text
-        cell.cellImageView.image = loadImageFromDocumentDirectory(nameOfImage : "img001")
+        cell.cellImageView.image = loadImageFromDocumentDirectory(nameOfImage: self.photoList[indexPath.item])
         
       // Return the configured cell
       return cell
@@ -133,7 +164,7 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
             let image    = UIImage(contentsOfFile: imageURL.path)
             print(imageURL.path)
             if (image == nil){
-                removeImage(itemName: "image001", fileExtension: "png")
+                removeImage(itemName: nameOfImage, fileExtension: "png")
             } else {
                 return image!
             }
@@ -170,3 +201,34 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
     */
 
 }
+
+protocol ModalTransitionListener {
+    func popoverDismissed()
+}
+
+class ModalTransitionMediator {
+    /* Singleton */
+    class var instance: ModalTransitionMediator {
+        struct Static {
+            static let instance: ModalTransitionMediator = ModalTransitionMediator()
+        }
+        return Static.instance
+    }
+
+    private var listener: ModalTransitionListener?
+
+    private init() {
+
+    }
+
+    func setListener(listener: ModalTransitionListener) {
+        self.listener = listener
+    }
+
+    func sendPopoverDismissed(modelChanged: Bool) {
+        listener?.popoverDismissed()
+    }
+}
+
+
+
