@@ -1,29 +1,32 @@
 //
-//  BathroomsViewController.swift
+//  LivingViewController.swift
 //  Catapult
 //
-//  Created by Alison Soong on 12/28/20.
+//  Created by Alison Soong on 3/6/20.
 //
 
 import UIKit
 import CoreData
 
-class BathroomsViewController: UIViewController, UITableViewDataSource, UINavigationControllerDelegate, UITableViewDelegate {
+class LivingViewController: UIViewController, UITableViewDataSource, UINavigationControllerDelegate, UITableViewDelegate {
     
 
     let defaults = UserDefaults.standard
     let categoryKey = "photoCategory"
-    let bathroomPhotosKey = "bathroomPhotoPaths"
+    let livingPhotosKey = "livingPhotosPaths"
     let tbdKey = "toBeDisplayedKey"
     
     var photoList = [String]()
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    
     @IBOutlet weak var AddPhotosButton: UIButton!
     @IBOutlet weak var TakePhotosButton: UIButton!
     @IBOutlet weak var photoTableView: UITableView!
-  
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -31,17 +34,17 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
         AddPhotosButton.layer.cornerRadius = AddPhotosButton.frame.size.height / 5
         TakePhotosButton.layer.cornerRadius = TakePhotosButton.frame.size.height / 5
         // Do any additional setup after loading the view.
-        self.defaults.set("bathroom", forKey: self.categoryKey)
+        self.defaults.set("living", forKey: self.categoryKey)
         
         
         self.photoTableView.dataSource = self
         self.photoTableView.delegate = self
         
-        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+        if (self.defaults.object(forKey: self.livingPhotosKey) == nil){
             self.photoList = [String]()
-            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+            self.defaults.set([String](), forKey: self.livingPhotosKey)
         } else {
-            self.photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+            self.photoList = self.defaults.object(forKey: self.livingPhotosKey) as! [String]
         
             
         }
@@ -68,11 +71,11 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+        if (self.defaults.object(forKey: self.livingPhotosKey) == nil){
             self.photoList = [String]()
-            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+            self.defaults.set([String](), forKey: self.livingPhotosKey)
         } else {
-            self.photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+            self.photoList = self.defaults.object(forKey: self.livingPhotosKey) as! [String]
         
         }
         
@@ -96,7 +99,7 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
     }
     @IBAction func takePictureButtonPressed(_ sender: UIButton) {
         
-        self.defaults.set("bathroom", forKey: self.categoryKey)
+        self.defaults.set("living", forKey: self.categoryKey)
 
     }
     
@@ -180,7 +183,7 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
 
 }
 
-extension BathroomsViewController:  ImageTableViewCellDelegate {
+extension LivingViewController:  ImageTableViewCellDelegate {
     
     func viewButtonPressed(with row: Int) {
         if (row >= 0) {
@@ -211,9 +214,9 @@ extension BathroomsViewController:  ImageTableViewCellDelegate {
             
             removeImage(itemName: photoList[row], fileExtension: "png")
             
-            self.photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+            self.photoList = self.defaults.object(forKey: self.livingPhotosKey) as! [String]
             photoList.remove(at: row)
-            self.defaults.set(photoList, forKey: self.bathroomPhotosKey)
+            self.defaults.set(photoList, forKey: self.livingPhotosKey)
             
             // check what is in the directory before deleting
             let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)

@@ -3749,7 +3749,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="usePhoto:" destination="XPb-An-b2X" eventType="touchUpInside" id="Lne-go-u58"/>
-                                                            <segue destination="ijx-HH-vJ0" kind="presentation" identifier="fromGetToBathroom" animates="NO" modalPresentationStyle="fullScreen" id="1A1-Mj-1ti"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -4808,7 +4807,7 @@
         <!--Living Areas Category-->
         <scene sceneID="DXJ-To-Eph">
             <objects>
-                <viewController storyboardIdentifier="LivingAreas" title="Living Areas Category" id="s7Y-rh-YJH" customClass="BathroomsViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LivingAreas" title="Living Areas Category" id="s7Y-rh-YJH" customClass="LivingViewController" customModule="Catapult" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A29-gt-TB6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4918,6 +4917,7 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="AddPhotosPressed:" destination="s7Y-rh-YJH" eventType="touchUpInside" id="foJ-rW-WGJ"/>
+                                                                            <segue destination="XPb-An-b2X" kind="presentation" modalPresentationStyle="fullScreen" id="JuQ-cn-Oe6"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PA-bD-Wam">
@@ -4958,6 +4958,7 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="takePictureButtonPressed:" destination="s7Y-rh-YJH" eventType="touchUpInside" id="UPO-vO-eOd"/>
+                                                                            <segue destination="Vp7-N0-4e5" kind="presentation" modalPresentationStyle="fullScreen" id="kG6-Yd-sgd"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjg-g5-gZ3">
@@ -5121,10 +5122,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tjl-I7-tRu"/>
+        <segue reference="JuQ-cn-Oe6"/>
+        <segue reference="kG6-Yd-sgd"/>
         <segue reference="G3o-8f-hNQ"/>
         <segue reference="xxi-BF-xh0"/>
-        <segue reference="qK2-Qd-MaD"/>
+        <segue reference="Fh3-ic-isD"/>
         <segue reference="qOv-J8-amk"/>
         <segue reference="dIG-hD-gkI"/>
     </inferredMetricsTieBreakers>

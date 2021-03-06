@@ -106,6 +106,11 @@ class HouseInfoPhotosViewController: UIViewController {
             
         }
         
+        if (self.defaults.string(forKey: self.categoryKey) == "exterior") {
+            self.performSegue(withIdentifier: "toExterior", sender: self)
+            
+        }
+        
     }
 
     
