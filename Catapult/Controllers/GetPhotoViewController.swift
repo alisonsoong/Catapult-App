@@ -239,12 +239,14 @@ extension GetPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
     
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if (identifier == "step2done"){
-            if (true){
-
+        if (self.defaults.string(forKey: self.categoryKey) == "bathroom"){
+            if (identifier == "fromGetToBathroom"){
+                return true
+            } else {
                 return false
             }
         }
+        
         
         // set lastSeenScreen to photos
         return true

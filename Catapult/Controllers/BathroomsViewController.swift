@@ -25,6 +25,8 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
 
     @IBOutlet weak var photoTableView: UITableView!
     
+//    let myRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +44,8 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
         
         photoTableView.dataSource = self
         photoTableView.delegate = self
+//        myRefreshControl.addTarget(self, action:#selector(BathroomsViewController.handleRefresh), for: .valueChanged)
+//        photoTableView.refreshControl = myRefreshControl
         
         if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
             self.photoList = [String]()
@@ -59,6 +63,13 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
 
 
     }
+//
+//    @objc func handleRefresh(){
+//        self.photoTableView.reloadData()
+//        self.myRefreshControl.endRefreshing()
+//    }
+//
+    
     
     @objc func loadList(notification: NSNotification){
         //load data here
@@ -75,10 +86,27 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+            self.photoList = [String]()
+            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+        } else {
+            self.photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+        
+        }
+        
+        photoTableView.dataSource = self
+        photoTableView.delegate = self
+        
+        photoTableView.reloadData()
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         photoTableView.dataSource = self
         photoTableView.delegate = self
         photoTableView.reloadData()
-        
     }
     
 //    let sections = [1, 1]
@@ -132,6 +160,8 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
         return photoList.count
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       // Create an object of the dynamic cell "PlainCell"
     
@@ -140,6 +170,7 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
         print(indexPath.row)
         print("PUT \(self.photoList[indexPath.row]) into place")
         cell.cellImageView.image = loadImageFromDocumentDirectory(nameOfImage: self.photoList[indexPath.row])
+        
         
         
         // Return the configured cell
