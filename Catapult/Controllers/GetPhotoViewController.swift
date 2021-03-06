@@ -19,6 +19,7 @@ class GetPhotoViewController: UIViewController {
     let defaults = UserDefaults.standard
     let categoryKey = "photoCategory"
     let bathroomPhotosKey = "bathroomPhotoPaths"
+    let bathroomIndexKey = "bathroomHighestIndex"
     // etc, TODO: make the keys
     
     var curImage = UIImage()
@@ -109,12 +110,13 @@ class GetPhotoViewController: UIViewController {
             arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
         }
         print("TEST 2")
-        let size = Int(arr.count)
-        let newIndex = size + 1
+        let newIndex = self.defaults.integer(forKey: self.bathroomIndexKey) + 1
+        self.defaults.setValue(newIndex, forKey: bathroomIndexKey)
         var selectedImageTag = ""
         if (self.defaults.string(forKey: self.categoryKey) == "bathroom"){
             selectedImageTag = "Bathroom"
         }
+        
         selectedImageTag += String(newIndex)
         print("TEST 3: \(selectedImageTag)")
         arr.append(selectedImageTag)
@@ -159,12 +161,6 @@ class GetPhotoViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        
-        ModalTransitionMediator.instance.sendPopoverDismissed(modelChanged: true)
-    }
 
 }
 

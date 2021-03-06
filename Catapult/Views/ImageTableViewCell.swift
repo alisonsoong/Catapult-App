@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol ImageTableViewCellDelegate: AnyObject {
+    func deleteButtonPressed(with row: Int)
+    func viewButtonPressed(with row: Int)
+}
+
 class ImageTableViewCell: UITableViewCell {
 
-//    @IBOutlet weak var ViewPhotoButton: UIButton!
-//    @IBOutlet weak var DeletePhotoButton: UIButton!
-//    @IBOutlet weak var TableImageView: UIImageView!
+    var row : Int = -1
+    
+    weak var delegate : ImageTableViewCellDelegate?
     
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var cellViewButton: UIButton!
@@ -28,5 +33,12 @@ class ImageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        self.delegate?.deleteButtonPressed(with: row)
+    }
+    
+    @IBAction func viewButtonPressed(_ sender: UIButton) {
+        self.delegate?.viewButtonPressed(with: row)
+    }
     
 }

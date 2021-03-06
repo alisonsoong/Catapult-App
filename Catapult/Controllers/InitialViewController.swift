@@ -25,6 +25,8 @@ class InitialViewController: UIViewController {
     let emailDomainKey = "emailDomain"
     let bathroomPhotosKey = "bathroomPhotoPaths"
     
+    let bathroomIndexKey = "bathroomHighestIndex"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +56,7 @@ class InitialViewController: UIViewController {
         self.defaults.set("asdf", forKey: self.emailKey)
         self.defaults.set("asdf", forKey: self.emailDomainKey)
         self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+        self.defaults.set(0, forKey: bathroomIndexKey)
        
         
     }

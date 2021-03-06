@@ -1939,7 +1939,7 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="AddPhotosPressed:" destination="ijx-HH-vJ0" eventType="touchUpInside" id="1QE-eu-hcw"/>
-                                                                            <segue destination="Vp7-N0-4e5" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="qCX-dE-mqZ"/>
+                                                                            <segue destination="XPb-An-b2X" kind="presentation" modalPresentationStyle="fullScreen" id="aH8-z3-K19"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wke-CH-Ie2">
@@ -1980,6 +1980,7 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="takePictureButtonPressed:" destination="ijx-HH-vJ0" eventType="touchUpInside" id="vDO-eJ-dgk"/>
+                                                                            <segue destination="Vp7-N0-4e5" kind="presentation" modalPresentationStyle="fullScreen" id="e7g-4c-TYE"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvN-GX-3Mo">
@@ -2004,7 +2005,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-pP-S9o">
                                                         <rect key="frame" x="0.0" y="427" width="374" height="772"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-Vp-4Mv">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-Vp-4Mv">
                                                                 <rect key="frame" x="20" y="0.0" width="334" height="772"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uploaded Photos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wK-5Z-KWy">
@@ -2014,7 +2015,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OAP-52-Aw6">
-                                                                        <rect key="frame" x="0.0" y="37.5" width="334" height="734.5"/>
+                                                                        <rect key="frame" x="0.0" y="27.5" width="334" height="744.5"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <prototypes>
                                                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageTableViewCell" rowHeight="185" id="9Qq-Yq-E1e" customClass="ImageTableViewCell" customModule="Catapult" customModuleProvider="target">
@@ -2043,6 +2044,9 @@
                                                                                                     <state key="normal" title="View Photo">
                                                                                                         <color key="titleColor" name="OfficialWhite"/>
                                                                                                     </state>
+                                                                                                    <connections>
+                                                                                                        <action selector="viewButtonPressed:" destination="9Qq-Yq-E1e" eventType="touchUpInside" id="rkL-sa-wB4"/>
+                                                                                                    </connections>
                                                                                                 </button>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxJ-Xs-CfM">
                                                                                                     <rect key="frame" x="264" y="0.0" width="70" height="25"/>
@@ -2054,6 +2058,9 @@
                                                                                                     <state key="normal" image="trash" catalog="system">
                                                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                                                                     </state>
+                                                                                                    <connections>
+                                                                                                        <action selector="deleteButtonPressed:" destination="9Qq-Yq-E1e" eventType="touchUpInside" id="TLu-F7-PmY"/>
+                                                                                                    </connections>
                                                                                                 </button>
                                                                                             </subviews>
                                                                                         </stackView>
@@ -2133,7 +2140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoq-Mn-tyO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1359.4202898550725" y="3016.7410714285711"/>
+            <point key="canvasLocation" x="-1359" y="3017"/>
         </scene>
         <!--About-->
         <scene sceneID="cfQ-L8-JUg">
@@ -2933,61 +2940,299 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0h-Fa-4Qw">
-                                <rect key="frame" x="0.0" y="348" width="414" height="200"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3mu-PK-Ex7">
+                                <rect key="frame" x="0.0" y="39" width="414" height="818"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IxJ-9N-wTf">
-                                        <rect key="frame" x="50" y="50" width="314" height="100"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cH-cz-4en">
+                                        <rect key="frame" x="20" y="100" width="57" height="578"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivc-Ax-tom">
+                                        <rect key="frame" x="30" y="8" width="38" height="26"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="12"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" name="OfficialDarkGrey"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="XPb-An-b2X" eventType="touchUpInside" id="1Jy-gc-qXv"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mj-4E-goz">
+                                        <rect key="frame" x="0.0" y="697" width="97" height="175"/>
+                                        <color key="backgroundColor" name="OfficialLightGrey"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tNX-Rq-Uz6">
+                                        <rect key="frame" x="20" y="718" width="57" height="80"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VxM-ij-wgx">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="100"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="50u-Ym-MsF">
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="80"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28N-a8-49C">
-                                                        <rect key="frame" x="10" y="20" width="294" height="60"/>
-                                                        <color key="backgroundColor" red="0.63140612839999999" green="0.63523834940000001" blue="0.63922214509999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="kIU-Zf-2bx"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
-                                                        <state key="normal" title="Close">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0w5-XY-lLY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="40"/>
+                                                        <color key="tintColor" name="OfficialDarkGrey"/>
+                                                        <state key="normal">
+                                                            <imageReference key="image" image="photo.on.rectangle.angled" catalog="system" symbolScale="large"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="usePhoto:" destination="XPb-An-b2X" eventType="touchUpInside" id="ZwL-05-D38"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zd8-0F-Y97">
+                                                        <rect key="frame" x="0.0" y="40" width="57" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="PSa-tk-yzB"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="12"/>
+                                                        <state key="normal" title="Use Photo">
+                                                            <color key="titleColor" name="OfficialDarkGrey"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="usePhoto:" destination="XPb-An-b2X" eventType="touchUpInside" id="HmL-zo-TVU"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="28N-a8-49C" secondAttribute="trailing" constant="10" id="Ebv-5Y-ET4"/>
-                                                    <constraint firstItem="28N-a8-49C" firstAttribute="centerY" secondItem="VxM-ij-wgx" secondAttribute="centerY" id="VoS-RL-k9O"/>
-                                                    <constraint firstAttribute="height" constant="100" id="e2S-LY-JU1"/>
-                                                    <constraint firstItem="28N-a8-49C" firstAttribute="leading" secondItem="VxM-ij-wgx" secondAttribute="leading" constant="10" id="guf-vR-k2a"/>
-                                                </constraints>
-                                            </view>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5by-Y5-vl2">
+                                        <rect key="frame" x="-76.5" y="21" width="250" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="KfO-nW-f5Z"/>
+                                            <constraint firstAttribute="height" constant="60" id="u2h-hg-gvB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
+                                        <state key="normal" title="Re-select">
+                                            <color key="titleColor" name="OfficialDarkGrey"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="importImageWith_sender:" destination="XPb-An-b2X" eventType="touchUpInside" id="3cx-9o-EwG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="IxJ-9N-wTf" firstAttribute="top" secondItem="i0h-Fa-4Qw" secondAttribute="top" constant="50" id="Cgk-gY-U66"/>
-                                    <constraint firstItem="IxJ-9N-wTf" firstAttribute="centerX" secondItem="i0h-Fa-4Qw" secondAttribute="centerX" id="RXE-wt-q8n"/>
-                                    <constraint firstAttribute="trailing" secondItem="IxJ-9N-wTf" secondAttribute="trailing" constant="50" id="RfO-gd-mCR"/>
-                                    <constraint firstAttribute="bottom" secondItem="IxJ-9N-wTf" secondAttribute="bottom" constant="50" id="cF2-OY-fda"/>
-                                    <constraint firstItem="IxJ-9N-wTf" firstAttribute="leading" secondItem="i0h-Fa-4Qw" secondAttribute="leading" constant="50" id="dgO-8s-ezO"/>
+                                    <constraint firstAttribute="trailing" secondItem="tNX-Rq-Uz6" secondAttribute="trailing" constant="20" id="0LB-4w-eGK"/>
+                                    <constraint firstItem="tNX-Rq-Uz6" firstAttribute="top" secondItem="0cH-cz-4en" secondAttribute="bottom" constant="40" id="2kb-mi-oVx"/>
+                                    <constraint firstAttribute="trailing" secondItem="0cH-cz-4en" secondAttribute="trailing" constant="20" id="66m-bM-mqT"/>
+                                    <constraint firstItem="5by-Y5-vl2" firstAttribute="top" secondItem="3mu-PK-Ex7" secondAttribute="top" constant="21" id="Bvd-mg-E1l"/>
+                                    <constraint firstItem="5by-Y5-vl2" firstAttribute="centerX" secondItem="3mu-PK-Ex7" secondAttribute="centerX" id="I1N-Kb-tgV"/>
+                                    <constraint firstItem="ivc-Ax-tom" firstAttribute="leading" secondItem="3mu-PK-Ex7" secondAttribute="leading" constant="30" id="Ijt-qd-TTK"/>
+                                    <constraint firstItem="0cH-cz-4en" firstAttribute="leading" secondItem="3mu-PK-Ex7" secondAttribute="leading" constant="20" id="J86-Ss-dQI"/>
+                                    <constraint firstAttribute="bottom" secondItem="tNX-Rq-Uz6" secondAttribute="bottom" constant="20" id="Qfp-29-KpD"/>
+                                    <constraint firstItem="ivc-Ax-tom" firstAttribute="top" secondItem="3mu-PK-Ex7" secondAttribute="top" constant="8" id="ZIj-nU-Rnz"/>
+                                    <constraint firstItem="5mj-4E-goz" firstAttribute="top" secondItem="0cH-cz-4en" secondAttribute="bottom" constant="19" id="csO-6H-HJc"/>
+                                    <constraint firstAttribute="trailing" secondItem="5mj-4E-goz" secondAttribute="trailing" id="fml-D8-SBQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="5mj-4E-goz" secondAttribute="bottom" constant="-54" id="h69-1k-Bj3"/>
+                                    <constraint firstItem="tNX-Rq-Uz6" firstAttribute="leading" secondItem="3mu-PK-Ex7" secondAttribute="leading" constant="20" id="j6U-Ia-j3B"/>
+                                    <constraint firstItem="5mj-4E-goz" firstAttribute="leading" secondItem="3mu-PK-Ex7" secondAttribute="leading" id="nna-3c-KfO"/>
+                                    <constraint firstItem="0cH-cz-4en" firstAttribute="top" secondItem="3mu-PK-Ex7" secondAttribute="top" constant="100" id="wnJ-H3-D8c"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-cC-vk9">
+                                <rect key="frame" x="0.0" y="218" width="414" height="459"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAK-HJ-9Rp">
+                                        <rect key="frame" x="35" y="0.0" width="345" height="459"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="459" id="B8r-IF-Qij"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="12"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapButton" destination="Vp7-N0-4e5" eventType="touchUpInside" id="04h-g0-ueD"/>
+                                            <action selector="importImageWith_sender:" destination="XPb-An-b2X" eventType="touchUpInside" id="xbU-x9-REV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Access Photo Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV9-Lf-Fh3">
+                                        <rect key="frame" x="109.5" y="255" width="195" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="195" id="cER-yN-HAw"/>
+                                            <constraint firstAttribute="height" constant="28" id="emh-g0-xR5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="photo.on.rectangle.angled" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KMy-Df-Rv2">
+                                        <rect key="frame" x="144.5" y="158" width="125" height="89"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="edA-sj-EXk"/>
+                                            <constraint firstAttribute="width" constant="125" id="zOu-hQ-XJU"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="459" id="9Bx-Op-eXX"/>
+                                    <constraint firstItem="ZAK-HJ-9Rp" firstAttribute="centerX" secondItem="CHQ-cC-vk9" secondAttribute="centerX" id="JoJ-eT-noc"/>
+                                    <constraint firstItem="KMy-Df-Rv2" firstAttribute="centerX" secondItem="CHQ-cC-vk9" secondAttribute="centerX" id="a47-RK-QRL"/>
+                                    <constraint firstItem="vV9-Lf-Fh3" firstAttribute="centerX" secondItem="CHQ-cC-vk9" secondAttribute="centerX" id="fZC-dG-Kfy"/>
+                                    <constraint firstItem="ZAK-HJ-9Rp" firstAttribute="centerY" secondItem="CHQ-cC-vk9" secondAttribute="centerY" id="mRW-JA-Rne"/>
+                                    <constraint firstItem="KMy-Df-Rv2" firstAttribute="top" secondItem="CHQ-cC-vk9" secondAttribute="top" constant="159" id="ulZ-kK-sP3"/>
+                                    <constraint firstItem="vV9-Lf-Fh3" firstAttribute="top" secondItem="KMy-Df-Rv2" secondAttribute="bottom" constant="8" id="wyL-43-rgw"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5v2-BU-xTG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="i0h-Fa-4Qw" firstAttribute="centerY" secondItem="dob-il-V0T" secondAttribute="centerY" id="7GW-oK-GpX"/>
-                            <constraint firstItem="5v2-BU-xTG" firstAttribute="trailing" secondItem="i0h-Fa-4Qw" secondAttribute="trailing" id="MUs-rQ-YM6"/>
-                            <constraint firstItem="i0h-Fa-4Qw" firstAttribute="leading" secondItem="5v2-BU-xTG" secondAttribute="leading" id="hU2-cR-ple"/>
+                            <constraint firstItem="CHQ-cC-vk9" firstAttribute="leading" secondItem="3mu-PK-Ex7" secondAttribute="leading" id="pkV-qt-CZm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FSK-OS-SkN"/>
-                    <connections>
-                        <outlet property="CloseButton" destination="28N-a8-49C" id="YvJ-1w-SXD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fac-49-Mqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="SHo-gk-m3p">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNH-zb-kAx">
+                            <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-an-bsn">
+                                    <rect key="frame" x="20" y="100" width="374" height="578"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjH-Tr-SHE">
+                                    <rect key="frame" x="30" y="8" width="38" height="26"/>
+                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="12"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" name="OfficialDarkGrey"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelButtonPressed:" destination="XPb-An-b2X" eventType="touchUpInside" id="55J-ua-YwE"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBO-BI-qDt">
+                                    <rect key="frame" x="0.0" y="697" width="414" height="175"/>
+                                    <color key="backgroundColor" name="OfficialLightGrey"/>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h04-sI-u8o">
+                                    <rect key="frame" x="20" y="718" width="374" height="80"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Ba-y0-gJw">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJQ-Wr-BKH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                    <color key="tintColor" name="OfficialDarkGrey"/>
+                                                    <state key="normal">
+                                                        <imageReference key="image" image="photo.on.rectangle.angled" catalog="system" symbolScale="large"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="usePhoto:" destination="XPb-An-b2X" eventType="touchUpInside" id="Zd4-bl-En5"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHx-Ou-UCr">
+                                                    <rect key="frame" x="0.0" y="40" width="374" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="sLM-Pi-aCf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="12"/>
+                                                    <state key="normal" title="Use Photo">
+                                                        <color key="titleColor" name="OfficialDarkGrey"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="usePhoto:" destination="XPb-An-b2X" eventType="touchUpInside" id="ww9-dh-Jg4"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ar-Vw-NYP">
+                                    <rect key="frame" x="82" y="21" width="250" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="D20-4b-lmR"/>
+                                        <constraint firstAttribute="width" constant="250" id="nRU-8q-U70"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
+                                    <state key="normal" title="Re-select">
+                                        <color key="titleColor" name="OfficialDarkGrey"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="importImageWith_sender:" destination="XPb-An-b2X" eventType="touchUpInside" id="KLg-q6-3kk"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="xjH-Tr-SHE" firstAttribute="top" secondItem="dNH-zb-kAx" secondAttribute="top" constant="8" id="3Ae-5g-87v"/>
+                                <constraint firstAttribute="bottom" secondItem="h04-sI-u8o" secondAttribute="bottom" constant="20" id="5xo-G0-ot8"/>
+                                <constraint firstItem="wg4-an-bsn" firstAttribute="top" secondItem="dNH-zb-kAx" secondAttribute="top" constant="100" id="6P6-ql-kda"/>
+                                <constraint firstItem="xjH-Tr-SHE" firstAttribute="leading" secondItem="dNH-zb-kAx" secondAttribute="leading" constant="30" id="AEf-UV-asz"/>
+                                <constraint firstItem="h04-sI-u8o" firstAttribute="leading" secondItem="dNH-zb-kAx" secondAttribute="leading" constant="20" id="CM7-XU-Egv"/>
+                                <constraint firstItem="8ar-Vw-NYP" firstAttribute="top" secondItem="dNH-zb-kAx" secondAttribute="top" constant="21" id="Fwv-XE-w5q"/>
+                                <constraint firstAttribute="trailing" secondItem="h04-sI-u8o" secondAttribute="trailing" constant="20" id="GQp-HD-HeS"/>
+                                <constraint firstItem="8ar-Vw-NYP" firstAttribute="centerX" secondItem="dNH-zb-kAx" secondAttribute="centerX" id="I9p-VH-7jp"/>
+                                <constraint firstItem="PBO-BI-qDt" firstAttribute="top" secondItem="wg4-an-bsn" secondAttribute="bottom" constant="19" id="Kle-H7-QEg"/>
+                                <constraint firstAttribute="bottom" secondItem="PBO-BI-qDt" secondAttribute="bottom" constant="-54" id="NjF-fR-c1p"/>
+                                <constraint firstItem="PBO-BI-qDt" firstAttribute="leading" secondItem="dNH-zb-kAx" secondAttribute="leading" id="Sxi-lh-sOk"/>
+                                <constraint firstAttribute="trailing" secondItem="wg4-an-bsn" secondAttribute="trailing" constant="20" id="hre-9W-bYW"/>
+                                <constraint firstAttribute="trailing" secondItem="PBO-BI-qDt" secondAttribute="trailing" id="tFu-Ga-qhU"/>
+                                <constraint firstItem="wg4-an-bsn" firstAttribute="leading" secondItem="dNH-zb-kAx" secondAttribute="leading" constant="20" id="tId-X5-lhm"/>
+                                <constraint firstItem="h04-sI-u8o" firstAttribute="top" secondItem="wg4-an-bsn" secondAttribute="bottom" constant="40" id="vuI-Dq-Dia"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-e8-YYw">
+                            <rect key="frame" x="0.0" y="218.5" width="414" height="459"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCh-uC-nOW">
+                                    <rect key="frame" x="35" y="0.0" width="345" height="459"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="459" id="piN-iz-Z2t"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="12"/>
+                                    <state key="normal">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didTapButton" destination="Vp7-N0-4e5" eventType="touchUpInside" id="rta-fq-YFR"/>
+                                        <action selector="importImageWith_sender:" destination="XPb-An-b2X" eventType="touchUpInside" id="IgY-Sb-gMk"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access Photo Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klg-uD-gE6">
+                                    <rect key="frame" x="109.5" y="255" width="195" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="V9K-Bk-wMB"/>
+                                        <constraint firstAttribute="width" constant="195" id="te8-4c-XeE"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle.angled" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hhG-bp-tlo">
+                                    <rect key="frame" x="144.5" y="158" width="125" height="89"/>
+                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="88" id="F6W-AK-lGA"/>
+                                        <constraint firstAttribute="width" constant="125" id="LPM-9b-s7M"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="459" id="5me-6c-oDb"/>
+                                <constraint firstItem="hhG-bp-tlo" firstAttribute="top" secondItem="ZgO-e8-YYw" secondAttribute="top" constant="159" id="KfU-wJ-nbG"/>
+                                <constraint firstItem="klg-uD-gE6" firstAttribute="centerX" secondItem="ZgO-e8-YYw" secondAttribute="centerX" id="OOT-VG-GSZ"/>
+                                <constraint firstItem="klg-uD-gE6" firstAttribute="top" secondItem="hhG-bp-tlo" secondAttribute="bottom" constant="8" id="R2T-1U-tIh"/>
+                                <constraint firstItem="hhG-bp-tlo" firstAttribute="centerX" secondItem="ZgO-e8-YYw" secondAttribute="centerX" id="gRa-4V-jPu"/>
+                                <constraint firstItem="sCh-uC-nOW" firstAttribute="centerX" secondItem="ZgO-e8-YYw" secondAttribute="centerX" id="od4-Aa-sVU"/>
+                                <constraint firstItem="sCh-uC-nOW" firstAttribute="centerY" secondItem="ZgO-e8-YYw" secondAttribute="centerY" id="w6j-x4-QqC"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="wRB-7Y-hnf"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="ZgO-e8-YYw" firstAttribute="centerY" secondItem="SHo-gk-m3p" secondAttribute="centerY" id="02v-Vf-1bK"/>
+                        <constraint firstItem="ZgO-e8-YYw" firstAttribute="leading" secondItem="dNH-zb-kAx" secondAttribute="leading" id="0aq-sW-tAZ"/>
+                        <constraint firstItem="dNH-zb-kAx" firstAttribute="trailing" secondItem="wRB-7Y-hnf" secondAttribute="trailing" id="1WT-ff-WcU"/>
+                        <constraint firstItem="ZgO-e8-YYw" firstAttribute="centerX" secondItem="SHo-gk-m3p" secondAttribute="centerX" id="7Te-lR-edU"/>
+                        <constraint firstItem="dNH-zb-kAx" firstAttribute="leading" secondItem="wRB-7Y-hnf" secondAttribute="leading" id="FaW-uf-Gvo"/>
+                        <constraint firstItem="wRB-7Y-hnf" firstAttribute="bottom" secondItem="dNH-zb-kAx" secondAttribute="bottom" id="H0x-2F-3EC"/>
+                        <constraint firstItem="dNH-zb-kAx" firstAttribute="top" secondItem="wRB-7Y-hnf" secondAttribute="top" id="mOR-qq-t4Z"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="-4032" y="2324"/>
         </scene>
