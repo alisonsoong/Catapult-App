@@ -32,7 +32,7 @@ class ViewPhotoViewController: UIViewController {
     }
     
     @IBAction func dismissButton(_ sender: UIButton) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*

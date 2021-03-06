@@ -168,6 +168,9 @@ extension GetPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+        if (curImage == UIImage()){
+            self.dismiss(animated: true, completion: nil)
+        }
         
     }
     

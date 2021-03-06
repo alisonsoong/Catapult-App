@@ -77,7 +77,7 @@ class TakePhotoViewController: UIViewController {
         
         // leave
         
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
         
         

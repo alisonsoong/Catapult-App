@@ -116,31 +116,47 @@ class SettingsViewController: UIViewController {
         self.defaults.set("", forKey: self.emailKey)
         self.defaults.set("", forKey: self.emailDomainKey)
         
+        
         // remove all images
             //bathroom
+        // try
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentDirectory = paths[0]
         if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
             print(allItems)
         }
-            var photoList = [String]()
-            if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
-                photoList = [String]()
-                self.defaults.set([String](), forKey: self.bathroomPhotosKey)
-            } else {
-                photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
-                self.defaults.set([String](), forKey: self.bathroomPhotosKey)
-            }
         
-            for x in photoList{
-                removeImage(itemName: x, fileExtension: "png")
-            }
         
-//            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-//            let documentDirectory = paths[0]
-            if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
-                print(allItems)
+        var photoList = [String]()
+        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+            photoList = [String]()
+            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+        } else {
+            photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+        }
+//        print(photoList)
+//        for x in photoList{
+//            removeImage(itemName: x, fileExtension: "png")
+//        }
+        
+        let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+
+        do {
+            let fileURLs = try FileManager.default.contentsOfDirectory(at: documentsUrl,
+                                                                       includingPropertiesForKeys: nil,
+                                                                       options: .skipsHiddenFiles)
+            for fileURL in fileURLs {
+                if fileURL.pathExtension == "png" {
+                    try FileManager.default.removeItem(at: fileURL)
+                }
             }
+        } catch  { print(error) }
+        
+
+        if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
+            print(allItems)
+        }
         
             
         

@@ -45,6 +45,9 @@ class HouseInfoPhotosViewController: UIViewController {
     let stateKey = "state"
     let postalKey = "postal"
     
+    // photos
+    let bathroomPhotosKey = "bathroomPhotoPaths"
+    
     @IBOutlet weak var FinishButton: UIButton!
     @IBOutlet weak var BathroomButton: UIButton!
     override func viewDidLoad() {
@@ -154,6 +157,30 @@ class HouseInfoPhotosViewController: UIViewController {
                 Pictures:
         """
         
+        var arrAttachments = [Attachment]()
+        let fileManager = FileManager.default
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        guard let dirPath = paths.first else {
+            return
+        }
+        
+        
+        let arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+        
+        for x in arr {
+            print(x)
+            let filePath = "\(dirPath)/\(x).png"
+            let fileAttachment = Attachment(filePath: filePath)
+            if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+                arrAttachments.append(fileAttachment)
+            }
+        }
+        
+        
+        
+        
         // real code
 //        let me = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
 //        let user = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
@@ -167,8 +194,9 @@ class HouseInfoPhotosViewController: UIViewController {
             from: user,
             to: [me],
             subject: subjectString,
-            text: bodyString
-        
+            text: bodyString,
+            attachments: arrAttachments
+            
         )
 
         smtp.send(mail) { (error) in
