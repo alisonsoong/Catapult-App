@@ -85,6 +85,27 @@ class HouseInfoPhotosViewController: UIViewController {
             self.performSegue(withIdentifier: "toBathroom", sender: self)
             
         }
+        
+        if (self.defaults.string(forKey: self.categoryKey) == "bedroom") {
+            self.performSegue(withIdentifier: "toBedroom", sender: self)
+            
+        }
+        
+        if (self.defaults.string(forKey: self.categoryKey) == "kitchen") {
+            self.performSegue(withIdentifier: "toKitchen", sender: self)
+            
+        }
+        
+        if (self.defaults.string(forKey: self.categoryKey) == "living") {
+            self.performSegue(withIdentifier: "toLiving", sender: self)
+            
+        }
+        
+        if (self.defaults.string(forKey: self.categoryKey) == "other") {
+            self.performSegue(withIdentifier: "toOther", sender: self)
+            
+        }
+        
     }
 
     
