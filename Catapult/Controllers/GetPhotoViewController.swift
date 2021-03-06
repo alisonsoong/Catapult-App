@@ -225,6 +225,7 @@ class GetPhotoViewController: UIViewController {
         } else {
             // if it's other
             // change 3
+            print("MAKE OTHER PHOTO")
             if (self.defaults.object(forKey: self.otherPhotosKey) == nil){
                 arr = [String]()
                 self.defaults.set([String](), forKey: self.otherPhotosKey)
