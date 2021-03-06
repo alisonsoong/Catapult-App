@@ -43,16 +43,16 @@ class InitialViewController: UIViewController {
         }
         
         // reset everything
-        self.defaults.set("", forKey: self.addressLine1Key)
-        self.defaults.set("", forKey: self.addressLine2Key)
-        self.defaults.set("", forKey: self.cityKey)
-        self.defaults.set("", forKey: self.stateKey)
-        self.defaults.set("", forKey: self.postalKey)
-        self.defaults.set("", forKey: self.firstNameKey)
-        self.defaults.set("", forKey: self.lastNameKey)
-        self.defaults.set(nil, forKey: self.phoneKey)
-        self.defaults.set("", forKey: self.emailKey)
-        self.defaults.set("", forKey: self.emailDomainKey)
+        self.defaults.set("asdf", forKey: self.addressLine1Key)
+        self.defaults.set("adf", forKey: self.addressLine2Key)
+        self.defaults.set("asdf", forKey: self.cityKey)
+        self.defaults.set("asdf", forKey: self.stateKey)
+        self.defaults.set("asdf", forKey: self.postalKey)
+        self.defaults.set("asdf", forKey: self.firstNameKey)
+        self.defaults.set("asdf", forKey: self.lastNameKey)
+        self.defaults.set(123, forKey: self.phoneKey)
+        self.defaults.set("asdf", forKey: self.emailKey)
+        self.defaults.set("asdf", forKey: self.emailDomainKey)
         self.defaults.set([String](), forKey: self.bathroomPhotosKey)
        
         

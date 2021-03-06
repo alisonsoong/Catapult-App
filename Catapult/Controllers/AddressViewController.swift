@@ -82,7 +82,7 @@ class AddressViewController: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         self.defaults.set(1, forKey: self.screenKey)
     }
-    
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier == "step2done"){
             if (self.defaults.string(forKey: self.addressLine1Key) == "" || self.defaults.string(forKey: self.addressLine1Key) == " " || self.defaults.string(forKey: self.postalKey) == "" || self.defaults.string(forKey: self.postalKey) == " " || self.defaults.string(forKey: self.cityKey) == "" || self.defaults.string(forKey: self.cityKey) == " " || self.defaults.string(forKey: self.stateKey) == "" || self.defaults.string(forKey: self.stateKey) == " "){

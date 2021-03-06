@@ -71,6 +71,8 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
     }
     
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         photoTableView.dataSource = self
@@ -122,21 +124,26 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return photoList.count
+        return 1
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return photoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       // Create an object of the dynamic cell "PlainCell"
-      let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
-      // Depending on the section, fill the textLabel with the relevant text
-        cell.cellImageView.image = loadImageFromDocumentDirectory(nameOfImage: self.photoList[indexPath.item])
+    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
+        // Depending on the section, fill the textLabel with the relevant text
+        print(indexPath.row)
+        print("PUT \(self.photoList[indexPath.row]) into place")
+        cell.cellImageView.image = loadImageFromDocumentDirectory(nameOfImage: self.photoList[indexPath.row])
         
-      // Return the configured cell
-      return cell
+        
+        // Return the configured cell
+        return cell
 
     }
     
@@ -156,21 +163,42 @@ class BathroomsViewController: UIViewController, UITableViewDataSource, UINaviga
     
     // loads image from disk (using string file name)
     func loadImageFromDocumentDirectory(nameOfImage : String) -> UIImage {
-        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-        let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
-        let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-        if let dirPath = paths.first{
-            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(nameOfImage)
-            let image    = UIImage(contentsOfFile: imageURL.path)
-            print(imageURL.path)
-            if (image == nil){
-                removeImage(itemName: nameOfImage, fileExtension: "png")
-            } else {
-                return image!
-            }
+//        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+//        let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+//        let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+//        if let dirPath = paths.first{
+//            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(nameOfImage)
+//            let image    = UIImage(contentsOfFile: imageURL.path)
+//            print(imageURL.path)
+//            if (image == nil){
+//                removeImage(itemName: nameOfImage, fileExtension: "png")
+//            } else {
+//                return image!
+//            }
+//        }
+//        // // backup image, failed to load image for whatever reason
+//        return UIImage.init(named: "image001.png")!
+        
+        // check what is in the directory before deleting
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectory = paths[0]
+        if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
+            print(allItems)
         }
-        // // backup image, failed to load image for whatever reason
-        return UIImage.init(named: "image001.png")!
+        
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(nameOfImage).path) ?? UIImage()
+        }
+        return UIImage()
+    }
+    
+    func getSavedImage(named: String) -> UIImage? {
+        
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+        
     }
     
     // removes image from directory given string
@@ -229,6 +257,4 @@ class ModalTransitionMediator {
         listener?.popoverDismissed()
     }
 }
-
-
 

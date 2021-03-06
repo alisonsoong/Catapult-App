@@ -49,6 +49,8 @@ class TakePhotoViewController: UIViewController {
         }
     }
     
+    
+    
     @IBAction func savePhoto(_ sender: AnyObject){
         let imageData = imageTake.image?.jpegData(compressionQuality: 1.0)
         let compressedImage = UIImage(data: imageData!)

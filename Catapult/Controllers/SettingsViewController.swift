@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
     let phoneKey = "phone"
     let emailKey = "email"
     let emailDomainKey = "emailDomain"
+    let bathroomPhotosKey = "bathroomPhotoPaths"
     
 
     override func viewDidLoad() {
@@ -115,11 +116,58 @@ class SettingsViewController: UIViewController {
         self.defaults.set("", forKey: self.emailKey)
         self.defaults.set("", forKey: self.emailDomainKey)
         
+        // remove all images
+            //bathroom
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectory = paths[0]
+        if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
+            print(allItems)
+        }
+            var photoList = [String]()
+            if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
+                photoList = [String]()
+                self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+            } else {
+                photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
+                self.defaults.set([String](), forKey: self.bathroomPhotosKey)
+            }
+        
+            for x in photoList{
+                removeImage(itemName: x, fileExtension: "png")
+            }
+        
+//            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+//            let documentDirectory = paths[0]
+            if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
+                print(allItems)
+            }
+        
+            
+        
         // go back to original screen
         self.defaults.set(0, forKey: self.screenKey)
         
+        
+        
         self.performSegue(withIdentifier: "resetSegue", sender: nil)
     }
+    
+    // removes image from directory given string
+    func removeImage(itemName:String, fileExtension: String) {
+      let fileManager = FileManager.default
+      let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+      let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+      let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+      guard let dirPath = paths.first else {
+          return
+      }
+      let filePath = "\(dirPath)/\(itemName).\(fileExtension)"
+      do {
+        try fileManager.removeItem(atPath: filePath)
+      } catch let error as NSError {
+        print(error.debugDescription)
+      }}
+    
     /*
     // MARK: - Navigation
 

@@ -94,19 +94,22 @@ class GetPhotoViewController: UIViewController, RefreshDataDelegate {
         
         saveImageToDocumentDirectory(image: curImage)
         
+        
+        // check
+        print("CHECK")
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentDirectory = paths[0]
         if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
             print(allItems)
         }
-        
+        print("END")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         self.dismiss(animated: true, completion: nil)
     }
     
     
     // saves image to document directory
-    func saveImageToDocumentDirectory(image: UIImage ) {
+    func saveImageToDocumentDirectory(image: UIImage ) -> Bool {
         
         var arr = [String]()
         if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
@@ -123,24 +126,72 @@ class GetPhotoViewController: UIViewController, RefreshDataDelegate {
             selectedImageTag = "Bathroom"
         }
         selectedImageTag += String(newIndex)
-        print("TEST 3")
+        print("TEST 3: \(selectedImageTag)")
         arr.append(selectedImageTag)
         self.defaults.set(arr, forKey: self.bathroomPhotosKey)
-        
+
         print(arr)
         
+        
+        
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let fileName = "\(selectedImageTag).png" // name of the image to be saved
+        let fileName = selectedImageTag // name of the image to be saved
         let fileURL = documentsDirectory.appendingPathComponent(fileName)
-        if let data = image.jpegData(compressionQuality: 1.0),!FileManager.default.fileExists(atPath: fileURL.path){
-            do {
-                try data.write(to: fileURL)
-                print("file saved")
-
-            } catch {
-                print("error saving file:", error)
-            }
+        print(fileURL)
+//        if let data = curImage.jpegData(compressionQuality: 1.0), createFile(atPath: fileURL.path, contents: data) {
+//            do {
+//                try data.write(to: fileURL)
+//                print("file saved")
+//
+//            } catch {
+//                print("error saving file:", error)
+//            }
+//            print("Done")
+//        }
+        
+        
+        guard let data = image.jpegData(compressionQuality: 1) ?? image.pngData() else {
+            return false
         }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+            return false
+        }
+        do {
+            try data.write(to: directory.appendingPathComponent("\(selectedImageTag).png")!)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectory = paths[0]
+        if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
+            print(allItems)
+        }
+        
+//        if let data = curImage.jpegData(compressionQuality: 1.0),!FileManager.default.fileExists(atPath: fileURL.path){
+//            print("OK")
+//            do {
+//                try data.write(to: fileURL)
+//                print("file saved")
+//
+//            } catch {
+//                print("error saving file:", error)
+//            }
+//        } else if let data = curImage.jpegData(compressionQuality: 1.0) {
+//            print("s1")
+//        } else if !FileManager.default.fileExists(atPath: fileURL.path) {
+//            print("s2")
+//        } else {
+//            print("fails")
+//        }
+        print("DONE")
+        return true
+    }
+    
+    func createFile(atPath path: String,
+           contents data: Data?,
+           attributes attr: [FileAttributeKey : Any]? = nil) -> Bool {
+        return true
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
@@ -180,10 +231,23 @@ extension GetPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
             return
         }
 
-        
+        curImage = image
         imagePreview.image = image
         
         
+    }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == "step2done"){
+            if (true){
+
+                return false
+            }
+        }
+        
+        // set lastSeenScreen to photos
+        return true
     }
     
     
