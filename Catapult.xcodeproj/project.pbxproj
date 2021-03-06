@@ -27,6 +27,7 @@
 		F10BDFAF25F444D100231D3D /* ExteriorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10BDFAE25F444D100231D3D /* ExteriorViewController.swift */; };
 		F10BDFB425F4467600231D3D /* KitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10BDFB325F4467600231D3D /* KitchenViewController.swift */; };
 		F10BDFB925F4478400231D3D /* BedroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10BDFB825F4478400231D3D /* BedroomViewController.swift */; };
+		F10BDFBE25F44A9C00231D3D /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10BDFBD25F44A9C00231D3D /* OtherViewController.swift */; };
 		F11BFB00259FEEBF00FFBEA6 /* customTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */; };
 		F14EB79A25CF68A2008217FD /* Step1DoneSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EB79925CF68A2008217FD /* Step1DoneSegue.swift */; };
 		F15B078525A3801200B023B6 /* CategoriesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */; };
@@ -95,6 +96,7 @@
 		F10BDFAE25F444D100231D3D /* ExteriorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorViewController.swift; sourceTree = "<group>"; };
 		F10BDFB325F4467600231D3D /* KitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenViewController.swift; sourceTree = "<group>"; };
 		F10BDFB825F4478400231D3D /* BedroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomViewController.swift; sourceTree = "<group>"; };
+		F10BDFBD25F44A9C00231D3D /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTextFieldController.swift; sourceTree = "<group>"; };
 		F14EB79925CF68A2008217FD /* Step1DoneSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1DoneSegue.swift; sourceTree = "<group>"; };
 		F15B078425A3801200B023B6 /* CategoriesNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesNavigationController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				F10BDFB325F4467600231D3D /* KitchenViewController.swift */,
 				F10BDFB825F4478400231D3D /* BedroomViewController.swift */,
 				F10BDFAE25F444D100231D3D /* ExteriorViewController.swift */,
+				F10BDFBD25F44A9C00231D3D /* OtherViewController.swift */,
 				F191874E259D3B91002A255F /* customTabBarController.swift */,
 				F11BFAFF259FEEBF00FFBEA6 /* customTextFieldController.swift */,
 				F1956DB425A1AC110051B817 /* ViewPhotoViewController.swift */,
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1084DF225984A95009AD713 /* InitialViewController.swift in Sources */,
+				F10BDFBE25F44A9C00231D3D /* OtherViewController.swift in Sources */,
 				F1A0811625E24AD000F4873B /* Data.swift in Sources */,
 				F15B078F25A3848F00B023B6 /* PrivacyPolicyViewController.swift in Sources */,
 				F15B078525A3801200B023B6 /* CategoriesNavigationController.swift in Sources */,
