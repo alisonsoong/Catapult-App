@@ -8,20 +8,26 @@
 import UIKit
 import CoreData
 
-class BathroomsViewController: UIViewController, UINavigationControllerDelegate {
+class BathroomsViewController: UIViewController, UITableViewDataSource, UINavigationControllerDelegate, UITableViewDelegate {
+    
+    
 
     let defaults = UserDefaults.standard
     let categoryKey = "photoCategory"
     let bathroomPhotosKey = "bathroomPhotoPaths"
     let bathroomFolderKey = "bathroomFolder"
     
+    
+    let photosTesting = ["img001"]
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var AddPhotosButton: UIButton!
     @IBOutlet weak var TakePhotosButton: UIButton!
     @IBOutlet weak var testingImage: UIImageView!
+
+    @IBOutlet weak var photoTableView: UITableView!
     
-    @IBOutlet weak var photoTableView: PreviewPhotosTableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +41,9 @@ class BathroomsViewController: UIViewController, UINavigationControllerDelegate 
         TakePhotosButton.layer.cornerRadius = TakePhotosButton.frame.size.height / 5
         // Do any additional setup after loading the view.
         self.defaults.set("bathroom", forKey: self.categoryKey)
-
+        
+        photoTableView.dataSource = self
+        photoTableView.delegate = self
 
 
     }
@@ -72,11 +80,8 @@ class BathroomsViewController: UIViewController, UINavigationControllerDelegate 
     }
     @IBAction func takePictureButtonPressed(_ sender: UIButton) {
         
-        
-        
         self.defaults.set("bathroom", forKey: self.categoryKey)
-        
-        
+
     }
     
     @IBAction func AddPhotosPressed(_ sender: UIButton) {
@@ -84,6 +89,74 @@ class BathroomsViewController: UIViewController, UINavigationControllerDelegate 
     
     @IBAction func TakePhotosPressed(_ sender: UIButton) {
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return photosTesting.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      // Create an object of the dynamic cell "PlainCell"
+      let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
+      // Depending on the section, fill the textLabel with the relevant text
+        cell.cellImageView.image = loadImageFromDocumentDirectory(nameOfImage : "img001")
+        
+      // Return the configured cell
+      return cell
+
+    }
+    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView,
+//                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//       // Ask for a cell of the appropriate type.
+//       let cell = tableView.dequeueReusableCell(withIdentifier: "imageListCell", for: indexPath)
+//
+//       return cell
+//    }
+    
+    // loads image from disk (using string file name)
+    func loadImageFromDocumentDirectory(nameOfImage : String) -> UIImage {
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        if let dirPath = paths.first{
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(nameOfImage)
+            let image    = UIImage(contentsOfFile: imageURL.path)
+            print(imageURL.path)
+            if (image == nil){
+                removeImage(itemName: "image001", fileExtension: "png")
+            } else {
+                return image!
+            }
+        }
+        // // backup image, failed to load image for whatever reason
+        return UIImage.init(named: "image001.png")!
+    }
+    
+    // removes image from directory given string
+    func removeImage(itemName:String, fileExtension: String) {
+      let fileManager = FileManager.default
+      let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+      let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+      let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+      guard let dirPath = paths.first else {
+          return
+      }
+      let filePath = "\(dirPath)/\(itemName).\(fileExtension)"
+      do {
+        try fileManager.removeItem(atPath: filePath)
+      } catch let error as NSError {
+        print(error.debugDescription)
+      }}
     
     
     /*

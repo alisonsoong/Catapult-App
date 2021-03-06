@@ -53,15 +53,17 @@ class TestingEmailViewController: UIViewController {
 //    }
     
     
-    
+    // display of image
     @IBOutlet weak var imageToSaveImageView: UIImageView! {
         didSet {
-            imageToSaveImageView.image = UIImage(named: "buildingImage")
+            imageToSaveImageView.image = UIImage(named: "image001")
         }
     }
 
+    // display of saved image
     @IBOutlet weak var savedImageDisplayImageView: UIImageView!
     
+    // display the image
     @IBAction func display(_ sender: UIButton) {
         display()
     }
@@ -100,8 +102,13 @@ class TestingEmailViewController: UIViewController {
             let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(nameOfImage)
             let image    = UIImage(contentsOfFile: imageURL.path)
             print(imageURL.path)
-            return image!
+            if (image == nil){
+                removeImage(itemName: "image001", fileExtension: "png")
+            } else {
+                return image!
+            }
         }
+        // // backup image, failed to load image for whatever reason
         return UIImage.init(named: "image001.png")!
     }
     
@@ -180,7 +187,7 @@ extension TestingEmailViewController: UIImagePickerControllerDelegate, UINavigat
             return
         }
 
-        
+        // save image when selected
         imageToSaveImageView.image = image
         saveImageToDocumentDirectory(image: image)
         print("done")

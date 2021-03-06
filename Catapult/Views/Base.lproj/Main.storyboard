@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I3p-ln-ajF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9kV-Za-BtS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -2003,10 +2003,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-pP-S9o">
-                                                        <rect key="frame" x="0.0" y="451.5" width="374" height="417.5"/>
+                                                        <rect key="frame" x="0.0" y="451.5" width="374" height="747.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-Vp-4Mv">
-                                                                <rect key="frame" x="20" y="0.0" width="334" height="417.5"/>
+                                                                <rect key="frame" x="20" y="0.0" width="334" height="747.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uploaded Photos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wK-5Z-KWy">
                                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="27.5"/>
@@ -2015,23 +2015,80 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OAP-52-Aw6">
-                                                                        <rect key="frame" x="0.0" y="57.5" width="334" height="360"/>
+                                                                        <rect key="frame" x="0.0" y="57.5" width="334" height="690"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <prototypes>
-                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageListCell" rowHeight="162" id="fKg-On-cbf" customClass="ImageTableViewCell" customModule="Catapult" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="55.5" width="334" height="162"/>
+                                                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageTableViewCell" rowHeight="185" id="9Qq-Yq-E1e" customClass="ImageTableViewCell" customModule="Catapult" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="55.5" width="334" height="185"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Qq-Yq-E1e" id="P0T-Ld-i0n">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="185"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <subviews>
+                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TBt-bj-7tW">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="150"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="height" constant="150" id="tf1-O0-vrP"/>
+                                                                                            </constraints>
+                                                                                        </imageView>
+                                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDl-Ko-kpO">
+                                                                                            <rect key="frame" x="0.0" y="150" width="334" height="35"/>
+                                                                                            <subviews>
+                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUC-9j-HMR">
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="264" height="35"/>
+                                                                                                    <color key="backgroundColor" name="OfficialDarkGrey"/>
+                                                                                                    <constraints>
+                                                                                                        <constraint firstAttribute="height" constant="25" id="QeY-GJ-acb"/>
+                                                                                                    </constraints>
+                                                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                                    <state key="normal" title="View Photo">
+                                                                                                        <color key="titleColor" name="OfficialWhite"/>
+                                                                                                    </state>
+                                                                                                </button>
+                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxJ-Xs-CfM">
+                                                                                                    <rect key="frame" x="264" y="0.0" width="70" height="35"/>
+                                                                                                    <color key="backgroundColor" name="OfficialLightGrey"/>
+                                                                                                    <constraints>
+                                                                                                        <constraint firstAttribute="width" constant="70" id="wfL-Hh-wbJ"/>
+                                                                                                    </constraints>
+                                                                                                    <color key="tintColor" red="0.82392131980000005" green="0.1532809258" blue="0.16870961249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                                    <state key="normal" image="trash" catalog="system"/>
+                                                                                                </button>
+                                                                                            </subviews>
+                                                                                        </stackView>
+                                                                                    </subviews>
+                                                                                    <color key="backgroundColor" name="OfficialWhite"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="trailing" secondItem="NDl-Ko-kpO" secondAttribute="trailing" id="3C9-Jp-6sI"/>
+                                                                                        <constraint firstItem="TBt-bj-7tW" firstAttribute="top" secondItem="P0T-Ld-i0n" secondAttribute="top" id="Oaw-Ww-fkg"/>
+                                                                                        <constraint firstAttribute="bottom" secondItem="NDl-Ko-kpO" secondAttribute="bottom" id="VJX-2B-9TW"/>
+                                                                                        <constraint firstItem="TBt-bj-7tW" firstAttribute="leading" secondItem="P0T-Ld-i0n" secondAttribute="leading" id="dJc-x5-OAk"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="TBt-bj-7tW" secondAttribute="trailing" id="i3G-aK-LJ6"/>
+                                                                                        <constraint firstItem="NDl-Ko-kpO" firstAttribute="top" secondItem="TBt-bj-7tW" secondAttribute="bottom" id="mab-Sy-w6G"/>
+                                                                                        <constraint firstItem="NDl-Ko-kpO" firstAttribute="leading" secondItem="P0T-Ld-i0n" secondAttribute="leading" id="wxr-Si-aBq"/>
+                                                                                    </constraints>
+                                                                                </tableViewCellContentView>
+                                                                                <viewLayoutGuide key="safeArea" id="xZg-gu-v3e"/>
+                                                                                <connections>
+                                                                                    <outlet property="cellDeleteButton" destination="rxJ-Xs-CfM" id="ChV-K2-a9T"/>
+                                                                                    <outlet property="cellImageView" destination="TBt-bj-7tW" id="iQr-Pt-SqQ"/>
+                                                                                    <outlet property="cellViewButton" destination="pUC-9j-HMR" id="l3D-kz-xNH"/>
+                                                                                </connections>
+                                                                            </tableViewCell>
+                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ImageTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreviewCell" rowHeight="162" id="17v-x0-EcL" customClass="ImageTableViewCell" customModule="Catapult" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="240.5" width="334" height="162"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKg-On-cbf" id="rCF-3Z-yBT">
+                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="17v-x0-EcL" id="JGX-vJ-Qrl">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="334" height="162"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
-                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j7Q-Lx-JaT">
+                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QsF-rz-TxP">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="334" height="162"/>
                                                                                         </imageView>
-                                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fW-AW-S4L">
+                                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZQ-rG-I28">
                                                                                             <rect key="frame" x="0.0" y="132" width="334" height="30"/>
                                                                                             <subviews>
-                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy0-pe-uDD">
+                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gE-YB-bMV">
                                                                                                     <rect key="frame" x="0.0" y="0.0" width="264" height="30"/>
                                                                                                     <color key="backgroundColor" name="OfficialLightGrey"/>
                                                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -2039,11 +2096,11 @@
                                                                                                         <color key="titleColor" name="OfficialDarkGrey"/>
                                                                                                     </state>
                                                                                                 </button>
-                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqT-fx-n3N">
+                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLe-Dw-Ofc">
                                                                                                     <rect key="frame" x="264" y="0.0" width="70" height="30"/>
                                                                                                     <color key="backgroundColor" name="OfficialLightGrey"/>
                                                                                                     <constraints>
-                                                                                                        <constraint firstAttribute="width" constant="70" id="EzK-AB-mDo"/>
+                                                                                                        <constraint firstAttribute="width" constant="70" id="UZu-IJ-Fkf"/>
                                                                                                     </constraints>
                                                                                                     <color key="tintColor" red="0.82392131980000005" green="0.1532809258" blue="0.16870961249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                                     <state key="normal" image="trash" catalog="system"/>
@@ -2052,20 +2109,20 @@
                                                                                         </stackView>
                                                                                     </subviews>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="bottom" secondItem="j7Q-Lx-JaT" secondAttribute="bottom" id="85Y-yP-SVp"/>
-                                                                                        <constraint firstItem="6fW-AW-S4L" firstAttribute="leading" secondItem="rCF-3Z-yBT" secondAttribute="leading" id="HuX-I6-hCA"/>
-                                                                                        <constraint firstAttribute="trailing" secondItem="j7Q-Lx-JaT" secondAttribute="trailing" id="MKW-ed-Q40"/>
-                                                                                        <constraint firstItem="j7Q-Lx-JaT" firstAttribute="leading" secondItem="rCF-3Z-yBT" secondAttribute="leading" id="Uey-Rd-NcR"/>
-                                                                                        <constraint firstItem="j7Q-Lx-JaT" firstAttribute="top" secondItem="rCF-3Z-yBT" secondAttribute="top" id="g8u-B3-HFV"/>
-                                                                                        <constraint firstItem="j7Q-Lx-JaT" firstAttribute="leading" secondItem="6fW-AW-S4L" secondAttribute="leading" id="kS9-TI-Afp"/>
-                                                                                        <constraint firstAttribute="bottom" secondItem="6fW-AW-S4L" secondAttribute="bottom" id="tye-AU-3pV"/>
-                                                                                        <constraint firstAttribute="trailing" secondItem="6fW-AW-S4L" secondAttribute="trailing" id="uZj-Vc-LRG"/>
+                                                                                        <constraint firstAttribute="bottom" secondItem="QsF-rz-TxP" secondAttribute="bottom" id="8jE-b3-QgT"/>
+                                                                                        <constraint firstAttribute="bottom" secondItem="WZQ-rG-I28" secondAttribute="bottom" id="JeC-n8-fVd"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="QsF-rz-TxP" secondAttribute="trailing" id="Q6P-Yi-8wh"/>
+                                                                                        <constraint firstItem="QsF-rz-TxP" firstAttribute="leading" secondItem="JGX-vJ-Qrl" secondAttribute="leading" id="VCb-nJ-g7a"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="WZQ-rG-I28" secondAttribute="trailing" id="e5R-WJ-CDd"/>
+                                                                                        <constraint firstItem="QsF-rz-TxP" firstAttribute="top" secondItem="JGX-vJ-Qrl" secondAttribute="top" id="oKX-Du-Qlu"/>
+                                                                                        <constraint firstItem="WZQ-rG-I28" firstAttribute="leading" secondItem="JGX-vJ-Qrl" secondAttribute="leading" id="qWa-0J-7pK"/>
+                                                                                        <constraint firstItem="QsF-rz-TxP" firstAttribute="leading" secondItem="WZQ-rG-I28" secondAttribute="leading" id="wcB-81-GBY"/>
                                                                                     </constraints>
                                                                                 </tableViewCellContentView>
                                                                                 <connections>
-                                                                                    <outlet property="cellDeleteButton" destination="EqT-fx-n3N" id="4Zj-Zv-pfA"/>
-                                                                                    <outlet property="cellImageView" destination="j7Q-Lx-JaT" id="kZL-MS-0y7"/>
-                                                                                    <outlet property="cellViewButton" destination="Vy0-pe-uDD" id="psQ-HD-Mdy"/>
+                                                                                    <outlet property="cellDeleteButton" destination="fLe-Dw-Ofc" id="FJh-ec-0Vr"/>
+                                                                                    <outlet property="cellImageView" destination="QsF-rz-TxP" id="y6i-Kj-IxN"/>
+                                                                                    <outlet property="cellViewButton" destination="1gE-YB-bMV" id="Dx7-d7-MP4"/>
                                                                                 </connections>
                                                                             </tableViewCell>
                                                                         </prototypes>
@@ -2081,12 +2138,6 @@
                                                             <constraint firstItem="32Y-Vp-4Mv" firstAttribute="centerY" secondItem="vSI-pP-S9o" secondAttribute="centerY" id="geV-hN-75X"/>
                                                         </constraints>
                                                     </view>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZnL-43-sYH">
-                                                        <rect key="frame" x="0.0" y="899" width="374" height="300"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="300" id="VYS-v8-5ps"/>
-                                                        </constraints>
-                                                    </imageView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -2126,8 +2177,7 @@
                     <connections>
                         <outlet property="AddPhotosButton" destination="Bet-6z-eeI" id="JLz-DZ-Lkd"/>
                         <outlet property="TakePhotosButton" destination="jva-Il-hR8" id="abG-i7-uwE"/>
-                        <outlet property="photoTableView" destination="OAP-52-Aw6" id="0Xw-hY-XT2"/>
-                        <outlet property="testingImage" destination="ZnL-43-sYH" id="NlM-r0-itf"/>
+                        <outlet property="photoTableView" destination="OAP-52-Aw6" id="DGH-pp-1dO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoq-Mn-tyO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3160,9 +3210,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q5R-Ge-LjV"/>
-        <segue reference="4Jy-VJ-dbU"/>
-        <segue reference="O3e-12-rzA"/>
+        <segue reference="G3o-8f-hNQ"/>
+        <segue reference="xxi-BF-xh0"/>
+        <segue reference="h4i-Vo-YOa"/>
         <segue reference="qOv-J8-amk"/>
         <segue reference="dGa-gi-5AF"/>
     </inferredMetricsTieBreakers>
