@@ -142,20 +142,23 @@ class HouseInfoPhotosViewController: UIViewController {
             address += "\n\(second)"
         }
         
-        let bodyString = """
-            Submission
-                First Name: \(self.defaults.string(forKey: self.firstNameKey) ?? "First Name Not Given")
-                Last Name: \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")
-                Phone: \(self.defaults.string(forKey: self.phoneKey) ?? "Phone Number Not Given")
-                Email: \(newEmail)
+        // actual message!
+let bodyString = """
+Contact Information
+
+First Name: \(self.defaults.string(forKey: self.firstNameKey) ?? "First Name Not Given")
+Last Name: \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")
+Phone: \(self.defaults.string(forKey: self.phoneKey) ?? "Phone Number Not Given")
+Email: \(newEmail)
                 
-            Home Information
-                Address:
-                    \(address)
-                    \(self.defaults.string(forKey: self.cityKey) ?? "City Not Given"), \(self.defaults.string(forKey: self.stateKey) ?? "State Not Given") \(self.defaults.string(forKey: self.postalKey) ?? "Postal Not Given")
+Home Information
+
+Address:
+\(address)
+\(self.defaults.string(forKey: self.cityKey) ?? "City Not Given"), \(self.defaults.string(forKey: self.stateKey) ?? "State Not Given") \(self.defaults.string(forKey: self.postalKey) ?? "Postal Not Given")
                 
-                Pictures:
-        """
+Pictures:
+"""
         
         var arrAttachments = [Attachment]()
         let fileManager = FileManager.default
@@ -260,20 +263,22 @@ class HouseInfoPhotosViewController: UIViewController {
                 address += "\n\(second)"
             }
             
-            let bodyString = """
-                Submission
-                    First Name: \(self.defaults.string(forKey: self.firstNameKey) ?? "First Name Not Given")
-                    Last Name: \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")
-                    Phone: \(self.defaults.string(forKey: self.phoneKey) ?? "Phone Number Not Given")
-                    Email: \(newEmail)
-                    
-                Home Information
-                    Address:
-                        \(address)
-                        \(self.defaults.string(forKey: self.cityKey) ?? "City Not Given"), \(self.defaults.string(forKey: self.stateKey) ?? "State Not Given") \(self.defaults.string(forKey: self.postalKey) ?? "Postal Not Given")
-                    
-                    Pictures:
-            """
+let bodyString = """
+    Submission
+
+    First Name: \(self.defaults.string(forKey: self.firstNameKey) ?? "First Name Not Given")
+    Last Name: \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")
+    Phone: \(self.defaults.string(forKey: self.phoneKey) ?? "Phone Number Not Given")
+    Email: \(newEmail)
+                                    
+    Home Information
+
+    Address:
+    \(address)
+    \(self.defaults.string(forKey: self.cityKey) ?? "City Not Given"), \(self.defaults.string(forKey: self.stateKey) ?? "State Not Given") \(self.defaults.string(forKey: self.postalKey) ?? "Postal Not Given")
+                        
+    Pictures:
+"""
                 
             composer.setMessageBody(bodyString, isHTML: false)
             present(composer, animated: true)
