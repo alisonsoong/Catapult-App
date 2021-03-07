@@ -121,12 +121,14 @@ class Step1ViewController: UIViewController {
                 return false;
                 
                 
+            } else {
+                self.defaults.set(2, forKey: self.screenKey)
             }
-
+            
       
         }
         // set lastSeenScreen to address
-        self.defaults.set(2, forKey: self.screenKey)
+        
         return true
     }
     

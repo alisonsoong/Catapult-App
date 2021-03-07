@@ -93,10 +93,12 @@ class AddressViewController: UIViewController {
                 ErrorMessage.isHidden = false
                 self.defaults.set(2, forKey: self.screenKey)
                 return false
+            } else {
+                self.defaults.set(3, forKey: self.screenKey)
             }
         }
         // set lastSeenScreen to photos
-        self.defaults.set(3, forKey: self.screenKey)
+        
         return true
     }
     
