@@ -12,13 +12,8 @@ import SwiftSMTP
 let smtp = SMTP(
     hostname: "smtp.gmail.com",     // SMTP server address
     // real
-//    email: "submit@getcatapult.app",        // username to login
-//    password: "notavailable"            // password to login
-    
-    // testing
-    email: "asoongtesting@gmail.com",        // username to login // TODO: change email
-    password: "a1s2d3f4%"            // password to login
-    
+    email: "submit@getcatapult.app",        // username to login
+    password: "notavailable"           // password to login
     
 
 )
@@ -75,6 +70,7 @@ class HouseInfoPhotosViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
     
     }
     
@@ -126,14 +122,6 @@ class HouseInfoPhotosViewController: UIViewController {
     
     @IBAction func finishButtonPressed(_ sender: UIButton) {
         
-//        // alert
-//        let alert = UIAlertController(title: "Review", message: "Please review your submission.", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-//        NSLog("The \"OK\" alert occured.")
-//            // show mail to review
-//            self.showMailComposer()
-//        }))
-//        self.present(alert, animated: true, completion: nil)
         
         // are you sure you want to submit?
         var refreshAlert = UIAlertController(title: "Submit?", message: "Are you sure you want to submit?", preferredStyle: UIAlertController.Style.alert)
@@ -154,7 +142,6 @@ class HouseInfoPhotosViewController: UIViewController {
  
     }
 
-    
     
     func submit(){
         // make email!
@@ -297,13 +284,13 @@ Pictures:
         }
         
         // real code
-//        let me = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
-//        let user = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
+        let me = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
+        let user = Mail.User(name: "Catapult Submissions", email: "submit@getcatapult.app") // TODO: change email
         
-        // testing purposes
-        let me = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
-        let user = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
-        
+//        // testing purposes
+//        let me = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
+//        let user = Mail.User(name: "Catapult Submissions", email: "asoongtesting@gmail.com") // TODO: change email
+
         
         let mail = Mail(
             from: user,
@@ -333,92 +320,81 @@ Pictures:
         
     }
     
-    func showMailComposer() {
-        // send email
-        guard MFMailComposeViewController.canSendMail() else {
-            let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail. Please check e-mail configuration and try again.", preferredStyle: UIAlertController.Style.alert)
-            let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-            sendMailErrorAlert.addAction(cancelAction)
-            self.present(sendMailErrorAlert, animated: true, completion: nil)
-
-            return
-        }
-        
-        if MFMailComposeViewController.canSendMail() {
-            let composer = MFMailComposeViewController()
-            composer.mailComposeDelegate = self
-            composer.setToRecipients(["asoongtesting@gmail.com"]) // TODO: email change
-            let subjectString = "Submission, \(self.defaults.string(forKey: self.firstNameKey) ?? "Name Not Given") \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")"
-            composer.setSubject(subjectString)
-            
-            let email = self.defaults.string(forKey: self.emailKey) ?? "EmailNotGiven"
-            var flag = false
-            var newEmail = ""
-            for char in email{
-                if (char == "@"){
-                    flag = true
-                }
-                if (char != " "){
-                    newEmail += String(char)
-                }
-            }
-            if (!flag){
-                newEmail += "\(self.defaults.string(forKey: self.emailDomainKey) ?? "Email Domain Not Given")"
-            }
-            
-            var address = "\(self.defaults.string(forKey: self.addressLine1Key) ?? "Address Not Given")"
-            let second = "\(self.defaults.string(forKey: self.addressLine2Key) ?? " ")"
-            if (second == " " || second == ""){
-                
-            } else {
-                address += "\n\(second)"
-            }
-            
-let bodyString = """
-    Submission
-
-    First Name: \(self.defaults.string(forKey: self.firstNameKey) ?? "First Name Not Given")
-    Last Name: \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")
-    Phone: \(self.defaults.string(forKey: self.phoneKey) ?? "Phone Number Not Given")
-    Email: \(newEmail)
-                                    
-    Home Information
-
-    Address:
-    \(address)
-    \(self.defaults.string(forKey: self.cityKey) ?? "City Not Given"), \(self.defaults.string(forKey: self.stateKey) ?? "State Not Given") \(self.defaults.string(forKey: self.postalKey) ?? "Postal Not Given")
-                        
-    Pictures:
-"""
-                
-            composer.setMessageBody(bodyString, isHTML: false)
-            present(composer, animated: true)
-            
-
-        } else {
-            let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail. Please check e-mail configuration and try again.", preferredStyle: UIAlertController.Style.alert)
-            let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-            sendMailErrorAlert.addAction(cancelAction)
-            self.present(sendMailErrorAlert, animated: true, completion: nil)
-
-        }
-        
-
-
-    }
     
-    
-   
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // old version
+//    func showMailComposer() {
+//        // send email
+//        guard MFMailComposeViewController.canSendMail() else {
+//            let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail. Please check e-mail configuration and try again.", preferredStyle: UIAlertController.Style.alert)
+//            let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+//            sendMailErrorAlert.addAction(cancelAction)
+//            self.present(sendMailErrorAlert, animated: true, completion: nil)
+//
+//            return
+//        }
+//
+//        if MFMailComposeViewController.canSendMail() {
+//            let composer = MFMailComposeViewController()
+//            composer.mailComposeDelegate = self
+//            composer.setToRecipients(["asoongtesting@gmail.com"]) // TODO: email change
+//            let subjectString = "Submission, \(self.defaults.string(forKey: self.firstNameKey) ?? "Name Not Given") \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")"
+//            composer.setSubject(subjectString)
+//
+//            let email = self.defaults.string(forKey: self.emailKey) ?? "EmailNotGiven"
+//            var flag = false
+//            var newEmail = ""
+//            for char in email{
+//                if (char == "@"){
+//                    flag = true
+//                }
+//                if (char != " "){
+//                    newEmail += String(char)
+//                }
+//            }
+//            if (!flag){
+//                newEmail += "\(self.defaults.string(forKey: self.emailDomainKey) ?? "Email Domain Not Given")"
+//            }
+//
+//            var address = "\(self.defaults.string(forKey: self.addressLine1Key) ?? "Address Not Given")"
+//            let second = "\(self.defaults.string(forKey: self.addressLine2Key) ?? " ")"
+//            if (second == " " || second == ""){
+//
+//            } else {
+//                address += "\n\(second)"
+//            }
+//
+//let bodyString = """
+//    Submission
+//
+//    First Name: \(self.defaults.string(forKey: self.firstNameKey) ?? "First Name Not Given")
+//    Last Name: \(self.defaults.string(forKey: self.lastNameKey) ?? "Last Name Not Given")
+//    Phone: \(self.defaults.string(forKey: self.phoneKey) ?? "Phone Number Not Given")
+//    Email: \(newEmail)
+//
+//    Home Information
+//
+//    Address:
+//    \(address)
+//    \(self.defaults.string(forKey: self.cityKey) ?? "City Not Given"), \(self.defaults.string(forKey: self.stateKey) ?? "State Not Given") \(self.defaults.string(forKey: self.postalKey) ?? "Postal Not Given")
+//
+//    Pictures:
+//"""
+//
+//            composer.setMessageBody(bodyString, isHTML: false)
+//            present(composer, animated: true)
+//
+//
+//        } else {
+//            let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail. Please check e-mail configuration and try again.", preferredStyle: UIAlertController.Style.alert)
+//            let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+//            sendMailErrorAlert.addAction(cancelAction)
+//            self.present(sendMailErrorAlert, animated: true, completion: nil)
+//
+//        }
+//
+//
+//
+//    }
     
     func tryFile(_ nameOfImage : String) -> Bool {
         if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
@@ -428,10 +404,34 @@ let bodyString = """
         }
         return false
     }
+    
+    func loadImageFromDocumentDirectory(nameOfImage : String) -> UIImage {
+
+        // check what is in the directory before deleting
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectory = paths[0]
+        if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
+            print(allItems)
+        }
+        
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(nameOfImage).path) ?? UIImage()
+        }
+        return UIImage()
+    }
+    
+    func getSavedImage(named: String) -> UIImage? {
+        
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+        
+    }
 
 }
 
-
+// no longer used
 //MARK: - MFMailComposeViewControllerDelegate
 
 
@@ -441,7 +441,6 @@ extension HouseInfoPhotosViewController: MFMailComposeViewControllerDelegate {
         if let _ = error {
             controller.dismiss(animated: true)
         }
-        
         
         
         controller.dismiss(animated: true)

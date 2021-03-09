@@ -86,10 +86,7 @@ class AddressViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier == "step2done"){
             if (self.defaults.string(forKey: self.addressLine1Key) == "" || self.defaults.string(forKey: self.addressLine1Key) == " " || self.defaults.string(forKey: self.postalKey) == "" || self.defaults.string(forKey: self.postalKey) == " " || self.defaults.string(forKey: self.cityKey) == "" || self.defaults.string(forKey: self.cityKey) == " " || self.defaults.string(forKey: self.stateKey) == "" || self.defaults.string(forKey: self.stateKey) == " "){
-//                let submitErrorAlert = UIAlertController(title: "Make sure all input boxes are filled in!", message: "Please review your submission.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-//                submitErrorAlert.addAction(cancelAction)
-//                self.present(submitErrorAlert, animated: true, completion: nil)
+
                 ErrorMessage.isHidden = false
                 self.defaults.set(2, forKey: self.screenKey)
                 return false
@@ -118,15 +115,5 @@ class AddressViewController: UIViewController {
         self.defaults.set(postalInput.text, forKey: self.postalKey)
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

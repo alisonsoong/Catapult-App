@@ -207,7 +207,6 @@ extension KitchenViewController:  ImageTableViewCellDelegate {
     
     func deleteButtonPressed(with row: Int) {
         print(photoList)
-        print("ROWWW: \(row)")
         if (row >= 0 && row < photoList.count){
             print("removed: at \(row), name \(photoList[row])")
             

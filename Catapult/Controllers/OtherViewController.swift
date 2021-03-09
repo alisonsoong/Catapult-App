@@ -207,7 +207,6 @@ extension OtherViewController:  ImageTableViewCellDelegate {
     
     func deleteButtonPressed(with row: Int) {
         print(photoList)
-        print("ROWWW: \(row)")
         if (row >= 0 && row < photoList.count){
             print("removed: at \(row), name \(photoList[row])")
             
@@ -223,8 +222,7 @@ extension OtherViewController:  ImageTableViewCellDelegate {
             if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
                 print(allItems)
             }
-            
-            
+ 
             let indexPath = IndexPath(item: row, section: 0)
             
             self.photoTableView.deleteRows(at: [indexPath], with: .fade)

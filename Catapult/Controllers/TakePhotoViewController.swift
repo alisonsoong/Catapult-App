@@ -105,13 +105,12 @@ class TakePhotoViewController: UIViewController {
             } else {
                 arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
             }
-            print("TEST 2")
             newIndex = self.defaults.integer(forKey: self.bathroomIndexKey) + 1
             self.defaults.setValue(newIndex, forKey: bathroomIndexKey)
             selectedImageTag = "Bathroom"
             
             selectedImageTag += String(newIndex)
-            print("TEST 3: \(selectedImageTag)")
+            print("Tag: \(selectedImageTag)")
             arr.append(selectedImageTag)
             self.defaults.set(arr, forKey: self.bathroomPhotosKey)
             

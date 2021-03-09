@@ -95,20 +95,16 @@ class GetPhotoViewController: UIViewController {
     }
     
     @IBAction func usePhoto(_ sender: UIButton) {
-        print("TEST 1")
-        
-        
+
         if (curImage.size.width != 0){
             saveImageToDocumentDirectory(image: curImage)
             
             // check
-            print("CHECK")
             let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
             let documentDirectory = paths[0]
             if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
                 print(allItems)
             }
-            print("END")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
         self.dismiss(animated: true, completion: nil)
@@ -128,13 +124,12 @@ class GetPhotoViewController: UIViewController {
             } else {
                 arr = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
             }
-            print("TEST 2")
             newIndex = self.defaults.integer(forKey: self.bathroomIndexKey) + 1
             self.defaults.setValue(newIndex, forKey: bathroomIndexKey)
             selectedImageTag = "Bathroom"
             
             selectedImageTag += String(newIndex)
-            print("TEST 3: \(selectedImageTag)")
+            print("Selected tag: \(selectedImageTag)")
             arr.append(selectedImageTag)
             self.defaults.set(arr, forKey: self.bathroomPhotosKey)
             
@@ -225,7 +220,6 @@ class GetPhotoViewController: UIViewController {
         } else {
             // if it's other
             // change 3
-            print("MAKE OTHER PHOTO")
             if (self.defaults.object(forKey: self.otherPhotosKey) == nil){
                 arr = [String]()
                 self.defaults.set([String](), forKey: self.otherPhotosKey)

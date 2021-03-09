@@ -18,6 +18,7 @@ import SwiftSMTP
 
 
 
+// purely for testing purposes!
 class TestingEmailViewController: UIViewController {
     
     let defaults = UserDefaults.standard
@@ -76,12 +77,9 @@ class TestingEmailViewController: UIViewController {
 
     // saves image to document directory
     func saveImageToDocumentDirectory(image: UIImage ) {
-        print("TEST")
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        print("TEST")
         let fileName = "image001.png" // name of the image to be saved
         let fileURL = documentsDirectory.appendingPathComponent(fileName)
-        print("TEST")
         if let data = image.jpegData(compressionQuality: 1.0),!FileManager.default.fileExists(atPath: fileURL.path){
             do {
                 try data.write(to: fileURL)
@@ -144,7 +142,6 @@ class TestingEmailViewController: UIViewController {
         }
         removeImage(itemName:"image001", fileExtension: "png")
         savedImageDisplayImageView.image = nil
-        print("after")
         // check what is in the directory after deleting
         let documentDirectory2 = paths[0]
         if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory2) {

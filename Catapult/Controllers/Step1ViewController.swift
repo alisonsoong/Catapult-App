@@ -67,16 +67,6 @@ class Step1ViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         
     }
-    
-    override func viewWillAppear(_ animated: Bool){
-        super.viewWillAppear(true)
-        
-//        if (self.defaults.bool(forKey: self.settingsKey) && self.defaults.integer(forKey: self.settingsIndexKey) != 1){
-//            self.navigationController?.tabBarController?.selectedIndex = self.defaults.integer(forKey: self.settingsIndexKey)
-//        }
-        
-//        self.defaults.set(false, forKey: self.settingsKey)
-    }
 
     @IBAction func firstNameEdit(_ sender: UITextField) {
         self.defaults.set(nameInput.text, forKey: self.firstNameKey)
@@ -111,11 +101,8 @@ class Step1ViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if (identifier == "step1done") {
             if (self.defaults.string(forKey: self.lastNameKey) == "" || self.defaults.string(forKey: self.lastNameKey) == " " || self.defaults.string(forKey: self.firstNameKey) == "" || self.defaults.string(forKey: self.firstNameKey) == " " || self.defaults.string(forKey: self.phoneKey) == nil || self.defaults.string(forKey: self.emailKey) == "" || self.defaults.string(forKey: self.emailKey) == " " || self.defaults.string(forKey: self.emailDomainKey) == "" || self.defaults.string(forKey: self.emailDomainKey) == " ") {
+
                 
-//                let submitErrorAlert = UIAlertController(title: "Make sure all input boxes are filled in!", message: "Please review your submission.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-//                submitErrorAlert.addAction(cancelAction)
-//                self.present(submitErrorAlert, animated: true, completion: nil)
                 ErrorMessage.isHidden = false
                 self.defaults.set(1, forKey: self.screenKey)
                 return false;
@@ -127,7 +114,6 @@ class Step1ViewController: UIViewController {
             
       
         }
-        // set lastSeenScreen to address
         
         return true
     }
@@ -141,7 +127,6 @@ class Step1ViewController: UIViewController {
         self.defaults.set(emailInput.text, forKey: self.emailKey)
         
     }
-    
     
     @IBAction func DropDownPressed(_ sender: UIButton) {
         if (dropDownToggle){
@@ -190,17 +175,6 @@ class Step1ViewController: UIViewController {
         ErrorMessage.isHidden = true
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

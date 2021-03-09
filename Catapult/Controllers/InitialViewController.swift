@@ -13,6 +13,7 @@ class InitialViewController: UIViewController {
     let defaults = UserDefaults.standard
     let screenKey = "startScreenIndex"
 
+    // user info
     let addressLine1Key = "addressLine1"
     let addressLine2Key = "addressLine2"
     let cityKey = "city"
@@ -23,6 +24,8 @@ class InitialViewController: UIViewController {
     let phoneKey = "phone"
     let emailKey = "email"
     let emailDomainKey = "emailDomain"
+    
+    // arrays that keeps the path names for photos in different categories
     let bathroomPhotosKey = "bathroomPhotoPaths"
     let livingPhotosKey = "livingPhotosPaths"
     let exteriorPhotosKey = "exteriorPhotosPaths"
@@ -30,6 +33,7 @@ class InitialViewController: UIViewController {
     let bedroomPhotosKey = "bedroomPhotosPath"
     let otherPhotosKey = "otherPhotosPath"
     
+    // for creating unique paths (strings) for photos
     let bathroomIndexKey = "bathroomHighestIndex"
     let livingIndexKey = "livingHighestIndex"
     let exteriorIndexKey = "exteriorHighestIndex"
@@ -47,14 +51,11 @@ class InitialViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-        // scroll reset
-//        initialScrollView.setContentOffset(CGPoint.zero, animated: true)
-        
         if (self.defaults.integer(forKey:"startScreenIndex") != 0){
             self.defaults.set(0, forKey: self.screenKey)
         }
         
-        // testing purposes
+        // for testing purposes
 //        self.defaults.set("asdf", forKey: self.addressLine1Key)
 //        self.defaults.set("adf", forKey: self.addressLine2Key)
 //        self.defaults.set("asdf", forKey: self.cityKey)
@@ -100,14 +101,7 @@ class InitialViewController: UIViewController {
         self.defaults.set(0, forKey: self.otherIndexKey)
         
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let curView  = storyBoard.instantiateViewController(withIdentifier: "Step1") as! Step1ViewController
-//        self.present(curView, animated: true, completion: nil)
-    }
+
     
     @IBAction func StartPressed(_ sender: UIButton) {
         
@@ -116,16 +110,7 @@ class InitialViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 
 }
 

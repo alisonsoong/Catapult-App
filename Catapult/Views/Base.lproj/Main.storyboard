@@ -2832,10 +2832,10 @@
                                 <rect key="frame" x="0.0" y="22" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmd-Ws-2El">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6oT-kP-oq2">
-                                                <rect key="frame" x="24" y="24" width="366" height="980"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6oT-kP-oq2">
+                                                <rect key="frame" x="24" y="24" width="366" height="1238"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zat-Lf-oCF">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="90"/>
@@ -2866,7 +2866,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIS-y4-WLc">
-                                                        <rect key="frame" x="0.0" y="90" width="366" height="156"/>
+                                                        <rect key="frame" x="0.0" y="100" width="366" height="156"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgX-DP-Ry6">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="156"/>
@@ -2885,7 +2885,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYA-FF-eUz">
-                                                        <rect key="frame" x="0.0" y="246" width="366" height="66"/>
+                                                        <rect key="frame" x="0.0" y="266" width="366" height="66"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection of Personal Information" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDu-72-C7G">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="66"/>
@@ -2903,7 +2903,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPP-Ck-XPe">
-                                                        <rect key="frame" x="0.0" y="312" width="366" height="66"/>
+                                                        <rect key="frame" x="0.0" y="342" width="366" height="66"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrS-Gq-PHC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="66"/>
@@ -2921,7 +2921,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiY-Yl-0xb">
-                                                        <rect key="frame" x="0.0" y="378" width="366" height="260"/>
+                                                        <rect key="frame" x="0.0" y="418" width="366" height="260"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxQ-IG-Fce">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="260"/>
@@ -2940,7 +2940,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rve-p1-gRU">
-                                                        <rect key="frame" x="0.0" y="638" width="366" height="66"/>
+                                                        <rect key="frame" x="0.0" y="688" width="366" height="66"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disclosure of Personal Information" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgY-nA-YxH">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="66"/>
@@ -2958,7 +2958,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxO-2Y-qLO">
-                                                        <rect key="frame" x="0.0" y="704" width="366" height="118"/>
+                                                        <rect key="frame" x="0.0" y="764" width="366" height="118"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will not disclose your information to any third party except if you expressly consent or where required by law." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3y-37-aF8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="118"/>
@@ -2976,9 +2976,9 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftQ-d0-yKF">
-                                                        <rect key="frame" x="0.0" y="822" width="366" height="66"/>
+                                                        <rect key="frame" x="0.0" y="892" width="366" height="66"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacting Us" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlR-ph-lOL">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacting Us (Catapult)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlR-ph-lOL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="66"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
                                                                 <color key="textColor" name="OfficialDarkGrey"/>
@@ -2994,7 +2994,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2SC-EX-V7e">
-                                                        <rect key="frame" x="0.0" y="888" width="366" height="92"/>
+                                                        <rect key="frame" x="0.0" y="968" width="366" height="92"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you have any questions regarding this privacy policy, you can email ____________" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgv-tp-7Kn">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="92"/>
@@ -3009,6 +3009,42 @@
                                                             <constraint firstAttribute="bottom" secondItem="Dgv-tp-7Kn" secondAttribute="bottom" id="Ohr-Kk-cMd"/>
                                                             <constraint firstItem="Dgv-tp-7Kn" firstAttribute="top" secondItem="2SC-EX-V7e" secondAttribute="top" id="hT5-bs-9wD"/>
                                                             <constraint firstItem="Dgv-tp-7Kn" firstAttribute="leading" secondItem="2SC-EX-V7e" secondAttribute="leading" id="vzx-90-bof"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMR-xQ-A96">
+                                                        <rect key="frame" x="0.0" y="1070" width="366" height="66"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacting Us (Developer)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7C3-7h-nem">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="66"/>
+                                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                                                <color key="textColor" name="OfficialDarkGrey"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="7C3-7h-nem" firstAttribute="leading" secondItem="oMR-xQ-A96" secondAttribute="leading" id="2l9-bp-cdo"/>
+                                                            <constraint firstAttribute="bottom" secondItem="7C3-7h-nem" secondAttribute="bottom" id="5vb-rV-rFr"/>
+                                                            <constraint firstItem="7C3-7h-nem" firstAttribute="top" secondItem="oMR-xQ-A96" secondAttribute="top" id="AEY-O8-7Yy"/>
+                                                            <constraint firstAttribute="trailing" secondItem="7C3-7h-nem" secondAttribute="trailing" id="YJP-Fv-lTX"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBp-cO-7tF">
+                                                        <rect key="frame" x="0.0" y="1146" width="366" height="92"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you have any questions regarding this app, you can reach out to the developer, Alison Soong, at alisonsoong@gmail.com" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCc-wG-d2g">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="92"/>
+                                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                                                <color key="textColor" name="OfficialDarkGrey"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="lCc-wG-d2g" firstAttribute="leading" secondItem="tBp-cO-7tF" secondAttribute="leading" id="eZA-AK-nyH"/>
+                                                            <constraint firstItem="lCc-wG-d2g" firstAttribute="top" secondItem="tBp-cO-7tF" secondAttribute="top" id="o15-bI-SqS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="lCc-wG-d2g" secondAttribute="trailing" id="qif-fB-TmA"/>
+                                                            <constraint firstAttribute="bottom" secondItem="lCc-wG-d2g" secondAttribute="bottom" id="uBa-65-t4o"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -3038,7 +3074,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="6oT-kP-oq2" firstAttribute="leading" secondItem="vmd-Ws-2El" secondAttribute="leading" constant="24" id="GEJ-Ta-CaF"/>
-                                            <constraint firstAttribute="height" constant="1100" id="PnY-Va-Q1j"/>
+                                            <constraint firstAttribute="height" constant="1600" id="PnY-Va-Q1j"/>
                                             <constraint firstAttribute="trailing" secondItem="6oT-kP-oq2" secondAttribute="trailing" constant="24" id="dxU-9r-xZl"/>
                                             <constraint firstItem="6oT-kP-oq2" firstAttribute="top" secondItem="vmd-Ws-2El" secondAttribute="top" constant="24" id="jh3-yY-Aec"/>
                                         </constraints>

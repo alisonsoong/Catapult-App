@@ -32,8 +32,8 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
+    
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
         
         // are you sure you want to submit?
@@ -53,6 +53,7 @@ class SettingsViewController: UIViewController {
         present(refreshAlert, animated: true, completion: nil)
         
     }
+    
     @IBAction func FAQButtonPressed(_ sender: UIButton) {
         
         // are you sure you want to submit?
@@ -87,7 +88,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func restartButtonPressed(_ sender: UIButton) {
         
-        var refreshAlert = UIAlertController(title: "Reset", message: "Are you sure you want to restart? All your progress will be lost.", preferredStyle: UIAlertController.Style.alert)
+        let refreshAlert = UIAlertController(title: "Reset", message: "Are you sure you want to restart? All your progress will be lost.", preferredStyle: UIAlertController.Style.alert)
 
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             // Handle Ok logic here
@@ -101,11 +102,6 @@ class SettingsViewController: UIViewController {
           }))
 
         present(refreshAlert, animated: true, completion: nil)
-        
-   
-        
-        
-        
         
     }
     
@@ -123,27 +119,14 @@ class SettingsViewController: UIViewController {
         
         
         // remove all images
-            //bathroom
-        // try
+        
+        
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentDirectory = paths[0]
         if let allItems = try? FileManager.default.contentsOfDirectory(atPath: documentDirectory) {
-            print(allItems)
+            print("Items currently in directory: \(allItems)")
         }
-        
-        
-//        var photoList = [String]()
-//        if (self.defaults.object(forKey: self.bathroomPhotosKey) == nil){
-//            photoList = [String]()
-//            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
-//        } else {
-//            photoList = self.defaults.object(forKey: self.bathroomPhotosKey) as! [String]
-//            self.defaults.set([String](), forKey: self.bathroomPhotosKey)
-//        }
-//        print(photoList)
-//        for x in photoList{
-//            removeImage(itemName: x, fileExtension: "png")
-//        }
+
         
         let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 
@@ -163,11 +146,9 @@ class SettingsViewController: UIViewController {
             print(allItems)
         }
         
-            
-        
+    
         // go back to original screen
         self.defaults.set(0, forKey: self.screenKey)
-        
         
         
         self.performSegue(withIdentifier: "resetSegue", sender: nil)
@@ -175,28 +156,23 @@ class SettingsViewController: UIViewController {
     
     // removes image from directory given string
     func removeImage(itemName:String, fileExtension: String) {
-      let fileManager = FileManager.default
-      let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-      let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
-      let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-      guard let dirPath = paths.first else {
-          return
-      }
-      let filePath = "\(dirPath)/\(itemName).\(fileExtension)"
-      do {
-        try fileManager.removeItem(atPath: filePath)
-      } catch let error as NSError {
-        print(error.debugDescription)
-      }}
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        let fileManager = FileManager.default
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        
+        let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        guard let dirPath = paths.first else {
+            return
+        }
+        
+        let filePath = "\(dirPath)/\(itemName).\(fileExtension)"
+        do {
+            try fileManager.removeItem(atPath: filePath)
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+        
     }
-    */
-
+    
 }
